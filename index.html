@@ -116,7 +116,7 @@ body {
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 16px; /* slightly smaller */
     margin: 16px 0;
 }
 
@@ -129,15 +129,15 @@ body {
     position: absolute;
     top: 12px;
     right: 12px;
-    font-size: 26px; /* larger cross */
+    font-size: 32px; /* bigger cross */
     color: #F7E4D3;
     cursor: pointer;
 }
 
-/* Responsive adjustments */
-@media (max-width: 700px) {
+/* Responsive adjustments: trigger hamburger sooner */
+@media (max-width: 850px) {  /* increased breakpoint */
     .header {
-        padding: 35px 20px 20px 20px;
+        padding: 35px 20px 20px 20px; /* title closer to left edge */
     }
 
     .nav {
