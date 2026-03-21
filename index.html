@@ -63,10 +63,11 @@ body {
 .quote-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* move quote higher */
-    height: calc(100vh - 100px); /* slightly less than full height */
-    padding: 60px 20px 0 20px; /* top padding to lift quote */
+    align-items: center; /* mostly centered */
+    height: calc(100vh - 76px);
+    padding: 0 20px;
     text-align: center;
+    margin-top: -15px; /* slight nudge upward */
 }
 
 .quote {
@@ -153,7 +154,7 @@ body {
     }
 
     .quote {
-        font-size: 12px; /* smaller on mobile */
+        font-size: 12px; /* slightly smaller on mobile */
     }
 }
 </style>
