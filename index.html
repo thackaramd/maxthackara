@@ -48,6 +48,10 @@ body {
     color: #000;
 }
 
+.nav a.italic {
+    font-style: italic;
+}
+
 /* Line under header */
 .line {
     height: 1px;
@@ -76,8 +80,8 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 20px; /* smaller */
-    height: 16px; /* 3 lines */
+    width: 20px; /* small hamburger */
+    height: 16px;
     cursor: pointer;
 }
 
@@ -112,7 +116,7 @@ body {
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
-    font-size: 16px; /* slightly smaller */
+    font-size: 16px;
     margin: 16px 0;
 }
 
@@ -123,9 +127,9 @@ body {
 /* Close icon (top-right) */
 .close-icon {
     position: absolute;
-    top: 12px; /* aligned with hamburger */
+    top: 12px;
     right: 12px;
-    font-size: 20px; /* bigger to match hamburger icon */
+    font-size: 26px; /* larger cross */
     color: #F7E4D3;
     cursor: pointer;
 }
@@ -133,7 +137,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 700px) {
     .header {
-        padding: 35px 20px 20px 20px; /* title closer to left edge */
+        padding: 35px 20px 20px 20px;
     }
 
     .nav {
@@ -162,8 +166,8 @@ body {
     <!-- Desktop nav -->
     <div class="nav">
         <a href="#">Books</a>
-        <a href="#" class="italic">The Parlour</a>
         <a href="#">Mentoring</a>
+        <a href="#" class="italic">The Parlour</a>
         <a href="#">Support</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
@@ -188,8 +192,8 @@ body {
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="#">Books</a>
-    <a href="#" class="italic">The Parlour</a>
     <a href="#">Mentoring</a>
+    <a href="#" class="italic">The Parlour</a>
     <a href="#">Support</a>
     <a href="mailto:contact@maxthackara.uk">Contact</a>
 </div>
