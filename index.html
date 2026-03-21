@@ -20,7 +20,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline; /* align nav and title on same line */
     padding: 35px 60px 20px 60px;
     transition: padding 0.3s ease;
 }
@@ -35,7 +35,7 @@ body {
     display: flex;
     gap: 25px;
     font-size: 16px;
-    transition: font-size 0.3s ease, gap 0.3s ease;
+    margin-top: 0; /* fine-tune if needed */
 }
 
 .nav a {
@@ -117,7 +117,7 @@ body {
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 16px; /* slightly smaller */
     margin: 16px 0;
 }
 
@@ -138,7 +138,8 @@ body {
 /* Responsive adjustments: trigger hamburger sooner */
 @media (max-width: 850px) {
     .header {
-        padding: 35px 20px 20px 20px; /* title closer to left edge */
+        padding: 35px 20px 20px 20px;
+        align-items: center; /* revert to center on mobile */
     }
 
     .nav {
