@@ -31,7 +31,7 @@
         /* Desktop navigation */
         .nav {
             display: flex;
-            gap: 40px;
+            gap: 25px; /* slightly closer together */
             font-size: 16px;
         }
 
@@ -73,12 +73,12 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 5px;
+            gap: 4px;
         }
 
         .hamburger div {
             width: 25px;
-            height: 3px;
+            height: 2px; /* thinner lines */
             background-color: #43554F;
         }
 
@@ -90,7 +90,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #36443E;
+            background-color: #1B1B2F; /* dark navy */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -108,11 +108,21 @@
             color: #F7E4D3;
             text-decoration: none;
             font-size: 22px;
-            margin: 20px 0;
+            margin: 18px 0;
+        }
+
+        /* Close icon */
+        .close-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 28px;
+            color: #F7E4D3;
+            cursor: pointer;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 600px) {
+        @media (max-width: 700px) { /* Hamburger appears earlier */
             .nav {
                 display: none;
             }
@@ -162,6 +172,7 @@
 
     <!-- Mobile overlay menu -->
     <div class="mobile-menu" id="mobileMenu">
+        <div class="close-icon" onclick="toggleMenu()">×</div>
         <a href="#">Books</a>
         <a href="#">Mentoring</a>
         <a href="#">Support</a>
