@@ -16,7 +16,7 @@
             color: #43554F;
         }
 
-        /* Header with title and top-right navigation */
+        /* Header with title and nav */
         .header {
             display: flex;
             justify-content: space-between;
@@ -28,10 +28,11 @@
             font-size: 28px;
         }
 
+        /* Desktop navigation */
         .nav {
             display: flex;
-            gap: 25px;
-            font-size: 14px;
+            gap: 40px;
+            font-size: 16px;
         }
 
         .nav a {
@@ -41,9 +42,10 @@
         }
 
         .nav a:hover {
-            color: #000; /* Slight darkening on hover */
+            color: #000;
         }
 
+        /* Line under header */
         .line {
             height: 1px;
             background-color: #43554F;
@@ -55,7 +57,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 62px); /* Full viewport minus header + line height */
+            height: calc(100vh - 62px);
             padding: 0 20px;
             text-align: center;
         }
@@ -66,14 +68,61 @@
             max-width: 600px;
         }
 
+        /* Hamburger menu - hidden by default */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #43554F;
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #36443E;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            color: #F7E4D3;
+            text-decoration: none;
+            font-size: 22px;
+            margin: 20px 0;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 600px) {
-            .title {
-                font-size: 22px;
+            .nav {
+                display: none;
             }
 
-            .nav {
-                gap: 15px;
-                font-size: 13px;
+            .hamburger {
+                display: flex;
+            }
+
+            .title {
+                font-size: 22px;
             }
 
             .quote {
@@ -86,11 +135,20 @@
 
     <div class="header">
         <div class="title">Max Thackara</div>
+
+        <!-- Desktop nav -->
         <div class="nav">
             <a href="#">Books</a>
             <a href="#">Mentoring</a>
-            <a href="#">Donate</a>
-            <a href="#">Contact</a>
+            <a href="#">Support</a>
+            <a href="mailto:contact@maxthackara.uk">Contact</a>
+        </div>
+
+        <!-- Hamburger icon for mobile -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </div>
 
@@ -101,6 +159,25 @@
             "Your quote here. Something short, reflective, or inspiring."
         </div>
     </div>
+
+    <!-- Mobile overlay menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Books</a>
+        <a href="#">Mentoring</a>
+        <a href="#">Support</a>
+        <a href="mailto:contact@maxthackara.uk">Contact</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+            } else {
+                menu.classList.add('show');
+            }
+        }
+    </script>
 
 </body>
 </html>
