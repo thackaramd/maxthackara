@@ -76,14 +76,14 @@
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 25px;
-            height: 18px;
+            width: 22px; /* slightly smaller */
+            height: 22px; /* enough space for 4 lines */
             cursor: pointer;
         }
 
         .hamburger div {
             width: 100%;
-            height: 2px;
+            height: 1.5px; /* thin lines */
             background-color: #43554F;
             transition: all 0.4s ease;
         }
@@ -96,7 +96,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #1B1B2F;
+            background-color: #1B1B2F; /* dark navy */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -117,15 +117,14 @@
             margin: 18px 0;
         }
 
-        /* Hamburger active state - transform into cross */
-        .hamburger.active div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger.active div:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.active div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+        /* Close icon (top-right) */
+        .close-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 28px;
+            color: #F7E4D3;
+            cursor: pointer;
         }
 
         /* Responsive adjustments */
@@ -166,7 +165,8 @@
         </div>
 
         <!-- Hamburger icon for mobile -->
-        <div class="hamburger" onclick="toggleMenu(this)">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
@@ -183,6 +183,7 @@
 
     <!-- Mobile overlay menu -->
     <div class="mobile-menu" id="mobileMenu">
+        <div class="close-icon" onclick="toggleMenu()">×</div>
         <a href="#">Books</a>
         <a href="#">Mentoring</a>
         <a href="#">Support</a>
@@ -190,10 +191,9 @@
     </div>
 
     <script>
-        function toggleMenu(element) {
+        function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('show');
-            element.classList.toggle('active'); // animate hamburger
         }
     </script>
 
