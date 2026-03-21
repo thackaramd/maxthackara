@@ -63,14 +63,14 @@ body {
 .quote-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: calc(100vh - 76px);
-    padding: 0 20px;
+    align-items: flex-start; /* move quote higher */
+    height: calc(100vh - 100px); /* slightly less than full height */
+    padding: 60px 20px 0 20px; /* top padding to lift quote */
     text-align: center;
 }
 
 .quote {
-    font-size: 16px;
+    font-size: 14px; /* slightly smaller */
     font-style: italic;
     max-width: 600px;
 }
@@ -80,8 +80,8 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 20px; /* small hamburger */
-    height: 16px;
+    width: 20px; 
+    height: 16px; /* 3 lines */
     cursor: pointer;
 }
 
@@ -116,7 +116,7 @@ body {
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
-    font-size: 16px; /* slightly smaller */
+    font-size: 16px;
     margin: 16px 0;
 }
 
@@ -135,7 +135,7 @@ body {
 }
 
 /* Responsive adjustments: trigger hamburger sooner */
-@media (max-width: 850px) {  /* increased breakpoint */
+@media (max-width: 850px) {
     .header {
         padding: 35px 20px 20px 20px; /* title closer to left edge */
     }
@@ -153,7 +153,7 @@ body {
     }
 
     .quote {
-        font-size: 14px;
+        font-size: 12px; /* smaller on mobile */
     }
 }
 </style>
