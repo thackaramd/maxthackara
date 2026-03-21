@@ -21,11 +21,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 35px 60px 20px 60px; /* more horizontal padding on desktop */
+            padding: 35px 60px 20px 60px; /* desktop padding */
+            transition: padding 0.3s ease;
         }
 
         .title {
             font-size: 28px;
+            transition: font-size 0.3s ease;
         }
 
         /* Desktop navigation */
@@ -33,6 +35,7 @@
             display: flex;
             gap: 25px;
             font-size: 16px;
+            transition: font-size 0.3s ease, gap 0.3s ease;
         }
 
         .nav a {
@@ -72,14 +75,17 @@
         .hamburger {
             display: none;
             flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 18px;
             cursor: pointer;
-            gap: 4px;
         }
 
         .hamburger div {
-            width: 25px;
-            height: 2px; /* thinner lines */
+            width: 100%;
+            height: 2px;
             background-color: #43554F;
+            transition: all 0.4s ease;
         }
 
         /* Mobile menu overlay */
@@ -90,7 +96,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #1B1B2F; /* dark navy */
+            background-color: #1B1B2F;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -107,24 +113,25 @@
         .mobile-menu a {
             color: #F7E4D3;
             text-decoration: none;
-            font-size: 18px; /* slightly smaller again */
+            font-size: 18px;
             margin: 18px 0;
         }
 
-        /* Close icon */
-        .close-icon {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 28px;
-            color: #F7E4D3;
-            cursor: pointer;
+        /* Hamburger active state - transform into cross */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
         }
 
         /* Responsive adjustments */
-        @media (max-width: 700px) { /* Hamburger appears earlier */
+        @media (max-width: 700px) {
             .header {
-                padding: 35px 30px 20px 30px; /* less horizontal padding on mobile */
+                padding: 35px 30px 20px 30px;
             }
 
             .nav {
@@ -136,7 +143,7 @@
             }
 
             .title {
-                font-size: 20px; /* smaller site title on mobile */
+                font-size: 20px;
             }
 
             .quote {
@@ -159,7 +166,7 @@
         </div>
 
         <!-- Hamburger icon for mobile -->
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" onclick="toggleMenu(this)">
             <div></div>
             <div></div>
             <div></div>
@@ -176,7 +183,6 @@
 
     <!-- Mobile overlay menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <div class="close-icon" onclick="toggleMenu()">×</div>
         <a href="#">Books</a>
         <a href="#">Mentoring</a>
         <a href="#">Support</a>
@@ -184,9 +190,10 @@
     </div>
 
     <script>
-        function toggleMenu() {
+        function toggleMenu(element) {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('show');
+            element.classList.toggle('active'); // animate hamburger
         }
     </script>
 
