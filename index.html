@@ -13,21 +13,56 @@
             margin: 0;
             background-color: #F7E4D3;
             font-family: 'Prata', serif;
+            color: #43554F;
         }
 
         .header {
-            padding: 20px 30px 10px 30px;
+            padding: 25px 30px 10px 30px;
         }
 
         .title {
-            font-size: 20px;
-            color: #43554F;
+            font-size: 28px;
         }
 
         .line {
             height: 1px;
             background-color: #43554F;
             width: 100%;
+        }
+
+        .content {
+            max-width: 700px;
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .text {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #43554F;
+            text-decoration: underline;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 22px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -39,6 +74,40 @@
     </div>
 
     <div class="line"></div>
+
+    <div class="content">
+
+        <div class="section">
+            <div class="text">
+                Writer and creative mentor.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Books</div>
+            <div class="text">
+                <p><a href="#">Book Title One</a></p>
+                <p><a href="#">Book Title Two</a></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Mentoring</div>
+            <div class="text">
+                I offer one-to-one creative mentoring for writers and artists.
+                <br><br>
+                Get in touch if you'd like to work together.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Contact</div>
+            <div class="text">
+                <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>
