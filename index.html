@@ -85,21 +85,6 @@ body {
     width: 100%;
     height: 1.5px;
     background-color: #43554F;
-    transition: all 0.4s ease;
-}
-
-/* Hamburger animation to cross */
-.hamburger.active div:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
-}
-.hamburger.active div:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active div:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
-}
-.hamburger.active div:nth-child(4) {
-    opacity: 0;
 }
 
 /* Mobile menu overlay */
@@ -127,11 +112,11 @@ body {
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
-    font-size: 16px; /* slightly smaller */
+    font-size: 16px;
     margin: 16px 0;
 }
 
-/* Close icon inside mobile menu overlay */
+/* Close icon (top-right) */
 .close-icon {
     position: absolute;
     top: 20px;
@@ -179,7 +164,7 @@ body {
     </div>
 
     <!-- Hamburger -->
-    <div class="hamburger" onclick="toggleMenu(this)">
+    <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
@@ -197,6 +182,7 @@ body {
 
 <!-- Mobile overlay menu -->
 <div class="mobile-menu" id="mobileMenu">
+    <!-- Cross is always visible when menu is open -->
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="#">Books</a>
     <a href="#">Mentoring</a>
@@ -205,10 +191,9 @@ body {
 </div>
 
 <script>
-function toggleMenu(element) {
+function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
-    element.classList.toggle('active'); // hamburger animates to cross on desktop
 }
 </script>
 
