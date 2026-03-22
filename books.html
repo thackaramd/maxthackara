@@ -41,6 +41,7 @@ body {
     display: flex;
     gap: 25px;
     font-size: 16px;
+    transition: gap 0.2s ease, font-size 0.2s ease;
 }
 
 .nav a {
@@ -145,13 +146,22 @@ body {
     cursor: pointer;
 }
 
-/* Responsive - title shrink from 800px to 750px, collapse at 750px */
+/* Navigation shrink from 900px → 750px */
+@media (max-width: 900px) {
+    .nav {
+        gap: calc(15px + 10 * ((100vw - 750px) / 150)); /* gradually reduce gap */
+        font-size: calc(14px + 2 * ((100vw - 750px) / 150)); /* gradually reduce font-size */
+    }
+}
+
+/* Title shrink from 800px → 750px */
 @media (max-width: 800px) {
     .title {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 50)); /* smooth shrink */
     }
 }
 
+/* Collapse to mobile at 750px */
 @media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
