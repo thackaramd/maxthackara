@@ -20,13 +20,14 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline; /* align nav and title on same line */
+    align-items: baseline;
     padding: 35px 60px 20px 60px;
-    transition: padding 0.3s ease;
 }
 
+/* Title */
 .title {
     font-size: 28px;
+    transition: font-size 0.2s ease;
 }
 
 .title a {
@@ -36,20 +37,20 @@ body {
 
 .title .mobile {
     display: none;
+    font-size: 20px;
 }
 
-/* Desktop navigation */
+/* Navigation */
 .nav {
     display: flex;
     gap: 25px;
     font-size: 16px;
-    margin-top: 0;
+    transition: gap 0.2s ease, font-size 0.2s ease;
 }
 
 .nav a {
     text-decoration: none;
     color: #43554F;
-    transition: color 0.3s;
 }
 
 .nav a:hover {
@@ -71,11 +72,11 @@ body {
 .quote-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* mostly centered */
+    align-items: center;
     height: calc(100vh - 76px);
     padding: 0 20px;
     text-align: center;
-    margin-top: -30px; /* slight nudge upward */
+    margin-top: -30px;
 }
 
 .quote {
@@ -84,18 +85,18 @@ body {
     max-width: 600px;
 }
 
-/* Hamburger menu (thin 3 lines) */
+/* Hamburger menu */
 .hamburger {
     display: none;
     flex-direction: column;
-    justify-content: space-between; /* evenly space lines */
+    justify-content: space-between;
     width: 22px;
     height: 16px;
     cursor: pointer;
 }
 
 .hamburger div {
-    height: 2px; /* thin line */
+    height: 2px;
     background-color: #43554F;
 }
 
@@ -132,21 +133,31 @@ body {
     font-style: italic;
 }
 
-/* Close icon (top-right) */
 .close-icon {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 16px;
+    right: 16px;
     font-size: 32px;
     color: #F7E4D3;
     cursor: pointer;
 }
 
-/* Responsive adjustments: trigger hamburger sooner & padding */
-@media (max-width: 850px) {
+/* Shrink desktop title and nav from 1000px → 750px */
+@media (max-width: 1000px) {
+    .title .desktop {
+        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 250));
+    }
+    .nav {
+        gap: calc(10px + 15 * ((100vw - 750px) / 250));
+        font-size: calc(12px + 4 * ((100vw - 750px) / 250));
+    }
+}
+
+/* Collapse to mobile at 750px */
+@media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
-        align-items: center; /* revert to center on mobile */
+        align-items: center;
     }
 
     .nav {
@@ -155,10 +166,6 @@ body {
 
     .hamburger {
         display: flex;
-    }
-
-    .title {
-        font-size: 20px;
     }
 
     .title .desktop {
@@ -185,16 +192,14 @@ body {
         </a>
     </div>
 
-    <!-- Desktop nav -->
     <div class="nav">
         <a href="books.html">Books</a>
         <a href="#">Mentoring</a>
-        <a href="#" class="italic">The Parlour</a>
-        <a href="#">Support</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
+        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
 
-    <!-- Hamburger -->
     <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -210,20 +215,18 @@ body {
     </div>
 </div>
 
-<!-- Mobile overlay menu -->
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
     <a href="#">Mentoring</a>
-    <a href="#" class="italic">The Parlour</a>
-    <a href="#">Support</a>
+    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
+    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
     <a href="mailto:contact@maxthackara.uk">Contact</a>
 </div>
 
 <script>
 function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
+    document.getElementById('mobileMenu').classList.toggle('show');
 }
 </script>
 
