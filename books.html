@@ -60,22 +60,37 @@ body {
     width: 100%;
 }
 
-/* Books content */
+/* BOOK SHELF */
 .books-container {
-    padding: 80px 20px;
-    text-align: center;
+    padding: 80px 40px;
+    display: flex;
+    justify-content: center;
 }
 
-.books-container h1 {
-    font-size: 20px;
-    margin-bottom: 20px;
+.book-shelf {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: center;
 }
 
-.books-container p {
-    font-size: 14px;
-    font-style: italic;
+.book {
+    width: 180px;
+    transition: transform 0.3s ease;
 }
 
+.book img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.book:hover {
+    transform: translateY(-6px);
+}
+
+/* Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -89,6 +104,7 @@ body {
     background-color: #43554F;
 }
 
+/* Mobile menu */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -121,6 +137,7 @@ body {
     cursor: pointer;
 }
 
+/* Responsive */
 @media (max-width: 850px) {
     .header {
         padding: 35px 28px 20px 28px;
@@ -145,6 +162,17 @@ body {
 
     .title .mobile {
         display: inline;
+    }
+
+    .book-shelf {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .book {
+        width: 60%;
+        max-width: 220px;
     }
 }
 </style>
@@ -176,9 +204,31 @@ body {
 
 <div class="line"></div>
 
+<!-- BOOK SHELF -->
 <div class="books-container">
-    <h1>Books</h1>
-    <p>Books page coming soon.</p>
+    <div class="book-shelf">
+
+        <!-- BOOK 1 -->
+        <a href="PASTE_AMAZON_LINK_HERE" class="book" target="_blank">
+            <img src="book1.jpg" alt="Book 1">
+        </a>
+
+        <!-- BOOK 2 -->
+        <a href="PASTE_AMAZON_LINK_HERE" class="book" target="_blank">
+            <img src="book2.jpg" alt="Book 2">
+        </a>
+
+        <!-- BOOK 3 -->
+        <a href="PASTE_AMAZON_LINK_HERE" class="book" target="_blank">
+            <img src="book3.jpg" alt="Book 3">
+        </a>
+
+        <!-- BOOK 4 -->
+        <a href="PASTE_AMAZON_LINK_HERE" class="book" target="_blank">
+            <img src="book4.jpg" alt="Book 4">
+        </a>
+
+    </div>
 </div>
 
 <div class="mobile-menu" id="mobileMenu">
