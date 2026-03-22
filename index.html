@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Max Thackara</title>
 
+<!-- Prata Font -->
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
 <style>
@@ -15,11 +16,13 @@ body {
     color: #43554F;
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: baseline; /* align nav and title on same line */
     padding: 35px 60px 20px 60px;
+    transition: padding 0.3s ease;
 }
 
 .title {
@@ -35,15 +38,18 @@ body {
     display: none;
 }
 
+/* Desktop navigation */
 .nav {
     display: flex;
     gap: 25px;
     font-size: 16px;
+    margin-top: 0;
 }
 
 .nav a {
     text-decoration: none;
     color: #43554F;
+    transition: color 0.3s;
 }
 
 .nav a:hover {
@@ -54,19 +60,22 @@ body {
     font-style: italic;
 }
 
+/* Line under header */
 .line {
     height: 1px;
     background-color: #43554F;
     width: 100%;
 }
 
+/* Centered quote */
 .quote-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* mostly centered */
     height: calc(100vh - 76px);
+    padding: 0 20px;
     text-align: center;
-    margin-top: -30px;
+    margin-top: -30px; /* slight nudge upward */
 }
 
 .quote {
@@ -75,19 +84,22 @@ body {
     max-width: 600px;
 }
 
+/* Hamburger menu (thin 3 lines) */
 .hamburger {
     display: none;
     flex-direction: column;
-    width: 20px; 
+    justify-content: space-between; /* evenly space lines */
+    width: 22px;
     height: 16px;
     cursor: pointer;
 }
 
 .hamburger div {
-    height: 1.5px;
+    height: 2px; /* thin line */
     background-color: #43554F;
 }
 
+/* Mobile menu overlay */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -99,31 +111,42 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .mobile-menu.show {
     display: flex;
+    opacity: 1;
 }
 
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
+    font-size: 16px;
     margin: 16px 0;
 }
 
+.mobile-menu a.italic {
+    font-style: italic;
+}
+
+/* Close icon (top-right) */
 .close-icon {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 12px;
+    right: 12px;
     font-size: 32px;
     color: #F7E4D3;
     cursor: pointer;
 }
 
+/* Responsive adjustments: trigger hamburger sooner & padding */
 @media (max-width: 850px) {
     .header {
         padding: 35px 28px 20px 28px;
-        align-items: center;
+        align-items: center; /* revert to center on mobile */
     }
 
     .nav {
@@ -162,6 +185,7 @@ body {
         </a>
     </div>
 
+    <!-- Desktop nav -->
     <div class="nav">
         <a href="books.html">Books</a>
         <a href="#">Mentoring</a>
@@ -170,6 +194,7 @@ body {
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
 
+    <!-- Hamburger -->
     <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -185,6 +210,7 @@ body {
     </div>
 </div>
 
+<!-- Mobile overlay menu -->
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
@@ -196,7 +222,8 @@ body {
 
 <script>
 function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('show');
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
 }
 </script>
 
