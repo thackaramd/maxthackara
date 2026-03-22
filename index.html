@@ -20,7 +20,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline; /* align nav and title on same line */
+    align-items: baseline;
     padding: 35px 60px 20px 60px;
     transition: padding 0.3s ease;
 }
@@ -28,6 +28,11 @@ body {
 .title {
     font-size: 28px;
     transition: font-size 0.3s ease;
+}
+
+/* Swap title text */
+.title .mobile {
+    display: none;
 }
 
 /* Desktop navigation */
@@ -63,11 +68,11 @@ body {
 .quote-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* mostly centered */
+    align-items: center;
     height: calc(100vh - 76px);
     padding: 0 20px;
     text-align: center;
-    margin-top: -30px; /* slight nudge upward */
+    margin-top: -30px;
 }
 
 .quote {
@@ -128,18 +133,18 @@ body {
 /* Close icon (top-right) */
 .close-icon {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 16px;
+    right: 16px;
     font-size: 32px;
     color: #F7E4D3;
     cursor: pointer;
 }
 
-/* Responsive adjustments: trigger hamburger sooner */
+/* Responsive adjustments */
 @media (max-width: 850px) {
     .header {
-        padding: 35px 20px 20px 20px;
-        align-items: center; /* revert to center on mobile */
+        padding: 35px 28px 20px 28px; /* increased horizontal padding */
+        align-items: center;
     }
 
     .nav {
@@ -154,6 +159,15 @@ body {
         font-size: 20px;
     }
 
+    /* Swap visible title */
+    .title .desktop {
+        display: none;
+    }
+
+    .title .mobile {
+        display: inline;
+    }
+
     .quote {
         font-size: 12px;
     }
@@ -163,7 +177,10 @@ body {
 <body>
 
 <div class="header">
-    <div class="title">Max Thackara</div>
+    <div class="title">
+        <span class="desktop">Max Thackara</span>
+        <span class="mobile">MT</span>
+    </div>
 
     <!-- Desktop nav -->
     <div class="nav">
