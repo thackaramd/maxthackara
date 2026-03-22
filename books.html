@@ -15,6 +15,7 @@ body {
     color: #43554F;
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -23,8 +24,8 @@ body {
 }
 
 .title {
-    font-size: 28px;
-    transition: font-size 0.3s ease; /* smooth shrinking */
+    font-size: clamp(20px, 2vw + 16px, 28px); /* continuously shrink between 28px and 20px */
+    transition: font-size 0.2s ease;
 }
 
 .title a {
@@ -144,25 +145,7 @@ body {
     cursor: pointer;
 }
 
-/* Responsive - natural title shrinking and collapse at 800px */
-@media (max-width: 1200px) {
-    .title {
-        font-size: 24px; /* gradually smaller as screen narrows */
-    }
-}
-
-@media (max-width: 1000px) {
-    .title {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 850px) {
-    .title {
-        font-size: 20px;
-    }
-}
-
+/* Responsive - collapse at 800px */
 @media (max-width: 800px) {
     .header {
         padding: 35px 28px 20px 28px;
