@@ -24,7 +24,7 @@ body {
 
 .title {
     font-size: 28px;
-    transition: font-size 0.3s ease;
+    transition: font-size 0.3s ease; /* smooth shrinking */
 }
 
 .title a {
@@ -63,14 +63,14 @@ body {
 
 /* BOOK SHELF */
 .books-container {
-    padding: 140px 40px 80px 40px; /* pushed shelf lower */
+    padding: 140px 40px 80px 40px;
     display: flex;
     justify-content: center;
 }
 
 .book-shelf {
     display: flex;
-    gap: 60px; /* more space between books */
+    gap: 60px;
     max-width: 1000px;
     width: 100%;
     justify-content: center;
@@ -144,14 +144,26 @@ body {
     cursor: pointer;
 }
 
-/* Responsive - collapse later at 1050px and shrink title */
+/* Responsive - natural title shrinking and collapse at 800px */
 @media (max-width: 1200px) {
     .title {
-        font-size: 24px; /* shrink gradually */
+        font-size: 24px; /* gradually smaller as screen narrows */
     }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1000px) {
+    .title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 850px) {
+    .title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 800px) {
     .header {
         padding: 35px 28px 20px 28px;
         align-items: center;
@@ -165,10 +177,6 @@ body {
         display: flex;
     }
 
-    .title {
-        font-size: 20px; /* smaller on mobile */
-    }
-
     .title .desktop {
         display: none;
     }
@@ -180,7 +188,7 @@ body {
     .book-shelf {
         flex-direction: column;
         align-items: center;
-        gap: 40px; /* mobile spacing */
+        gap: 40px;
     }
 
     .book {
