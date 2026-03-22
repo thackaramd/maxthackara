@@ -36,6 +36,7 @@ body {
 
 .title .mobile {
     display: none;
+    font-size: 20px; /* fixed size for MT */
 }
 
 /* Navigation */
@@ -148,9 +149,9 @@ body {
     cursor: pointer;
 }
 
-/* Shrink title and nav together from 1000px → 750px */
+/* Shrink desktop title and nav together from 1000px → 750px */
 @media (max-width: 1000px) {
-    .title {
+    .title .desktop {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 250)); /* shrink 28 → 20 */
     }
     .nav {
