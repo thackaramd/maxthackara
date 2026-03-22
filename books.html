@@ -24,7 +24,7 @@ body {
 }
 
 .title {
-    font-size: clamp(20px, 2vw + 16px, 28px); /* continuously shrink between 28px and 20px */
+    font-size: 28px; /* full size until 800px */
     transition: font-size 0.2s ease;
 }
 
@@ -145,8 +145,14 @@ body {
     cursor: pointer;
 }
 
-/* Responsive - collapse at 800px */
+/* Responsive - title shrink from 800px to 750px, collapse at 750px */
 @media (max-width: 800px) {
+    .title {
+        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 50)); /* smooth shrink */
+    }
+}
+
+@media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
         align-items: center;
