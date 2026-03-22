@@ -24,6 +24,7 @@ body {
 
 .title {
     font-size: 28px;
+    transition: font-size 0.3s ease;
 }
 
 .title a {
@@ -75,7 +76,6 @@ body {
     justify-content: center;
 }
 
-/* Individual book styling */
 .book {
     width: 180px;
     transition: transform 0.3s ease;
@@ -144,8 +144,14 @@ body {
     cursor: pointer;
 }
 
-/* Responsive - Hamburger collapses later at 950px */
-@media (max-width: 950px) {
+/* Responsive - collapse later at 1050px and shrink title */
+@media (max-width: 1200px) {
+    .title {
+        font-size: 24px; /* shrink gradually */
+    }
+}
+
+@media (max-width: 1050px) {
     .header {
         padding: 35px 28px 20px 28px;
         align-items: center;
@@ -160,7 +166,7 @@ body {
     }
 
     .title {
-        font-size: 20px;
+        font-size: 20px; /* smaller on mobile */
     }
 
     .title .desktop {
