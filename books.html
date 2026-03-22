@@ -23,8 +23,9 @@ body {
     padding: 35px 60px 20px 60px;
 }
 
+/* Title */
 .title {
-    font-size: 28px; /* full size until 800px */
+    font-size: 28px; /* full size until shrink starts */
     transition: font-size 0.2s ease;
 }
 
@@ -37,6 +38,7 @@ body {
     display: none;
 }
 
+/* Navigation */
 .nav {
     display: flex;
     gap: 25px;
@@ -146,18 +148,14 @@ body {
     cursor: pointer;
 }
 
-/* Navigation shrink from 900px → 750px */
-@media (max-width: 900px) {
-    .nav {
-        gap: calc(15px + 10 * ((100vw - 750px) / 150)); /* gradually reduce gap */
-        font-size: calc(14px + 2 * ((100vw - 750px) / 150)); /* gradually reduce font-size */
-    }
-}
-
-/* Title shrink from 800px → 750px */
-@media (max-width: 800px) {
+/* Shrink title and nav together from 1000px → 750px */
+@media (max-width: 1000px) {
     .title {
-        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 50)); /* smooth shrink */
+        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 250)); /* shrink 28 → 20 */
+    }
+    .nav {
+        gap: calc(10px + 15 * ((100vw - 750px) / 250)); /* shrink gap 25 → 10 */
+        font-size: calc(12px + 4 * ((100vw - 750px) / 250)); /* shrink font 16 → 12 */
     }
 }
 
