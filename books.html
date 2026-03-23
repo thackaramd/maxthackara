@@ -25,7 +25,7 @@ body {
 
 /* Title */
 .title {
-    font-size: 28px; /* full size until shrink starts */
+    font-size: 28px;
     transition: font-size 0.2s ease;
 }
 
@@ -36,7 +36,7 @@ body {
 
 .title .mobile {
     display: none;
-    font-size: 20px; /* fixed size for MT */
+    font-size: 20px;
 }
 
 /* Navigation */
@@ -60,6 +60,7 @@ body {
     font-style: italic;
 }
 
+/* Line */
 .line {
     height: 1px;
     background-color: #43554F;
@@ -96,7 +97,7 @@ body {
     transform: translateY(-6px);
 }
 
-/* Hamburger (thin 3 lines) */
+/* Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -119,7 +120,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #1B1B2F;
+    background-color: #041A14;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -140,6 +141,14 @@ body {
     margin: 16px 0;
 }
 
+.mobile-menu a.italic {
+    font-style: italic;
+}
+
+.mobile-menu a:hover {
+    color: #A6E3C1;
+}
+
 .close-icon {
     position: absolute;
     top: 16px;
@@ -149,18 +158,18 @@ body {
     cursor: pointer;
 }
 
-/* Shrink desktop title and nav together from 1000px → 750px */
-@media (max-width: 1000px) {
+/* Responsive scaling (MATCHED) */
+@media (max-width: 1150px) {
     .title .desktop {
-        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 250)); /* shrink 28 → 20 */
+        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
     }
     .nav {
-        gap: calc(10px + 15 * ((100vw - 750px) / 250)); /* shrink gap 25 → 10 */
-        font-size: calc(12px + 4 * ((100vw - 750px) / 250)); /* shrink font 16 → 12 */
+        gap: calc(10px + 15 * ((100vw - 750px) / 400));
+        font-size: calc(12px + 4 * ((100vw - 750px) / 400));
     }
 }
 
-/* Collapse to mobile at 750px */
+/* Mobile */
 @media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
@@ -208,7 +217,8 @@ body {
 
     <div class="nav">
         <a href="books.html">Books</a>
-        <a href="#">Mentoring</a>
+        <a href="#">Reflection</a>
+        <a href="workshops.html">Workshops</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
         <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
@@ -223,26 +233,21 @@ body {
 
 <div class="line"></div>
 
-<!-- BOOK SHELF -->
 <div class="books-container">
     <div class="book-shelf">
 
-        <!-- BOOK 1 -->
         <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
             <img src="images/book1.png" alt="Book 1">
         </a>
 
-        <!-- BOOK 2 -->
         <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
             <img src="images/book2.png" alt="Book 2">
         </a>
 
-        <!-- BOOK 3 -->
         <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
             <img src="images/book3.png" alt="Book 3">
         </a>
 
-        <!-- BOOK 4 -->
         <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
             <img src="images/book4.png" alt="Book 4">
         </a>
@@ -253,7 +258,8 @@ body {
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
-    <a href="#">Mentoring</a>
+    <a href="#">Reflection</a>
+    <a href="workshops.html">Workshops</a>
     <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
     <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
     <a href="mailto:contact@maxthackara.uk">Contact</a>
