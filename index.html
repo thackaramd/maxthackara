@@ -14,41 +14,153 @@ body {
     background-color: #F7E4D3;
     font-family: 'Prata', serif;
     color: #43554F;
-    text-align: center;
 }
 
-/* Header container */
+/* Header */
 .header {
-    padding: 60px 20px 20px 20px; /* a bit lower from top */
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 35px 60px 20px 60px;
 }
 
-/* Title styling */
+/* Title */
 .title {
-    font-size: 36px; /* slightly smaller */
-    margin-bottom: 12px;
+    font-size: 28px;
+    transition: font-size 0.2s ease;
 }
 
 .title a {
     text-decoration: none;
     color: inherit;
-    display: inline-block;
 }
 
-/* Short divider under title */
-.divider {
-    width: 120px;
+.title .mobile {
+    display: none;
+    font-size: 20px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 25px;
+    font-size: 16px;
+    transition: gap 0.2s ease, font-size 0.2s ease;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #43554F;
+}
+
+.nav a:hover {
+    color: #000;
+}
+
+.nav a.italic {
+    font-style: italic;
+}
+
+/* Line under header */
+.line {
+    height: 1px;
+    background-color: #43554F;
+    width: 100%;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.hamburger div {
     height: 2px;
     background-color: #43554F;
-    margin: 0 auto;
-    border-radius: 1px;
 }
 
-@media (max-width: 600px) {
-    .title {
-        font-size: 28px;
+/* Mobile menu overlay */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #041A14;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.mobile-menu.show {
+    display: flex;
+    opacity: 1;
+}
+
+.mobile-menu a {
+    color: #F7E4D3;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 16px 0;
+}
+
+.mobile-menu a.italic {
+    font-style: italic;
+}
+
+.mobile-menu a:hover {
+    color: #A6E3C1;
+}
+
+.close-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    color: #F7E4D3;
+    cursor: pointer;
+}
+
+/* Responsive scaling */
+@media (max-width: 1150px) {
+    .title .desktop {
+        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
     }
-    .divider {
-        width: 80px;
+    .nav {
+        gap: calc(10px + 15 * ((100vw - 750px) / 400));
+        font-size: calc(12px + 4 * ((100vw - 750px) / 400));
+    }
+}
+
+/* Mobile */
+@media (max-width: 750px) {
+    .header {
+        padding: 35px 28px 20px 28px;
+        align-items: center;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .title .desktop {
+        display: none;
+    }
+
+    .title .mobile {
+        display: inline;
     }
 }
 </style>
@@ -57,10 +169,48 @@ body {
 
 <div class="header">
     <div class="title">
-        <a href="index.html">Max Thackara</a>
+        <a href="index.html">
+            <span class="desktop">Max Thackara</span>
+            <span class="mobile">MT</span>
+        </a>
     </div>
-    <div class="divider"></div>
+
+    <div class="nav">
+        <a href="books.html">Books</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
+        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
+        <a href="mailto:contact@maxthackara.uk">Contact</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </div>
+
+<div class="line"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <div class="close-icon" onclick="toggleMenu()">×</div>
+    <a href="books.html">Books</a>
+    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
+    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
+    <a href="mailto:contact@maxthackara.uk">Contact</a>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+
+    if (menu.classList.contains('show')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+}
+</script>
 
 </body>
 </html>
