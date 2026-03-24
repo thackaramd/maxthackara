@@ -74,20 +74,17 @@ body {
 .book-shelf {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap; /* prevent early stacking */
-    gap: clamp(20px, 5vw, 60px); /* gap shrinks smoothly */
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    gap: clamp(20px, 5vw, 60px);
     max-width: 1000px;
     width: 100%;
 }
 
 .book {
-    flex: 1 1 180px; /* shrink smoothly, base 180px */
+    flex: 1 1 180px;
     max-width: 180px;
     display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: bookFadeIn 1s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book img {
@@ -105,10 +102,8 @@ body {
 
 /* --- Keyframes --- */
 @keyframes bookFadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Hamburger --- */
@@ -128,24 +123,25 @@ body {
 
 /* --- Mobile menu --- */
 .mobile-menu {
-    display: none;
+    display: flex; /* keep displayed for transitions */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #041A14;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     z-index: 1000;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.4s ease;
 }
 
 .mobile-menu.show {
-    display: flex;
     opacity: 1;
+    pointer-events: auto;
 }
 
 .mobile-menu a {
@@ -238,7 +234,7 @@ body {
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </nav>
 
-    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+    <div class="hamburger" tabindex="0" aria-label="Toggle navigation menu" role="button">
         <div></div>
         <div></div>
         <div></div>
@@ -278,18 +274,20 @@ body {
 </div>
 
 <script>
+// --- Mobile menu toggle ---
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
-
-    if (menu.classList.contains('show')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 
-// Close menu on Escape key
+// Keyboard accessibility for hamburger
+document.querySelector('.hamburger').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') toggleMenu();
+});
+document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+
+// Close menu on Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const menu = document.getElementById('mobileMenu');
@@ -297,10 +295,13 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Staggered fade-in for books
+// --- Staggered fade-in animation for books ---
 document.addEventListener('DOMContentLoaded', () => {
     const books = document.querySelectorAll('.book');
     books.forEach((book, index) => {
+        book.style.opacity = '0'; // start hidden
+        book.style.transform = 'translateY(20px)';
+        book.style.animation = `bookFadeIn 0.8s forwards`;
         book.style.animationDelay = `${index * 0.3}s`;
     });
 });
