@@ -9,11 +9,18 @@
 
 <style>
 /* --- Base site styles --- */
+:root {
+    --bg-color: #F7E4D3;
+    --text-color: #43554F;
+    --card-color: #EAD6C8;
+    --border-color: rgba(67, 85, 79, 0.2);
+}
+
 body {
     margin: 0;
-    background-color: #F7E4D3;
+    background-color: var(--bg-color);
     font-family: 'Prata', serif;
-    color: #43554F;
+    color: var(--text-color);
 }
 
 /* --- Header --- */
@@ -21,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 35px 60px 20px 60px;
+    padding: 35px 60px 30px 60px; /* increased bottom padding for more space above line */
 }
 
 .title {
@@ -46,7 +53,7 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: #43554F;
+    color: var(--text-color);
 }
 
 .nav a:hover {
@@ -59,17 +66,18 @@ body {
 
 .line {
     height: 1px;
-    background-color: #43554F;
+    background-color: var(--text-color);
     width: 100%;
+    margin-bottom: 40px; /* spacing below header line */
 }
 
 /* --- Hero / Tagline --- */
 .hero {
     max-width: 800px;
-    margin: 100px auto 40px auto;
+    margin: 0 auto 60px auto; /* more padding below hero text */
     padding: 0 20px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px; /* slightly smaller */
     font-style: italic;
     font-weight: bold;
     line-height: 1.5;
@@ -81,6 +89,9 @@ body {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
+    padding: 30px 20px;
+    border: 1px solid var(--border-color); /* subtle border around cards */
+    border-radius: 12px;
 }
 
 .card-wrapper {
@@ -94,8 +105,14 @@ body {
     padding: 50px 40px;
     text-align: center;
     cursor: pointer;
-    background: #EAD6C8; /* slightly darker cream */
-    border-radius: 12px; /* more rounded edges */
+    background: var(--card-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .service-card h3 {
@@ -120,7 +137,7 @@ body {
 
 .hamburger div {
     height: 2px;
-    background-color: #43554F;
+    background-color: var(--text-color);
 }
 
 /* --- Mobile menu --- */
@@ -136,17 +153,23 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    opacity: 1;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .mobile-menu.show {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .mobile-menu a {
-    color: #F7E4D3;
+    color: var(--bg-color);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     margin: 16px 0;
 }
 
@@ -163,7 +186,7 @@ body {
     top: 16px;
     right: 16px;
     font-size: 32px;
-    color: #F7E4D3;
+    color: var(--bg-color);
     cursor: pointer;
 }
 
@@ -179,8 +202,8 @@ body {
     }
 
     .hero {
-        font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
-        margin: calc(80px + (100 - 80) * ((100vw - 750px)/400)) auto 30px auto;
+        font-size: calc(14px + (16 - 14) * ((100vw - 750px)/400));
+        margin: calc(40px + (60 - 40) * ((100vw - 750px)/400)) auto 40px auto;
     }
 }
 
@@ -211,11 +234,16 @@ body {
         flex-direction: column;
         gap: 25px;
         align-items: center;
+        padding: 20px;
     }
 
     .service-card {
         width: 90%;
         max-width: 320px;
+    }
+
+    .mobile-menu a {
+        font-size: 20px; /* better spacing for mobile menu */
     }
 }
 </style>
@@ -231,7 +259,7 @@ body {
         </a>
     </div>
 
-    <div class="nav">
+    <div class="nav" role="navigation">
         <a href="books.html">Books</a>
         <a href="#">Reflection</a>
         <a href="workshops.html">Workshops</a>
@@ -240,7 +268,7 @@ body {
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
 
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
         <div></div>
         <div></div>
         <div></div>
@@ -257,38 +285,4 @@ body {
 <!-- --- Services Section --- -->
 <div class="services-container">
     <div class="card-wrapper">
-        <div class="service-card" onclick="window.location.href='personal.html'">
-            <h3>Personal Reflection</h3>
-            <p>30 or 60 minute sessions for personal clarity, philosophical reflection, and thoughtful dialogue.</p>
-        </div>
-    </div>
-    <div class="card-wrapper">
-        <div class="service-card" onclick="window.location.href='creative.html'">
-            <h3>Creative Reflection</h3>
-            <p>30 or 60 minute sessions focused on your creative projects, writing, or artistic exploration.</p>
-        </div>
-    </div>
-</div>
-
-<!-- --- Mobile Menu --- -->
-<div class="mobile-menu" id="mobileMenu">
-    <div class="close-icon" onclick="toggleMenu()">×</div>
-    <a href="books.html">Books</a>
-    <a href="reflection.html">Reflection</a>
-    <a href="workshops.html">Workshops</a>
-    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
-    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
-    <a href="mailto:contact@maxthackara.uk">Contact</a>
-</div>
-
-<script>
-/* --- Toggle Mobile Menu --- */
-function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const isShown = menu.classList.toggle('show');
-    document.body.style.overflow = isShown ? 'hidden' : 'auto';
-}
-</script>
-
-</body>
-</html>
+        <div class="service-card" onclick="window.location.href='personal.html'" tabindex="
