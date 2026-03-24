@@ -77,31 +77,24 @@ body {
     transition: font-size 0.2s ease, margin 0.2s ease;
 }
 
-/* --- Services container --- */
+/* --- Services container & card smooth scaling --- */
 .services-container {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto 80px auto;
-    padding: 0 20px;
-    transition: gap 0.2s ease;
+    flex-wrap: wrap; /* allows wrapping only when necessary */
 }
 
-/* --- Card wrapper for fade-in --- */
 .card-wrapper {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
 }
 
-/* --- Service cards --- */
 .service-card {
-    background-color: #D8C2AD;
+    flex: 1 1 220px; /* grow | shrink | min width */
+    max-width: 300px;
     padding: 40px 30px;
-    border-radius: 12px;
-    width: 300px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.2s ease, padding 0.2s ease;
@@ -211,15 +204,7 @@ body {
     }
 
     /* Services container scaling */
-    .services-container {
-        gap: calc(20px + 20 * ((100vw - 750px)/400));
-    }
-
-    /* Service card scaling */
-    .service-card {
-        width: calc(220px + (300 - 220) * ((100vw - 750px)/400));
-        padding: calc(30px + (40 - 30) * ((100vw - 750px)/400));
-    }
+    /* Removed previous width calc for smooth flex shrink */
 }
 
 /* --- Mobile adjustments --- */
