@@ -71,31 +71,6 @@ body {
     width: 100%;
 }
 
-/* Centered quote */
-.quote-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 100px);
-    padding: 0 20px;
-    text-align: center;
-}
-
-.quote {
-    font-size: 14px;
-    font-style: italic;
-    max-width: 600px;
-    opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
-    animation-delay: 0.3s;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
 /* Hamburger menu */
 .hamburger {
     display: none;
@@ -190,10 +165,6 @@ body {
     .title .mobile {
         display: inline;
     }
-
-    .quote {
-        font-size: 12px;
-    }
 }
 </style>
 </head>
@@ -224,12 +195,6 @@ body {
 </div>
 
 <div class="line"></div>
-
-<div class="quote-container">
-    <div class="quote">
-        "I reserve the right to be misunderstood, including right now, as you read this."
-    </div>
-</div>
 
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
