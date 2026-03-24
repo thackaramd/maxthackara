@@ -73,18 +73,18 @@ body {
 
 .book-shelf {
     display: flex;
-    gap: 60px;
+    justify-content: center;
+    flex-wrap: nowrap; /* prevent early stacking */
+    gap: clamp(20px, 5vw, 60px); /* gap shrinks smoothly */
     max-width: 1000px;
     width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
-/* --- Book image hover effect --- */
 .book {
-    width: 180px;
+    flex: 1 1 180px; /* shrink smoothly, base 180px */
+    max-width: 180px;
     display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
     animation: bookFadeIn 1s forwards;
@@ -95,11 +95,12 @@ body {
     display: block;
     border-radius: 4px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
 }
 
 .book:hover img {
-    transform: translateY(-8px); /* lift upward on hover */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* subtle shadow */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 /* --- Keyframes --- */
@@ -220,7 +221,7 @@ body {
 </head>
 <body>
 
-<div class="header">
+<header class="header">
     <div class="title">
         <a href="index.html">
             <span class="desktop">Max Thackara</span>
@@ -228,53 +229,51 @@ body {
         </a>
     </div>
 
-    <div class="nav">
+    <nav class="nav">
         <a href="books.html">Books</a>
         <a href="reflection.html">Reflection</a>
         <a href="workshops.html">Workshops</a>
-        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
-        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener noreferrer">Support</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
-    </div>
+    </nav>
 
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
         <div></div>
         <div></div>
         <div></div>
     </div>
-</div>
+</header>
 
 <div class="line"></div>
 
-<div class="books-container">
+<main class="books-container">
     <div class="book-shelf">
-
         <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
-            <img src="images/book1.png" alt="Book 1">
+            <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
         </a>
 
         <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
-            <img src="images/book2.png" alt="Book 2">
+            <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
         </a>
 
         <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
-            <img src="images/book3.png" alt="Book 3">
+            <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
         </a>
 
         <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
-            <img src="images/book4.png" alt="Book 4">
+            <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
         </a>
-
     </div>
-</div>
+</main>
 
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
     <a href="reflection.html">Reflection</a>
     <a href="workshops.html">Workshops</a>
-    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
-    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
+    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener noreferrer">Support</a>
     <a href="mailto:contact@maxthackara.uk">Contact</a>
 </div>
 
@@ -289,6 +288,14 @@ function toggleMenu() {
         document.body.style.overflow = 'auto';
     }
 }
+
+// Close menu on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const menu = document.getElementById('mobileMenu');
+        if (menu.classList.contains('show')) toggleMenu();
+    }
+});
 
 // Staggered fade-in for books
 document.addEventListener('DOMContentLoaded', () => {
