@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Books — Max Thackara</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
 <style>
-/* --- Base site styles --- */
 body {
     margin: 0;
     background-color: #F7E4D3;
@@ -16,7 +14,6 @@ body {
     color: #43554F;
 }
 
-/* --- Header --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -26,7 +23,6 @@ body {
 
 .title {
     font-size: 28px;
-    transition: font-size 0.2s ease;
 }
 
 .title a {
@@ -50,10 +46,6 @@ body {
     color: #43554F;
 }
 
-.nav a:hover {
-    color: #000;
-}
-
 .nav a.italic {
     font-style: italic;
 }
@@ -64,7 +56,6 @@ body {
     width: 100%;
 }
 
-/* --- Books Section --- */
 .books-container {
     padding: 140px 40px 80px 40px;
     display: flex;
@@ -89,15 +80,6 @@ body {
     width: 100%;
     display: block;
     border-radius: 4px;
-    opacity: 0; /* start hidden for fade-in */
-    transform: translateY(20px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, opacity 0.6s ease;
-    will-change: transform, box-shadow, opacity;
-}
-
-.book:hover img {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 /* --- Hamburger --- */
@@ -147,10 +129,6 @@ body {
 
 .mobile-menu a.italic {
     font-style: italic;
-}
-
-.mobile-menu a:hover {
-    color: #A6E3C1;
 }
 
 .close-icon {
@@ -268,7 +246,7 @@ body {
 </div>
 
 <script>
-// --- Mobile menu toggle ---
+// Mobile menu toggle
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
@@ -285,17 +263,6 @@ document.addEventListener('keydown', (e) => {
         const menu = document.getElementById('mobileMenu');
         if (menu.classList.contains('show')) toggleMenu();
     }
-});
-
-// --- Staggered fade-in animation for books ---
-document.addEventListener('DOMContentLoaded', () => {
-    const books = document.querySelectorAll('.book img');
-    books.forEach((img, index) => {
-        setTimeout(() => {
-            img.style.opacity = '1';
-            img.style.transform = 'translateY(0)';
-        }, index * 300); // stagger 0.3s between each book
-    });
 });
 </script>
 
