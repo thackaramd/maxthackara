@@ -85,6 +85,9 @@ body {
 .book {
     width: 180px;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: bookFadeIn 1s forwards;
 }
 
 .book img {
@@ -95,6 +98,13 @@ body {
 
 .book:hover {
     transform: translateY(-6px);
+}
+
+@keyframes bookFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Hamburger */
@@ -276,6 +286,14 @@ function toggleMenu() {
         document.body.style.overflow = 'auto';
     }
 }
+
+// Staggered fade-in for books
+document.addEventListener('DOMContentLoaded', () => {
+    const books = document.querySelectorAll('.book');
+    books.forEach((book, index) => {
+        book.style.animationDelay = `${index * 0.3}s`;
+    });
+});
 </script>
 
 </body>
