@@ -81,8 +81,8 @@ body {
     width: 100%;
     display: block;
     border-radius: 4px;
-    aspect-ratio: 2/3; /* reserve height for book covers */
-    object-fit: cover; /* ensure full coverage without distortion */
+    height: auto;          /* full original height */
+    object-fit: contain;   /* show entire image without cropping */
 }
 
 /* --- Hamburger --- */
@@ -239,7 +239,7 @@ body {
 </main>
 
 <div class="mobile-menu" id="mobileMenu">
-    <div class="close-icon" onclick="toggleMenu()">×</div>
+    <div class="close-icon" onclick="toggleMenu()" aria-label="Close menu">×</div>
     <a href="books.html">Books</a>
     <a href="reflection.html">Reflection</a>
     <a href="workshops.html">Workshops</a>
