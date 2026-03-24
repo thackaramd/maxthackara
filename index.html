@@ -35,11 +35,6 @@ body {
     color: inherit;
 }
 
-.title .mobile {
-    display: none;
-    font-size: 20px;
-}
-
 /* Navigation */
 .nav {
     display: flex;
@@ -131,7 +126,7 @@ body {
 
 /* Responsive scaling */
 @media (max-width: 1150px) {
-    .title .desktop {
+    .title a {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
     }
     .nav {
@@ -154,14 +149,6 @@ body {
     .hamburger {
         display: flex;
     }
-
-    .title .desktop {
-        display: none;
-    }
-
-    .title .mobile {
-        display: inline;
-    }
 }
 </style>
 </head>
@@ -169,10 +156,7 @@ body {
 
 <div class="header">
     <div class="title">
-        <a href="index.html">
-            <span class="desktop">Max Thackara</span>
-            <span class="mobile">MT</span>
-        </a>
+        <a href="index.html">Max Thackara</a>
     </div>
 
     <div class="nav">
