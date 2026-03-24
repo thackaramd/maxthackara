@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reflection - Max Thackara</title>
 
+<!-- Prata Font -->
+<link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background-color: #F7E4D3;
+    font-family: 'Prata', serif;
+    color: #43554F;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 35px 60px 20px 60px;
+}
+
+.title {
+    font-size: 28px;
+    transition: font-size 0.2s ease;
+}
+.title a { text-decoration: none; color: inherit; }
+.title .mobile { display: none; font-size: 20px; }
+
+.nav {
+    display: flex;
+    gap: 25px;
+    font-size: 16px;
+    transition: gap 0.2s ease, font-size 0.2s ease;
+}
+.nav a { text-decoration: none; color: #43554F; }
+.nav a:hover { color: #000; }
+.nav a.italic { font-style: italic; }
+
+.line { height: 1px; background-color: #43554F; width: 100%; }
+
+/* Mobile menu */
+.hamburger { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 16px; cursor: pointer; }
+.hamburger div { height: 2px; background-color: #43554F; }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #041A14; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.4s ease; }
+.mobile-menu.show { display: flex; opacity: 1; }
+.mobile-menu a { color: #F7E4D3; text-decoration: none; font-size: 16px; margin: 16px 0; }
+.mobile-menu a.italic { font-style: italic; }
+.mobile-menu a:hover { color: #A6E3C1; }
+.close-icon { position: absolute; top: 16px; right: 16px; font-size: 32px; color: #F7E4D3; cursor: pointer; }
+
+/* Body content */
+.reflection-intro {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    margin: 60px 10%;
+    font-size: calc(14px + (16 - 14) * ((100vw - 750px)/400));
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: calc(20px + (30 - 20) * ((100vw - 750px)/400));
+    padding: 0 10% 60px 10%;
+}
+
+.card {
+    background-color: #ECD9C8;
+    border-radius: 12px;
+    padding: calc(20px + (25 - 20) * ((100vw - 750px)/400)) calc(15px + (20 - 15) * ((100vw - 750px)/400));
+    flex: 1 1 300px;
+    max-width: 350px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
+    color: #2E3B33;
+}
+
+.card p {
+    margin: 0;
+    font-size: calc(14px + (15 - 14) * ((100vw - 750px)/400));
+    line-height: 1.6;
+}
+
+/* Responsive scaling */
+@media (max-width: 1150px) {
+    .title .desktop { font-size: calc(20px + (28 - 20) * ((100vw - 750px)/400)); }
+    .nav { gap: calc(10px + 15 * ((100vw - 750px)/400)); font-size: calc(12px + 4 * ((100vw - 750px)/400)); }
+}
+
+@media (max-width: 750px) {
+    .header { padding: 35px 28px 20px 28px; align-items: center; }
+    .nav { display: none; }
+    .hamburger { display: flex; }
+    .title .desktop { display: none; }
+    .title .mobile { display: inline; }
+
+    .cards-container { flex-direction: column; gap: 20px; padding: 0 5% 40px 5%; }
+    .reflection-intro { margin: 40px 5%; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="title">
+        <a href="index.html">
+            <span class="desktop">Max Thackara</span>
+            <span class="mobile">MT</span>
+        </a>
+    </div>
+
+    <div class="nav">
+        <a href="books.html">Books</a>
+        <a href="reflection.html">Reflection</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
+        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
+        <a href="mailto:contact@maxthackara.uk">Contact</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<!-- Body content -->
+<div class="reflection-intro">
+    <em>Offering guided reflective sessions to clarify your personal or creative journey. Choose a session that fits your needs and step into presence with intention.</em>
+</div>
+
+<div class="cards-container">
+    <div class="card">
+        <h3>Personal Reflection</h3>
+        <p>30 or 60 minute sessions for personal clarity, philosophical reflection, and thoughtful dialogue.</p>
+    </div>
+    <div class="card">
+        <h3>Creative Reflection</h3>
+        <p>30 or 60 minute sessions focused on your creative projects, writing, or artistic exploration.</p>
+    </div>
+</div>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="close-icon" onclick="toggleMenu()">×</div>
+    <a href="books.html">Books</a>
+    <a href="reflection.html">Reflection</a>
+    <a href="workshops.html">Workshops</a>
+    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
+    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
+    <a href="mailto:contact@maxthackara.uk">Contact</a>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
+}
+</script>
+
+</body>
+</html>
