@@ -85,6 +85,14 @@ body {
     object-fit: contain;   /* show entire image without cropping */
 }
 
+.book img {
+    transition: transform 0.3s ease; /* Smooth transition for the transform */
+}
+
+.book:hover img {
+    transform: translateY(-10px); /* Slide up by 10px on hover */
+}
+
 /* --- Hamburger --- */
 .hamburger {
     display: none;
