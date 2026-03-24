@@ -26,7 +26,6 @@ body {
 
 .title {
     font-size: 28px;
-    transition: font-size 0.2s ease;
 }
 
 .title a {
@@ -74,30 +73,27 @@ body {
     font-style: italic;
     font-weight: bold;
     line-height: 1.5;
-    transition: font-size 0.2s ease, margin 0.2s ease;
 }
 
-/* --- Services container & card smooth scaling --- */
+/* --- Services container & card --- */
 .services-container {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap; /* allows wrapping only when necessary */
+    flex-wrap: wrap;
 }
 
 .card-wrapper {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+    opacity: 1;
+    transform: none;
 }
 
 .service-card {
-    flex: 1 1 220px; /* grow | shrink | min width */
+    flex: 1 1 220px;
     max-width: 300px;
     padding: 40px 30px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.2s ease, padding 0.2s ease;
 }
 
 .service-card:hover {
@@ -113,14 +109,6 @@ body {
 .service-card p {
     line-height: 1.6;
     font-size: 16px;
-}
-
-/* --- Keyframes for fade-in --- */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* --- Hamburger menu --- */
@@ -151,13 +139,11 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    opacity: 1;
 }
 
 .mobile-menu.show {
     display: flex;
-    opacity: 1;
 }
 
 .mobile-menu a {
@@ -186,25 +172,19 @@ body {
 
 /* --- Responsive scaling --- */
 @media (max-width: 1150px) {
-    /* Title scaling */
     .title .desktop {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px)/400));
     }
 
-    /* Nav scaling */
     .nav {
         gap: calc(10px + 15 * ((100vw - 750px)/400));
         font-size: calc(12px + 4 * ((100vw - 750px)/400));
     }
 
-    /* Hero scaling */
     .hero {
         font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
         margin: calc(80px + (100 - 80) * ((100vw - 750px)/400)) auto 30px auto;
     }
-
-    /* Services container scaling */
-    /* Removed previous width calc for smooth flex shrink */
 }
 
 /* --- Mobile adjustments --- */
@@ -236,7 +216,6 @@ body {
         align-items: center;
     }
 
-    /* Make cards slightly wider on mobile */
     .service-card {
         width: 90%;
         max-width: 320px;
@@ -309,22 +288,9 @@ body {
 /* --- Toggle Mobile Menu --- */
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-
-    if (menu.classList.contains('show')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    const isShown = menu.classList.toggle('show');
+    document.body.style.overflow = isShown ? 'hidden' : 'auto';
 }
-
-/* --- Sequential fade-in for cards --- */
-document.addEventListener('DOMContentLoaded', () => {
-    const wrappers = document.querySelectorAll('.card-wrapper');
-    wrappers.forEach((wrapper, index) => {
-        wrapper.style.animationDelay = `${index * 0.3}s`;
-    });
-});
 </script>
 
 </body>
