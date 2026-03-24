@@ -97,8 +97,6 @@ body {
     padding: 40px 30px;
     text-align: center;
     cursor: pointer;
-    background-color: #D8C2AD; /* warm cream */
-    border-radius: 12px;        /* rounded corners */
     transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.2s ease, padding 0.2s ease;
 }
 
@@ -205,7 +203,8 @@ body {
         margin: calc(80px + (100 - 80) * ((100vw - 750px)/400)) auto 30px auto;
     }
 
-    /* Services container scaling removed – using smooth flex shrink now */
+    /* Services container scaling */
+    /* Removed previous width calc for smooth flex shrink */
 }
 
 /* --- Mobile adjustments --- */
