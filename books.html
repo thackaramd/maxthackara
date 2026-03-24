@@ -81,28 +81,23 @@ body {
 }
 
 .book {
-    flex: 1 1 clamp(120px, 20%, 180px); /* flexible min, ideal, max */
+    flex: 1 1 clamp(120px, 20%, 180px);
     display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book img {
     width: 100%;
     display: block;
     border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
-    will-change: transform, box-shadow;
+    opacity: 0; /* start hidden for fade-in */
+    transform: translateY(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, opacity 0.6s ease;
+    will-change: transform, box-shadow, opacity;
 }
 
 .book:hover img {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-/* --- Keyframes --- */
-@keyframes bookFadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Hamburger --- */
@@ -280,13 +275,11 @@ function toggleMenu() {
     document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 
-// Keyboard accessibility for hamburger
 document.querySelector('.hamburger').addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') toggleMenu();
 });
 document.querySelector('.hamburger').addEventListener('click', toggleMenu);
 
-// Close menu on Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const menu = document.getElementById('mobileMenu');
@@ -296,12 +289,12 @@ document.addEventListener('keydown', (e) => {
 
 // --- Staggered fade-in animation for books ---
 document.addEventListener('DOMContentLoaded', () => {
-    const books = document.querySelectorAll('.book');
-    books.forEach((book, index) => {
-        book.style.opacity = '0';
-        book.style.transform = 'translateY(20px)';
-        book.style.animation = `bookFadeIn 0.8s forwards`;
-        book.style.animationDelay = `${index * 0.3}s`;
+    const books = document.querySelectorAll('.book img');
+    books.forEach((img, index) => {
+        setTimeout(() => {
+            img.style.opacity = '1';
+            img.style.transform = 'translateY(0)';
+        }, index * 300); // stagger 0.3s between each book
     });
 });
 </script>
