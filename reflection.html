@@ -74,7 +74,7 @@ body {
     font-style: italic;
     font-weight: bold;
     line-height: 1.5;
-    transition: font-size 0.2s ease, margin 0.2s ease;
+    transition: margin 0.2s ease;
 }
 
 /* --- Services container --- */
@@ -101,10 +101,10 @@ body {
     background-color: #D8C2AD;
     padding: 40px 30px;
     border-radius: 12px;
-    width: 300px;
+    width: 300px; /* fixed width */
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.2s ease, padding 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
@@ -204,21 +204,21 @@ body {
         font-size: calc(12px + 4 * ((100vw - 750px)/400));
     }
 
-    /* Hero scaling */
+    /* Hero margin scaling to keep it compact */
     .hero {
-        font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
-        margin: calc(80px + (100 - 80) * ((100vw - 750px)/400)) auto 30px auto;
+        margin: calc(60px + (100 - 60) * ((100vw - 750px)/400)) auto 30px auto;
+        padding: 0 20px;
     }
 
-    /* Services container scaling */
+    /* Reduce gap between cards as window shrinks */
     .services-container {
         gap: calc(20px + 20 * ((100vw - 750px)/400));
     }
 
-    /* Service card scaling */
+    /* Keep card width fixed, no shrinking */
     .service-card {
-        width: calc(220px + (300 - 220) * ((100vw - 750px)/400));
-        padding: calc(30px + (40 - 30) * ((100vw - 750px)/400));
+        width: 300px;
+        padding: 40px 30px;
     }
 }
 
