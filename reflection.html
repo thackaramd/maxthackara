@@ -87,14 +87,18 @@ body {
     padding: 0 20px;
 }
 
+/* --- Service cards --- */
 .service-card {
-    background-color: #D8C2AD; /* darker card color */
+    background-color: #D8C2AD;
     padding: 40px 30px;
     border-radius: 12px;
     width: 300px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;                     /* start invisible */
+    transform: translateY(20px);    /* start slightly lower */
+    animation: fadeInUp 1s forwards; /* animation will trigger in sequence */
 }
 
 .service-card:hover {
@@ -110,6 +114,14 @@ body {
 .service-card p {
     line-height: 1.6;
     font-size: 16px;
+}
+
+/* --- Keyframes for fade-in --- */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- Hamburger menu --- */
@@ -284,6 +296,14 @@ function toggleMenu() {
         document.body.style.overflow = 'auto';
     }
 }
+
+// --- Sequential fade-in for reflection cards ---
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.service-card');
+    cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.3}s`;
+    });
+});
 </script>
 
 </body>
