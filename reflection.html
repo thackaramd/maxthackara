@@ -67,14 +67,14 @@ body {
 /* --- Hero / Tagline --- */
 .hero {
     max-width: 800px;
-    margin: 100px auto 40px auto;
-    padding: 0 20px;
+    margin: 100px auto 60px auto; /* more space below for cards */
+    padding: 0 40px; /* initial wider padding for large screens */
     text-align: center;
     font-size: 18px;
     font-style: italic;
     font-weight: bold;
     line-height: 1.5;
-    transition: margin 0.2s ease;
+    transition: margin 0.2s ease, padding 0.2s ease;
 }
 
 /* --- Services container --- */
@@ -204,10 +204,10 @@ body {
         font-size: calc(12px + 4 * ((100vw - 750px)/400));
     }
 
-    /* Hero margin scaling to keep it compact */
+    /* Hero margin and padding scaling */
     .hero {
-        margin: calc(60px + (100 - 60) * ((100vw - 750px)/400)) auto 30px auto;
-        padding: 0 20px;
+        margin: calc(60px + (100 - 60) * ((100vw - 750px)/400)) auto 50px auto; /* more space below for cards */
+        padding: calc(20px + (40 - 20) * ((100vw - 750px)/400));
     }
 
     /* Reduce gap between cards as window shrinks */
