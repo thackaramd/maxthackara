@@ -14,16 +14,18 @@ body {
     background-color: #F7E4D3;
     font-family: 'Prata', serif;
     color: #43554F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     text-align: center;
+}
+
+/* Header container */
+.header {
+    padding: 40px 20px 20px 20px;
 }
 
 /* Title styling */
 .title {
     font-size: 48px;
+    margin-bottom: 12px;
 }
 
 .title a {
@@ -32,17 +34,32 @@ body {
     display: inline-block;
 }
 
+/* Short divider under title */
+.divider {
+    width: 120px;
+    height: 2px;
+    background-color: #43554F;
+    margin: 0 auto;
+    border-radius: 1px;
+}
+
 @media (max-width: 600px) {
     .title {
         font-size: 32px;
+    }
+    .divider {
+        width: 80px;
     }
 }
 </style>
 </head>
 <body>
 
-<div class="title">
-    <a href="index.html">Max Thackara</a>
+<div class="header">
+    <div class="title">
+        <a href="index.html">Max Thackara</a>
+    </div>
+    <div class="divider"></div>
 </div>
 
 </body>
