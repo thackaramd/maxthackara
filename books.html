@@ -14,6 +14,7 @@ body {
     color: #43554F;
 }
 
+/* --- Header --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -56,6 +57,7 @@ body {
     width: 100%;
 }
 
+/* --- Books grid --- */
 .books-container {
     padding: 140px 40px 80px 40px;
     display: flex;
@@ -73,12 +75,10 @@ body {
 
 .book {
     flex: 1 1 clamp(120px, 20%, 180px);
-    display: block;
 }
 
 .book img {
     width: 100%;
-    display: block;
     border-radius: 4px;
 }
 
@@ -110,12 +110,6 @@ body {
     height: 100%;
     background-color: #041A14;
     z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-
-.mobile-menu.show {
     opacity: 1;
     pointer-events: auto;
 }
@@ -197,7 +191,7 @@ body {
         </a>
     </div>
 
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="books.html">Books</a>
         <a href="reflection.html">Reflection</a>
         <a href="workshops.html">Workshops</a>
@@ -206,7 +200,7 @@ body {
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </nav>
 
-    <div class="hamburger" tabindex="0" aria-label="Toggle navigation menu" role="button">
+    <div class="hamburger" tabindex="0" aria-label="Toggle navigation menu" role="button" aria-expanded="false">
         <div></div>
         <div></div>
         <div></div>
@@ -220,15 +214,12 @@ body {
         <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
             <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
         </a>
-
         <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
             <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
         </a>
-
         <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
             <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
         </a>
-
         <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
             <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
         </a>
@@ -236,32 +227,39 @@ body {
 </main>
 
 <div class="mobile-menu" id="mobileMenu">
-    <div class="close-icon" onclick="toggleMenu()">×</div>
-    <a href="books.html">Books</a>
-    <a href="reflection.html">Reflection</a>
-    <a href="workshops.html">Workshops</a>
-    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener noreferrer">Support</a>
-    <a href="mailto:contact@maxthackara.uk">Contact</a>
+    <div class="close-icon" aria-label="Close menu">×</div>
 </div>
 
 <script>
-// Mobile menu toggle
+// --- Cache DOM ---
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeIcon = mobileMenu.querySelector('.close-icon');
+const navLinks = document.querySelectorAll('.nav a');
+
+// --- Generate mobile menu from desktop nav ---
+navLinks.forEach(link => {
+    const clone = link.cloneNode(true);
+    mobileMenu.appendChild(clone);
+});
+
+// --- Toggle menu ---
 function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
+    const isOpen = mobileMenu.classList.toggle('show');
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    hamburger.setAttribute('aria-expanded', isOpen);
 }
 
-document.querySelector('.hamburger').addEventListener('keydown', (e) => {
+hamburger.addEventListener('click', toggleMenu);
+hamburger.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') toggleMenu();
 });
-document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+closeIcon.addEventListener('click', toggleMenu);
 
+// --- Close menu on Escape ---
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const menu = document.getElementById('mobileMenu');
-        if (menu.classList.contains('show')) toggleMenu();
+    if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
+        toggleMenu();
     }
 });
 </script>
