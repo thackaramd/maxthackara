@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 35px 60px 20px 60px;
+    padding: 45px 60px 30px 60px; /* increased padding top and bottom */
 }
 
 .title {
@@ -66,10 +66,10 @@ body {
 /* --- Hero / Tagline --- */
 .hero {
     max-width: 800px;
-    margin: 100px auto 40px auto;
+    margin: 120px auto 60px auto; /* increased spacing from header and bottom */
     padding: 0 20px;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px; /* slightly smaller */
     font-style: italic;
     font-weight: bold;
     line-height: 1.5;
@@ -81,6 +81,7 @@ body {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
+    margin-bottom: 80px; /* added extra space below cards */
 }
 
 .card-wrapper {
@@ -96,6 +97,7 @@ body {
     cursor: pointer;
     background: #EAD6C8; /* slightly darker cream */
     border-radius: 12px; /* more rounded edges */
+    border: 1px solid #D8C0AD; /* subtle border */
 }
 
 .service-card h3 {
@@ -179,8 +181,8 @@ body {
     }
 
     .hero {
-        font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
-        margin: calc(80px + (100 - 80) * ((100vw - 750px)/400)) auto 30px auto;
+        font-size: calc(15px + (17 - 15) * ((100vw - 750px)/400));
+        margin: calc(100px + (120 - 100) * ((100vw - 750px)/400)) auto 50px auto;
     }
 }
 
