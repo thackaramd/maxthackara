@@ -87,6 +87,13 @@ body {
     padding: 0 20px;
 }
 
+/* --- Card wrapper for fade-in --- */
+.card-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
 /* --- Service cards --- */
 .service-card {
     background-color: #D8C2AD;
@@ -95,18 +102,11 @@ body {
     width: 300px;
     text-align: center;
     cursor: pointer;
-
-    /* --- Animation start --- */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-
-    /* --- Hover transition --- */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* hover lift */
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px); /* card physically moves upward */
     box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
 
@@ -267,13 +267,17 @@ body {
 
 <!-- --- Services Section --- -->
 <div class="services-container">
-    <div class="service-card" onclick="window.location.href='personal.html'">
-        <h3>Personal Reflection</h3>
-        <p>30 or 60 minute sessions for personal clarity, philosophical reflection, and thoughtful dialogue.</p>
+    <div class="card-wrapper">
+        <div class="service-card" onclick="window.location.href='personal.html'">
+            <h3>Personal Reflection</h3>
+            <p>30 or 60 minute sessions for personal clarity, philosophical reflection, and thoughtful dialogue.</p>
+        </div>
     </div>
-    <div class="service-card" onclick="window.location.href='creative.html'">
-        <h3>Creative Reflection</h3>
-        <p>30 or 60 minute sessions focused on your creative projects, writing, or artistic exploration.</p>
+    <div class="card-wrapper">
+        <div class="service-card" onclick="window.location.href='creative.html'">
+            <h3>Creative Reflection</h3>
+            <p>30 or 60 minute sessions focused on your creative projects, writing, or artistic exploration.</p>
+        </div>
     </div>
 </div>
 
@@ -301,11 +305,11 @@ function toggleMenu() {
     }
 }
 
-// --- Sequential fade-in for reflection cards ---
+/* --- Sequential fade-in for cards --- */
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.service-card');
-    cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.3}s`;
+    const wrappers = document.querySelectorAll('.card-wrapper');
+    wrappers.forEach((wrapper, index) => {
+        wrapper.style.animationDelay = `${index * 0.3}s`;
     });
 });
 </script>
