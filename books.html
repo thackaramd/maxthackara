@@ -84,7 +84,7 @@ body {
 
 .book {
     width: 180px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* smooth lift effect */
+    transition: transform 0.4s ease; /* smooth vertical lift */
     opacity: 0;
     transform: translateY(20px);
     animation: bookFadeIn 1s forwards;
@@ -98,8 +98,7 @@ body {
 }
 
 .book:hover {
-    transform: translateY(-8px) scale(1.03); /* subtle lift + gentle scale */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* soft floating shadow */
+    transform: translateY(-10px); /* gentle vertical lift on hover */
 }
 
 @keyframes bookFadeIn {
