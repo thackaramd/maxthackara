@@ -67,10 +67,10 @@ body {
 /* --- Hero / Tagline --- */
 .hero {
     max-width: 800px;
-    margin: 100px auto 40px auto; /* slightly reduced top & bottom spacing */
+    margin: 100px auto 40px auto;
     padding: 0 20px;
     text-align: center;
-    font-size: 18px; /* slightly reduced font size */
+    font-size: 18px;
     font-style: italic;
     font-weight: bold;
     line-height: 1.5;
@@ -193,13 +193,29 @@ body {
 
 /* --- Responsive scaling --- */
 @media (max-width: 1150px) {
+    /* Title scaling */
+    .title .desktop {
+        font-size: calc(20px + (28 - 20) * ((100vw - 750px)/400));
+    }
+
+    /* Nav scaling */
+    .nav {
+        gap: calc(10px + 15 * ((100vw - 750px)/400));
+        font-size: calc(12px + 4 * ((100vw - 750px)/400));
+    }
+
+    /* Hero scaling */
     .hero {
         font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
         margin: calc(80px + (100 - 80) * ((100vw - 750px)/400)) auto 30px auto;
     }
+
+    /* Services container scaling */
     .services-container {
         gap: calc(20px + 20 * ((100vw - 750px)/400));
     }
+
+    /* Service card scaling */
     .service-card {
         width: calc(220px + (300 - 220) * ((100vw - 750px)/400));
         padding: calc(30px + (40 - 30) * ((100vw - 750px)/400));
