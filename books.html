@@ -14,17 +14,6 @@ body {
     color: #43554F;
 }
 
-/* --- Sticky header container --- */
-.header-container {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: #F7E4D3;
-    display: flex;
-    flex-direction: column;
-}
-
-/* --- Header --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -32,7 +21,6 @@ body {
     padding: 35px 60px 20px 60px;
 }
 
-/* Title */
 .title {
     font-size: 28px;
 }
@@ -47,7 +35,6 @@ body {
     font-size: 20px;
 }
 
-/* Navigation */
 .nav {
     display: flex;
     gap: 25px;
@@ -63,11 +50,47 @@ body {
     font-style: italic;
 }
 
-/* Line under header */
 .line {
     height: 1px;
     background-color: #43554F;
     width: 100%;
+}
+
+.books-container {
+    padding: 140px 40px 80px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.book-shelf {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(20px, 5vw, 60px);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.book {
+    flex: 1 1 clamp(120px, 20%, 180px);
+    display: block;
+    min-height: 180px; /* reserve space to reduce layout shift */
+}
+
+.book img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    height: auto;          /* full original height */
+    object-fit: contain;   /* show entire image without cropping */
+}
+
+.book img {
+    transition: transform 0.3s ease; /* Smooth transition for the transform */
+}
+
+.book:hover img {
+    transform: translateY(-10px); /* Slide up by 10px on hover */
 }
 
 /* --- Hamburger --- */
@@ -128,40 +151,6 @@ body {
     cursor: pointer;
 }
 
-/* --- Books container --- */
-.books-container {
-    padding: 140px 40px 80px 40px;
-    display: flex;
-    justify-content: center;
-}
-
-.book-shelf {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(20px, 5vw, 60px);
-    max-width: 1000px;
-    width: 100%;
-}
-
-.book {
-    flex: 1 1 clamp(120px, 20%, 180px);
-    display: block;
-    min-height: 180px;
-}
-
-.book img {
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.book:hover img {
-    transform: translateY(-10px);
-}
-
 /* --- Responsive scaling --- */
 @media (max-width: 1150px) {
     .title .desktop {
@@ -211,45 +200,46 @@ body {
 </head>
 <body>
 
-<div class="header-container">
-    <header class="header">
-        <div class="title">
-            <a href="index.html">
-                <span class="desktop">Max Thackara</span>
-                <span class="mobile">MT</span>
-            </a>
-        </div>
+<header class="header">
+    <div class="title">
+        <a href="index.html">
+            <span class="desktop">Max Thackara</span>
+            <span class="mobile">MT</span>
+        </a>
+    </div>
 
-        <nav class="nav">
-            <a href="books.html">Books</a>
-            <a href="reflection.html">Reflection</a>
-            <a href="workshops.html">Workshops</a>
-            <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-            <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener noreferrer">Support</a>
-            <a href="mailto:contact@maxthackara.uk">Contact</a>
-        </nav>
+    <nav class="nav">
+        <a href="books.html">Books</a>
+        <a href="reflection.html">Reflection</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener noreferrer">Support</a>
+        <a href="mailto:contact@maxthackara.uk">Contact</a>
+    </nav>
 
-        <div class="hamburger" tabindex="0" aria-label="Toggle navigation menu" role="button">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
+    <div class="hamburger" tabindex="0" aria-label="Toggle navigation menu" role="button">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
 
-    <div class="line"></div>
-</div>
+<div class="line"></div>
 
 <main class="books-container">
     <div class="book-shelf">
         <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
             <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
         </a>
+
         <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
             <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
         </a>
+
         <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
             <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
         </a>
+
         <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
             <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
         </a>
