@@ -80,29 +80,34 @@ body {
     flex-wrap: wrap;
 }
 
-/* --- Book Card --- */
-.book-card {
-    background-color: #D8C2AD; /* card background */
-    padding: 10px;             /* space around book image */
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block;
+/* --- Book image hover effect --- */
+.book {
     width: 180px;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
     animation: bookFadeIn 1s forwards;
 }
 
-.book-card:hover {
-    transform: translateY(-8px); /* lift on hover */
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15); /* shadow */
+.book img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.book-card img {
-    display: block;
-    width: 100%;
-    border-radius: 4px;
+.book:hover img {
+    transform: translateY(-8px); /* lift upward on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* subtle shadow */
+}
+
+/* --- Keyframes --- */
+@keyframes bookFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- Hamburger --- */
@@ -166,14 +171,6 @@ body {
     cursor: pointer;
 }
 
-/* --- Keyframes --- */
-@keyframes bookFadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* --- Responsive scaling --- */
 @media (max-width: 1150px) {
     .title .desktop {
@@ -214,7 +211,7 @@ body {
         gap: 40px;
     }
 
-    .book-card {
+    .book {
         width: 60%;
         max-width: 220px;
     }
@@ -252,29 +249,21 @@ body {
 <div class="books-container">
     <div class="book-shelf">
 
-        <div class="book-card">
-            <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" target="_blank" rel="noopener">
-                <img src="images/book1.png" alt="Book 1">
-            </a>
-        </div>
+        <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
+            <img src="images/book1.png" alt="Book 1">
+        </a>
 
-        <div class="book-card">
-            <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" target="_blank" rel="noopener">
-                <img src="images/book2.png" alt="Book 2">
-            </a>
-        </div>
+        <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
+            <img src="images/book2.png" alt="Book 2">
+        </a>
 
-        <div class="book-card">
-            <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" target="_blank" rel="noopener">
-                <img src="images/book3.png" alt="Book 3">
-            </a>
-        </div>
+        <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
+            <img src="images/book3.png" alt="Book 3">
+        </a>
 
-        <div class="book-card">
-            <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" target="_blank" rel="noopener">
-                <img src="images/book4.png" alt="Book 4">
-            </a>
-        </div>
+        <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
+            <img src="images/book4.png" alt="Book 4">
+        </a>
 
     </div>
 </div>
@@ -303,7 +292,7 @@ function toggleMenu() {
 
 // Staggered fade-in for books
 document.addEventListener('DOMContentLoaded', () => {
-    const books = document.querySelectorAll('.book-card');
+    const books = document.querySelectorAll('.book');
     books.forEach((book, index) => {
         book.style.animationDelay = `${index * 0.3}s`;
     });
