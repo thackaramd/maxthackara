@@ -67,8 +67,8 @@ body {
 /* --- Hero / Tagline --- */
 .hero {
     max-width: 800px;
-    margin: 100px auto 60px auto; /* more space below for cards */
-    padding: 0 40px; /* initial wider padding for large screens */
+    margin: 100px auto 60px auto; /* space below for cards */
+    padding: 0 40px; /* large screens */
     text-align: center;
     font-size: 18px;
     font-style: italic;
@@ -82,11 +82,10 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* prevent wrapping until mobile */
     max-width: 1000px;
     margin: 0 auto 80px auto;
     padding: 0 20px;
-    transition: gap 0.2s ease;
 }
 
 /* --- Card wrapper for fade-in --- */
@@ -193,29 +192,26 @@ body {
 
 /* --- Responsive scaling --- */
 @media (max-width: 1150px) {
-    /* Title scaling */
     .title .desktop {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px)/400));
     }
 
-    /* Nav scaling */
     .nav {
         gap: calc(10px + 15 * ((100vw - 750px)/400));
         font-size: calc(12px + 4 * ((100vw - 750px)/400));
     }
 
-    /* Hero margin and padding scaling */
     .hero {
-        margin: calc(60px + (100 - 60) * ((100vw - 750px)/400)) auto 50px auto; /* more space below for cards */
+        margin: calc(60px + (100 - 60) * ((100vw - 750px)/400)) auto 60px auto;
         padding: calc(20px + (40 - 20) * ((100vw - 750px)/400));
     }
 
-    /* Reduce gap between cards as window shrinks */
+    /* Keep cards fixed width and no wrapping */
     .services-container {
-        gap: calc(20px + 20 * ((100vw - 750px)/400));
+        gap: 40px;
+        flex-wrap: nowrap;
     }
 
-    /* Keep card width fixed, no shrinking */
     .service-card {
         width: 300px;
         padding: 40px 30px;
@@ -245,17 +241,22 @@ body {
         display: inline;
     }
 
+    .hero {
+        padding: 0 20px; /* extra side space for mobile */
+        margin: 60px auto 40px auto; /* maintain vertical spacing */
+    }
+
     .services-container {
         flex-direction: column;
         gap: 25px;
         align-items: center;
+        flex-wrap: wrap; /* now wrap only on mobile */
     }
 }
 </style>
 </head>
 <body>
 
-<!-- --- Header & Navigation --- -->
 <div class="header">
     <div class="title">
         <a href="index.html">
@@ -282,12 +283,10 @@ body {
 
 <div class="line"></div>
 
-<!-- --- Hero / Tagline --- -->
 <div class="hero">
     Offering guided reflective sessions to clarify your personal or creative journey. Choose a session that fits your needs and step into presence with intention.
 </div>
 
-<!-- --- Services Section --- -->
 <div class="services-container">
     <div class="card-wrapper">
         <div class="service-card" onclick="window.location.href='personal.html'">
@@ -303,7 +302,6 @@ body {
     </div>
 </div>
 
-<!-- --- Mobile Menu --- -->
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
@@ -315,7 +313,6 @@ body {
 </div>
 
 <script>
-/* --- Toggle Mobile Menu --- */
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
@@ -327,7 +324,6 @@ function toggleMenu() {
     }
 }
 
-/* --- Sequential fade-in for cards --- */
 document.addEventListener('DOMContentLoaded', () => {
     const wrappers = document.querySelectorAll('.card-wrapper');
     wrappers.forEach((wrapper, index) => {
