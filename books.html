@@ -3,22 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Max Thackara books and publications. Explore poetry, journals, and creative works.">
 <title>Books — Max Thackara</title>
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --text-color: #43554F;
-    --bg-color: #F7E4D3;
-    --menu-bg: #041A14;
-}
-
 body {
     margin: 0;
-    background-color: var(--bg-color);
+    background-color: #F7E4D3;
     font-family: 'Prata', serif;
-    color: var(--text-color);
+    color: #43554F;
 }
 
 .header {
@@ -50,7 +43,7 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #43554F;
 }
 
 .nav a.italic {
@@ -59,7 +52,7 @@ body {
 
 .line {
     height: 1px;
-    background-color: var(--text-color);
+    background-color: #43554F;
     width: 100%;
 }
 
@@ -87,14 +80,6 @@ body {
     width: 100%;
     display: block;
     border-radius: 4px;
-    aspect-ratio: 2 / 3; /* Maintains book shape */
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.book img.loaded {
-    opacity: 1;
 }
 
 /* --- Hamburger --- */
@@ -109,7 +94,7 @@ body {
 
 .hamburger div {
     height: 2px;
-    background-color: var(--text-color);
+    background-color: #43554F;
 }
 
 /* --- Mobile menu --- */
@@ -123,7 +108,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--menu-bg);
+    background-color: #041A14;
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
@@ -136,7 +121,7 @@ body {
 }
 
 .mobile-menu a {
-    color: var(--bg-color);
+    color: #F7E4D3;
     text-decoration: none;
     font-size: 16px;
     margin: 16px 0;
@@ -151,7 +136,7 @@ body {
     top: 16px;
     right: 16px;
     font-size: 32px;
-    color: var(--bg-color);
+    color: #F7E4D3;
     cursor: pointer;
 }
 
@@ -233,19 +218,19 @@ body {
 <main class="books-container">
     <div class="book-shelf">
         <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
-            <img src="images/book1.png" alt="The Artist's Journey book cover" width="600" height="900" loading="lazy">
+            <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
         </a>
 
         <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
-            <img src="images/book2.png" alt="First Cup: Poetry Collection book cover" width="600" height="900" loading="lazy">
+            <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
         </a>
 
         <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
-            <img src="images/book3.png" alt="Sketches of Early Womanhood book cover" width="600" height="900" loading="lazy">
+            <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
         </a>
 
         <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
-            <img src="images/book4.png" alt="Journal book cover" width="600" height="900" loading="lazy">
+            <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
         </a>
     </div>
 </main>
@@ -268,23 +253,16 @@ function toggleMenu() {
     document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 
-// Hamburger interactions
 document.querySelector('.hamburger').addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') toggleMenu();
 });
 document.querySelector('.hamburger').addEventListener('click', toggleMenu);
 
-// Close menu on Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const menu = document.getElementById('mobileMenu');
         if (menu.classList.contains('show')) toggleMenu();
     }
-});
-
-// Fade-in images when loaded
-document.querySelectorAll('.book img').forEach(img => {
-    img.addEventListener('load', () => img.classList.add('loaded'));
 });
 </script>
 
