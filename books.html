@@ -84,7 +84,7 @@ body {
 
 .book {
     width: 180px;
-    transition: transform 0.4s ease; /* smooth vertical lift */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth lift + shadow */
     opacity: 0;
     transform: translateY(20px);
     animation: bookFadeIn 1s forwards;
@@ -97,8 +97,10 @@ body {
     border-radius: 4px; /* optional: slightly rounded for elegance */
 }
 
+/* Hover effect matching Reflection page */
 .book:hover {
-    transform: translateY(-10px); /* gentle vertical lift on hover */
+    transform: translateY(-8px); /* lift slightly */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15); /* soft shadow */
 }
 
 @keyframes bookFadeIn {
