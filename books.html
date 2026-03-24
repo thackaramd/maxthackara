@@ -22,15 +22,6 @@ body {
     justify-content: space-between;
     align-items: baseline;
     padding: 35px 60px 20px 60px;
-    position: sticky;   /* stick to top */
-    top: 0;
-    background-color: #F7E4D3; /* keep solid background */
-    z-index: 999;       /* above other content */
-    transition: box-shadow 0.3s ease;
-}
-
-.header.scrolled {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .title {
@@ -290,7 +281,7 @@ function toggleMenu() {
     document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 
-// Hamburger keyboard support
+// Keyboard accessibility for hamburger
 document.querySelector('.hamburger').addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') toggleMenu();
 });
@@ -308,21 +299,11 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const books = document.querySelectorAll('.book');
     books.forEach((book, index) => {
-        book.style.opacity = '0';
+        book.style.opacity = '0'; // start hidden
         book.style.transform = 'translateY(20px)';
         book.style.animation = `bookFadeIn 0.8s forwards`;
         book.style.animationDelay = `${index * 0.3}s`;
     });
-});
-
-// --- Header shadow on scroll ---
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
 });
 </script>
 
