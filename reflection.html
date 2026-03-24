@@ -67,8 +67,8 @@ body {
 /* --- Hero / Tagline --- */
 .hero {
     max-width: 800px;
-    margin: 100px auto 60px auto; /* space below for cards */
-    padding: 0 40px; /* large screens */
+    margin: 100px auto 60px auto;
+    padding: 0 40px;
     text-align: center;
     font-size: 18px;
     font-style: italic;
@@ -82,7 +82,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: nowrap; /* prevent wrapping until mobile */
+    flex-wrap: nowrap; /* stay in one row until mobile */
     max-width: 1000px;
     margin: 0 auto 80px auto;
     padding: 0 20px;
@@ -98,12 +98,12 @@ body {
 /* --- Service cards --- */
 .service-card {
     background-color: #D8C2AD;
-    padding: 40px 30px;
+    padding: 40px 30px; /* internal padding fixed */
     border-radius: 12px;
-    width: 300px; /* fixed width */
+    width: 300px; /* base width, will shrink with screen */
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.2s ease;
 }
 
 .service-card:hover {
@@ -206,15 +206,9 @@ body {
         padding: calc(20px + (40 - 20) * ((100vw - 750px)/400));
     }
 
-    /* Keep cards fixed width and no wrapping */
-    .services-container {
-        gap: 40px;
-        flex-wrap: nowrap;
-    }
-
+    /* Shrink cards slightly but keep text layout the same */
     .service-card {
-        width: 300px;
-        padding: 40px 30px;
+        width: calc(220px + (300 - 220) * ((100vw - 750px)/400));
     }
 }
 
@@ -242,15 +236,20 @@ body {
     }
 
     .hero {
-        padding: 0 20px; /* extra side space for mobile */
-        margin: 60px auto 40px auto; /* maintain vertical spacing */
+        padding: 0 20px; /* more side space */
+        margin: 60px auto 40px auto;
     }
 
     .services-container {
         flex-direction: column;
         gap: 25px;
         align-items: center;
-        flex-wrap: wrap; /* now wrap only on mobile */
+        flex-wrap: wrap; /* wrap only on mobile */
+    }
+
+    .service-card {
+        width: 100%; /* full width for stacked cards */
+        max-width: 300px; /* cap width to original card size */
     }
 }
 </style>
@@ -316,12 +315,7 @@ body {
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
-
-    if (menu.classList.contains('show')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
