@@ -58,9 +58,13 @@ body {
     text-align: center;
     font-style: italic;
     font-weight: bold;
-    margin: 100px auto 50px auto; /* top margin */
-    max-width: 600px;
-    font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400)); /* ← TEXT MADE SLIGHTLY BIGGER */
+    margin: 100px auto 50px auto;
+    font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
+    
+    display: inline-block;   /* shrink only as necessary */
+    max-width: 90%;          /* prevent overflow */
+    white-space: normal;     /* allow wrapping when necessary */
+    line-height: 1.4;
 }
 
 /* Responsive scaling */
@@ -76,7 +80,11 @@ body {
     .title .desktop { display: none; }
     .title .mobile { display: inline; }
 
-    .reflection-intro { margin: 80px 5% 40px 5%; font-size: 18px; } /* ← MOBILE TEXT ALSO SLIGHTLY BIGGER */
+    .reflection-intro {
+        font-size: 18px;
+        margin: 80px 5% 40px 5%;
+        max-width: 100%;
+    }
 }
 </style>
 </head>
