@@ -54,17 +54,20 @@ body {
 .close-icon { position: absolute; top: 16px; right: 16px; font-size: 32px; color: #F7E4D3; cursor: pointer; }
 
 /* Body content */
+.reflection-intro-wrapper {
+    text-align: center; /* centers the inline-block child */
+    width: 100%;
+}
+
 .reflection-intro {
-    text-align: center;
+    display: inline-block;   /* shrink only as needed */
+    max-width: 90%;          /* prevents overflow */
     font-style: italic;
     font-weight: bold;
-    margin: 100px auto 50px auto;
     font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
-    
-    display: inline-block;   /* shrink only as necessary */
-    max-width: 90%;          /* prevent overflow */
-    white-space: normal;     /* allow wrapping when necessary */
     line-height: 1.4;
+    margin: 100px auto 50px auto;
+    white-space: normal;     /* allow wrapping if necessary */
 }
 
 /* Responsive scaling */
@@ -118,8 +121,10 @@ body {
 <div class="line"></div>
 
 <!-- Body content -->
-<div class="reflection-intro">
-    <em>Offering reflective sessions to clarify your personal or creative journey.</em>
+<div class="reflection-intro-wrapper">
+    <div class="reflection-intro">
+        <em>Offering reflective sessions to clarify your personal or creative journey.</em>
+    </div>
 </div>
 
 <!-- Mobile menu -->
