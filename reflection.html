@@ -67,14 +67,14 @@ body {
 /* --- Hero / Tagline --- */
 .hero {
     max-width: 800px;
-    margin: 100px auto 60px auto;
-    padding: 0 40px;
+    margin: 100px auto 40px auto;
+    padding: 0 20px;
     text-align: center;
     font-size: 18px;
     font-style: italic;
     font-weight: bold;
     line-height: 1.5;
-    transition: margin 0.2s ease, padding 0.2s ease;
+    transition: font-size 0.2s ease, margin 0.2s ease;
 }
 
 /* --- Services container --- */
@@ -82,10 +82,11 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: nowrap; /* stay in one row until mobile */
+    flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto 80px auto;
     padding: 0 20px;
+    transition: gap 0.2s ease;
 }
 
 /* --- Card wrapper for fade-in --- */
@@ -98,12 +99,12 @@ body {
 /* --- Service cards --- */
 .service-card {
     background-color: #D8C2AD;
-    padding: 40px 30px; /* internal padding fixed */
+    padding: 40px 30px;
     border-radius: 12px;
-    width: 300px; /* base width, will shrink with screen */
+    width: 300px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.2s ease, padding 0.2s ease;
 }
 
 .service-card:hover {
@@ -192,23 +193,32 @@ body {
 
 /* --- Responsive scaling --- */
 @media (max-width: 1150px) {
+    /* Title scaling */
     .title .desktop {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px)/400));
     }
 
+    /* Nav scaling */
     .nav {
         gap: calc(10px + 15 * ((100vw - 750px)/400));
         font-size: calc(12px + 4 * ((100vw - 750px)/400));
     }
 
+    /* Hero scaling */
     .hero {
-        margin: calc(60px + (100 - 60) * ((100vw - 750px)/400)) auto 60px auto;
-        padding: calc(20px + (40 - 20) * ((100vw - 750px)/400));
+        font-size: calc(16px + (18 - 16) * ((100vw - 750px)/400));
+        margin: calc(80px + (100 - 80) * ((100vw - 750px)/400)) auto 30px auto;
     }
 
-    /* Shrink cards slightly but keep text layout the same */
+    /* Services container scaling */
+    .services-container {
+        gap: calc(20px + 20 * ((100vw - 750px)/400));
+    }
+
+    /* Service card scaling */
     .service-card {
         width: calc(220px + (300 - 220) * ((100vw - 750px)/400));
+        padding: calc(30px + (40 - 30) * ((100vw - 750px)/400));
     }
 }
 
@@ -235,27 +245,17 @@ body {
         display: inline;
     }
 
-    .hero {
-        padding: 0 20px; /* more side space */
-        margin: 60px auto 40px auto;
-    }
-
     .services-container {
         flex-direction: column;
         gap: 25px;
         align-items: center;
-        flex-wrap: wrap; /* wrap only on mobile */
-    }
-
-    .service-card {
-        width: 100%; /* full width for stacked cards */
-        max-width: 300px; /* cap width to original card size */
     }
 }
 </style>
 </head>
 <body>
 
+<!-- --- Header & Navigation --- -->
 <div class="header">
     <div class="title">
         <a href="index.html">
@@ -282,10 +282,12 @@ body {
 
 <div class="line"></div>
 
+<!-- --- Hero / Tagline --- -->
 <div class="hero">
     Offering guided reflective sessions to clarify your personal or creative journey. Choose a session that fits your needs and step into presence with intention.
 </div>
 
+<!-- --- Services Section --- -->
 <div class="services-container">
     <div class="card-wrapper">
         <div class="service-card" onclick="window.location.href='personal.html'">
@@ -301,6 +303,7 @@ body {
     </div>
 </div>
 
+<!-- --- Mobile Menu --- -->
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
@@ -312,12 +315,19 @@ body {
 </div>
 
 <script>
+/* --- Toggle Mobile Menu --- */
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
-    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
+
+    if (menu.classList.contains('show')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 }
 
+/* --- Sequential fade-in for cards --- */
 document.addEventListener('DOMContentLoaded', () => {
     const wrappers = document.querySelectorAll('.card-wrapper');
     wrappers.forEach((wrapper, index) => {
