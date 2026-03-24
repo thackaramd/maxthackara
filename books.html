@@ -74,12 +74,15 @@ body {
 .book {
     flex: 1 1 clamp(120px, 20%, 180px);
     display: block;
+    min-height: 180px; /* reserve space to reduce layout shift */
 }
 
 .book img {
     width: 100%;
     display: block;
     border-radius: 4px;
+    aspect-ratio: 2/3; /* reserve height for book covers */
+    object-fit: cover; /* ensure full coverage without distortion */
 }
 
 /* --- Hamburger --- */
