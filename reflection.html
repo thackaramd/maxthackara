@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reflection — Max Thackara</title>
+<title>Reflection Service — Max Thackara</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
@@ -64,40 +64,52 @@ body {
     width: 100%;
 }
 
-/* --- Reflection container --- */
-.reflections-container {
+/* --- Hero / Tagline --- */
+.hero {
     max-width: 800px;
-    margin: 80px auto;
+    margin: 80px auto 60px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* --- Services container --- */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto 100px auto;
     padding: 0 20px;
 }
 
-.reflection {
-    margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
+.service-card {
+    background-color: #EDE0D4;
+    padding: 40px 30px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.reflection h2 {
-    margin-bottom: 8px;
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
 }
 
-.reflection .date {
-    font-size: 14px;
-    font-style: italic;
-    margin-bottom: 12px;
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
-.reflection p {
+.service-card p {
     line-height: 1.6;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 16px;
 }
 
 /* --- Hamburger menu --- */
@@ -194,6 +206,12 @@ body {
     .title .mobile {
         display: inline;
     }
+
+    .services-container {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
 }
 </style>
 </head>
@@ -226,19 +244,20 @@ body {
 
 <div class="line"></div>
 
-<!-- --- Reflection container --- -->
-<div class="reflections-container">
-    <!-- Example reflection entries (replace with real content) -->
-    <div class="reflection">
-        <h2>Reflection Title 1</h2>
-        <div class="date">March 24, 2026</div>
-        <p>This is a sample reflection entry. Replace this text with your actual reflections.</p>
-    </div>
+<!-- --- Hero / Tagline --- -->
+<div class="hero">
+    Offering guided reflective sessions to clarify your personal or creative journey. Choose a session that fits your needs and step into presence with intention.
+</div>
 
-    <div class="reflection">
-        <h2>Reflection Title 2</h2>
-        <div class="date">March 22, 2026</div>
-        <p>Another reflection example. You can add as many entries as needed, each will fade in.</p>
+<!-- --- Services Section --- -->
+<div class="services-container">
+    <div class="service-card" onclick="window.location.href='personal.html'">
+        <h3>Personal Reflection</h3>
+        <p>30 or 60 minute sessions for personal clarity, philosophical reflection, and thoughtful dialogue.</p>
+    </div>
+    <div class="service-card" onclick="window.location.href='creative.html'">
+        <h3>Creative Reflection</h3>
+        <p>30 or 60 minute sessions focused on your creative projects, writing, or artistic exploration.</p>
     </div>
 </div>
 
@@ -265,14 +284,6 @@ function toggleMenu() {
         document.body.style.overflow = 'auto';
     }
 }
-
-/* --- Fade-in reflections staggered --- */
-document.addEventListener('DOMContentLoaded', () => {
-    const reflections = document.querySelectorAll('.reflection');
-    reflections.forEach((ref, index) => {
-        ref.style.animationDelay = `${index * 0.3}s`;
-    });
-});
 </script>
 
 </body>
