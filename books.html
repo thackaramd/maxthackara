@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
 <style>
+/* --- Base site styles --- */
 body {
     margin: 0;
     background-color: #F7E4D3;
@@ -15,7 +16,7 @@ body {
     color: #43554F;
 }
 
-/* Header */
+/* --- Header --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -23,7 +24,6 @@ body {
     padding: 35px 60px 20px 60px;
 }
 
-/* Title */
 .title {
     font-size: 28px;
     transition: font-size 0.2s ease;
@@ -39,12 +39,10 @@ body {
     font-size: 20px;
 }
 
-/* Navigation */
 .nav {
     display: flex;
     gap: 25px;
     font-size: 16px;
-    transition: gap 0.2s ease, font-size 0.2s ease;
 }
 
 .nav a {
@@ -60,14 +58,13 @@ body {
     font-style: italic;
 }
 
-/* Line */
 .line {
     height: 1px;
     background-color: #43554F;
     width: 100%;
 }
 
-/* BOOK SHELF */
+/* --- Books Section --- */
 .books-container {
     padding: 140px 40px 80px 40px;
     display: flex;
@@ -80,40 +77,35 @@ body {
     max-width: 1000px;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.book {
-    width: 180px;
+/* --- Book Card --- */
+.book-card {
+    background-color: #D8C2AD; /* card background */
+    padding: 10px;             /* space around book image */
+    border-radius: 8px;
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    width: 180px;
     opacity: 0;
     transform: translateY(20px);
     animation: bookFadeIn 1s forwards;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.08); /* subtle default lift */
-    border-radius: 4px;
-    display: block;
 }
 
-.book img {
+.book-card:hover {
+    transform: translateY(-8px); /* lift on hover */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15); /* shadow */
+}
+
+.book-card img {
+    display: block;
     width: 100%;
-    height: auto;
-    display: block;
     border-radius: 4px;
 }
 
-/* Hover effect: lift the book 8px with stronger shadow */
-.book:hover {
-    transform: translateY(-8px); /* noticeable lift */
-    box-shadow: 0 18px 36px rgba(0,0,0,0.22); /* stronger shadow for visibility */
-}
-
-@keyframes bookFadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hamburger */
+/* --- Hamburger --- */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -128,7 +120,7 @@ body {
     background-color: #43554F;
 }
 
-/* Mobile menu */
+/* --- Mobile menu --- */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -174,7 +166,15 @@ body {
     cursor: pointer;
 }
 
-/* Responsive scaling */
+/* --- Keyframes --- */
+@keyframes bookFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive scaling --- */
 @media (max-width: 1150px) {
     .title .desktop {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
@@ -185,7 +185,7 @@ body {
     }
 }
 
-/* Mobile */
+/* --- Mobile adjustments --- */
 @media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
@@ -214,7 +214,7 @@ body {
         gap: 40px;
     }
 
-    .book {
+    .book-card {
         width: 60%;
         max-width: 220px;
     }
@@ -252,21 +252,29 @@ body {
 <div class="books-container">
     <div class="book-shelf">
 
-        <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
-            <img src="images/book1.png" alt="Book 1">
-        </a>
+        <div class="book-card">
+            <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" target="_blank" rel="noopener">
+                <img src="images/book1.png" alt="Book 1">
+            </a>
+        </div>
 
-        <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
-            <img src="images/book2.png" alt="Book 2">
-        </a>
+        <div class="book-card">
+            <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" target="_blank" rel="noopener">
+                <img src="images/book2.png" alt="Book 2">
+            </a>
+        </div>
 
-        <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
-            <img src="images/book3.png" alt="Book 3">
-        </a>
+        <div class="book-card">
+            <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" target="_blank" rel="noopener">
+                <img src="images/book3.png" alt="Book 3">
+            </a>
+        </div>
 
-        <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
-            <img src="images/book4.png" alt="Book 4">
-        </a>
+        <div class="book-card">
+            <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" target="_blank" rel="noopener">
+                <img src="images/book4.png" alt="Book 4">
+            </a>
+        </div>
 
     </div>
 </div>
@@ -274,7 +282,7 @@ body {
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
-    <a href="#">Reflection</a>
+    <a href="reflection.html">Reflection</a>
     <a href="workshops.html">Workshops</a>
     <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
     <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener">Support</a>
@@ -295,7 +303,7 @@ function toggleMenu() {
 
 // Staggered fade-in for books
 document.addEventListener('DOMContentLoaded', () => {
-    const books = document.querySelectorAll('.book');
+    const books = document.querySelectorAll('.book-card');
     books.forEach((book, index) => {
         book.style.animationDelay = `${index * 0.3}s`;
     });
