@@ -37,7 +37,8 @@ body {
 
 .title .mobile {
     display: none;
-    font-size: 20px;
+    font-size: clamp(16px, 5vw, 28px); /* Responsive like No.1 */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 /* Navigation */
@@ -160,7 +161,7 @@ body {
     }
 
     .title .mobile {
-        display: inline;
+        display: inline; /* Show full name on mobile */
     }
 }
 </style>
@@ -171,7 +172,7 @@ body {
     <div class="title">
         <a href="index.html">
             <span class="desktop">Max Thackara</span>
-            <span class="mobile">MT</span>
+            <span class="mobile">Max Thackara</span> <!-- Changed from MT to full name -->
         </a>
     </div>
 
