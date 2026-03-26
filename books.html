@@ -14,26 +14,22 @@ body {
     color: #43554F;
 }
 
+/* Lock scroll cleanly */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    padding: 35px 60px 20px 60px;
+    align-items: center;
+    padding: 35px 60px 20px;
 }
 
-.title {
-    font-size: 28px;
-}
-
-.title a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.title .mobile {
-    display: none;
-    font-size: 20px;
-}
+.title { font-size: 28px; }
+.title a { text-decoration: none; color: inherit; }
+.title .mobile { display: none; font-size: 20px; }
 
 .nav {
     display: flex;
@@ -46,43 +42,34 @@ body {
     color: #43554F;
 }
 
-.nav a.italic {
-    font-style: italic;
-}
+.nav a.italic { font-style: italic; }
 
 .line {
     height: 1px;
     background-color: #43554F;
-    width: 100%;
 }
 
+/* Books */
 .books-container {
-    padding: 140px 40px 80px 40px;
+    padding: 140px 40px 80px;
     display: flex;
     justify-content: center;
 }
 
 .book-shelf {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: clamp(20px, 5vw, 60px);
     max-width: 1000px;
-    width: 100%;
 }
 
 .book {
     flex: 1 1 clamp(120px, 20%, 180px);
-    display: block;
-    min-height: 180px;
 }
 
 .book img {
     width: 100%;
-    display: block;
     border-radius: 4px;
-    height: auto;
-    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -90,116 +77,120 @@ body {
     transform: translateY(-10px);
 }
 
-/* --- Hamburger --- */
+/* Hamburger */
 .hamburger {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 22px;
-    height: 16px;
+    width: 24px;
+    height: 18px;
+    position: relative;
     cursor: pointer;
 }
 
-.hamburger div {
+.hamburger span {
+    position: absolute;
+    width: 100%;
     height: 2px;
-    background-color: #43554F;
+    background: #43554F;
+    left: 0;
+    transition: all 0.35s ease;
 }
 
-/* --- Mobile menu (SMOOTHED) --- */
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 16px; }
+
+/* Animate to X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+/* Overlay (key for smoothness) */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: #041A14;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Menu */
 .mobile-menu {
+    position: fixed;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    inset: 0;
-    background-color: #041A14;
-    z-index: 1000;
 
+    transform: scale(1.05);
     opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    z-index: 1000;
 }
 
 .mobile-menu.show {
+    transform: scale(1);
     opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
 }
 
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
-    font-size: 16px;
-    margin: 16px 0;
+    font-size: 18px;
+    margin: 14px 0;
 
     opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.3s ease;
+    transform: translateY(10px);
 }
 
+/* Stagger animation */
 .mobile-menu.show a {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeUp 0.4s ease forwards;
 }
 
-.mobile-menu a.italic {
-    font-style: italic;
-}
+.mobile-menu.show a:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu.show a:nth-child(2) { animation-delay: 0.15s; }
+.mobile-menu.show a:nth-child(3) { animation-delay: 0.2s; }
+.mobile-menu.show a:nth-child(4) { animation-delay: 0.25s; }
 
-.close-icon {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 32px;
-    color: #F7E4D3;
-    cursor: pointer;
-}
-
-/* --- Responsive scaling --- */
-@media (max-width: 1150px) {
-    .title .desktop {
-        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
-    }
-    .nav {
-        gap: calc(10px + 15 * ((100vw - 750px) / 400));
-        font-size: calc(12px + 4 * ((100vw - 750px) / 400));
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* --- Mobile adjustments --- */
+/* Responsive */
 @media (max-width: 750px) {
-    .header {
-        padding: 35px 28px 20px 28px;
-        align-items: center;
-    }
+    .nav { display: none; }
+    .hamburger { display: block; }
 
-    .nav {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .title .desktop {
-        display: none;
-    }
-
-    .title .mobile {
-        display: inline;
-    }
+    .title .desktop { display: none; }
+    .title .mobile { display: inline; }
 
     .books-container {
-        padding: 60px 20px 60px 20px;
+        padding: 60px 20px;
     }
 
     .book-shelf {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
     }
 
     .book {
@@ -213,23 +204,23 @@ body {
 
 <header class="header">
     <div class="title">
-        <a href="index.html">
+        <a href="#">
             <span class="desktop">Max Thackara</span>
             <span class="mobile">MT</span>
         </a>
     </div>
 
     <nav class="nav">
-        <a href="books.html">Books</a>
-        <a href="https://theparlour.org.uk" class="italic" target="_blank">The Parlour</a>
-        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA" target="_blank">Support</a>
-        <a href="mailto:contact@maxthackara.uk">Contact</a>
+        <a href="#">Books</a>
+        <a href="#" class="italic">The Parlour</a>
+        <a href="#">Support</a>
+        <a href="#">Contact</a>
     </nav>
 
-    <div class="hamburger" tabindex="0" role="button">
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </header>
 
@@ -237,29 +228,38 @@ body {
 
 <main class="books-container">
     <div class="book-shelf">
-        <a href="#" class="book"><img src="images/book1.png"></a>
-        <a href="#" class="book"><img src="images/book2.png"></a>
-        <a href="#" class="book"><img src="images/book3.png"></a>
-        <a href="#" class="book"><img src="images/book4.png"></a>
+        <a class="book"><img src="images/book1.png"></a>
+        <a class="book"><img src="images/book2.png"></a>
+        <a class="book"><img src="images/book3.png"></a>
+        <a class="book"><img src="images/book4.png"></a>
     </div>
 </main>
 
-<div class="mobile-menu" id="mobileMenu">
-    <div class="close-icon" onclick="toggleMenu()">×</div>
-    <a href="books.html">Books</a>
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Menu -->
+<div class="mobile-menu" id="menu">
+    <a href="#">Books</a>
     <a href="#" class="italic">The Parlour</a>
     <a href="#">Support</a>
     <a href="#">Contact</a>
 </div>
 
 <script>
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+const overlay = document.getElementById('overlay');
+
 function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
+    const isOpen = menu.classList.toggle('show');
+    overlay.classList.toggle('show', isOpen);
+    hamburger.classList.toggle('active', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
 }
 
-document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+hamburger.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
 </script>
 
 </body>
