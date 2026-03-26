@@ -14,6 +14,7 @@ body {
     color: #43554F;
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -56,6 +57,7 @@ body {
     width: 100%;
 }
 
+/* Books layout */
 .books-container {
     padding: 140px 40px 80px 40px;
     display: flex;
@@ -90,7 +92,7 @@ body {
     transform: translateY(-10px);
 }
 
-/* --- Hamburger --- */
+/* Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -105,27 +107,26 @@ body {
     background-color: #43554F;
 }
 
-/* --- Mobile menu --- */
+/* Mobile menu */
 .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: none; /* ✅ Hide initially with display:none */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #041A14;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
     opacity: 0;
-    pointer-events: none;
     transition: opacity 0.4s ease;
 }
 
 .mobile-menu.show {
+    display: flex; /* ✅ Show on toggle */
     opacity: 1;
-    pointer-events: auto;
 }
 
 .mobile-menu a {
@@ -148,7 +149,7 @@ body {
     cursor: pointer;
 }
 
-/* --- Responsive scaling --- */
+/* Responsive scaling */
 @media (max-width: 1150px) {
     .title .desktop {
         font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
@@ -159,7 +160,7 @@ body {
     }
 }
 
-/* --- Mobile adjustments --- */
+/* Mobile adjustments */
 @media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
@@ -182,7 +183,6 @@ body {
         display: inline;
     }
 
-    /* ✅ Reduced top spacing here */
     .books-container {
         padding: 60px 20px 60px 20px;
     }
@@ -231,15 +231,12 @@ body {
         <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
             <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
         </a>
-
         <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
             <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
         </a>
-
         <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
             <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
         </a>
-
         <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
             <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
         </a>
@@ -261,11 +258,14 @@ function toggleMenu() {
     document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 
-document.querySelector('.hamburger').addEventListener('keydown', (e) => {
+// Click and keyboard accessibility
+const hamburger = document.querySelector('.hamburger');
+hamburger.addEventListener('click', toggleMenu);
+hamburger.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') toggleMenu();
 });
-document.querySelector('.hamburger').addEventListener('click', toggleMenu);
 
+// Close menu with Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const menu = document.getElementById('mobileMenu');
