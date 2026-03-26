@@ -105,26 +105,27 @@ body {
     background-color: #43554F;
 }
 
-/* --- Mobile menu --- */
+/* --- Mobile menu (SMOOTHED) --- */
 .mobile-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-color: #041A14;
     z-index: 1000;
+
     opacity: 0;
+    transform: translateY(-10px);
     pointer-events: none;
-    transition: opacity 0.4s ease;
+
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .mobile-menu.show {
     opacity: 1;
+    transform: translateY(0);
     pointer-events: auto;
 }
 
@@ -133,6 +134,15 @@ body {
     text-decoration: none;
     font-size: 16px;
     margin: 16px 0;
+
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.show a {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .mobile-menu a.italic {
@@ -182,7 +192,6 @@ body {
         display: inline;
     }
 
-    /* ✅ Reduced top spacing here */
     .books-container {
         padding: 60px 20px 60px 20px;
     }
@@ -212,12 +221,12 @@ body {
 
     <nav class="nav">
         <a href="books.html">Books</a>
-        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener noreferrer">Support</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank">The Parlour</a>
+        <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA" target="_blank">Support</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </nav>
 
-    <div class="hamburger" tabindex="0" aria-label="Toggle navigation menu" role="button">
+    <div class="hamburger" tabindex="0" role="button">
         <div></div>
         <div></div>
         <div></div>
@@ -228,30 +237,19 @@ body {
 
 <main class="books-container">
     <div class="book-shelf">
-        <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
-            <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
-        </a>
-
-        <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
-            <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
-        </a>
-
-        <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
-            <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
-        </a>
-
-        <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
-            <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
-        </a>
+        <a href="#" class="book"><img src="images/book1.png"></a>
+        <a href="#" class="book"><img src="images/book2.png"></a>
+        <a href="#" class="book"><img src="images/book3.png"></a>
+        <a href="#" class="book"><img src="images/book4.png"></a>
     </div>
 </main>
 
 <div class="mobile-menu" id="mobileMenu">
-    <div class="close-icon" onclick="toggleMenu()" aria-label="Close menu">×</div>
+    <div class="close-icon" onclick="toggleMenu()">×</div>
     <a href="books.html">Books</a>
-    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-    <a href="https://www.paypal.com/donate/?business=RHZ4KP9JT4TGA&no_recurring=0&item_name=If+you+enjoy+The+Parlour+Magazine%2C+my+writing%2C+workshops%2C+or+talks%2C+your+support+helps+sustain+and+grow+this+work.+&currency_code=GBP" target="_blank" rel="noopener noreferrer">Support</a>
-    <a href="mailto:contact@maxthackara.uk">Contact</a>
+    <a href="#" class="italic">The Parlour</a>
+    <a href="#">Support</a>
+    <a href="#">Contact</a>
 </div>
 
 <script>
@@ -261,17 +259,7 @@ function toggleMenu() {
     document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 
-document.querySelector('.hamburger').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') toggleMenu();
-});
 document.querySelector('.hamburger').addEventListener('click', toggleMenu);
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const menu = document.getElementById('mobileMenu');
-        if (menu.classList.contains('show')) toggleMenu();
-    }
-});
 </script>
 
 </body>
