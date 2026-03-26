@@ -17,9 +17,9 @@ body {
 /* Header */
 .header {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: baseline;
     padding: 35px 60px 20px 60px;
-    position: relative; /* needed for absolute hamburger */
 }
 
 .title {
@@ -29,6 +29,12 @@ body {
 .title a {
     text-decoration: none;
     color: inherit;
+}
+
+.title .mobile {
+    display: none;
+    font-size: clamp(16px, 5vw, 28px); /* Responsive full name */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .nav {
@@ -95,10 +101,6 @@ body {
     width: 22px;
     height: 16px;
     cursor: pointer;
-    position: absolute; /* position for mobile right corner */
-    right: 28px;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .hamburger div {
@@ -162,8 +164,8 @@ body {
 /* Mobile adjustments */
 @media (max-width: 750px) {
     .header {
-        justify-content: center; /* center title */
         padding: 35px 28px 20px 28px;
+        align-items: center;
     }
 
     .nav {
@@ -179,10 +181,7 @@ body {
     }
 
     .title .mobile {
-        display: inline-block;
-        font-size: clamp(18px, 6vw, 28px); /* responsive full name */
-        text-align: center;
-        white-space: nowrap;
+        display: inline; /* Show full name */
     }
 
     .books-container {
@@ -208,7 +207,7 @@ body {
     <div class="title">
         <a href="index.html">
             <span class="desktop">Max Thackara</span>
-            <span class="mobile">Max Thackara</span>
+            <span class="mobile">Max Thackara</span> <!-- Full name for mobile -->
         </a>
     </div>
 
