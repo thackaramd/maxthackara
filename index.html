@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Max Thackara</title>
-
 <!-- Prata Font -->
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-
 <style>
 body {
     margin: 0;
@@ -29,15 +27,13 @@ body {
     font-size: 28px;
     transition: font-size 0.2s ease;
 }
-
 .title a {
     text-decoration: none;
     color: inherit;
 }
-
 .title .mobile {
     display: none;
-    font-size: clamp(18px, 6vw, 28px);
+    font-size: clamp(18px, 6vw, 28px); /* Responsive like No.1 */
     white-space: nowrap;
 }
 
@@ -48,16 +44,13 @@ body {
     font-size: 16px;
     transition: gap 0.2s ease, font-size 0.2s ease;
 }
-
 .nav a {
     text-decoration: none;
     color: #43554F;
 }
-
 .nav a:hover {
     color: #000;
 }
-
 .nav a.italic {
     font-style: italic;
 }
@@ -78,7 +71,6 @@ body {
     height: 16px;
     cursor: pointer;
 }
-
 .hamburger div {
     height: 2px;
     background-color: #43554F;
@@ -100,27 +92,22 @@ body {
     opacity: 0;
     transition: opacity 0.4s ease;
 }
-
 .mobile-menu.show {
     display: flex;
     opacity: 1;
 }
-
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
     font-size: 16px;
     margin: 16px 0;
 }
-
 .mobile-menu a.italic {
     font-style: italic;
 }
-
 .mobile-menu a:hover {
     color: #A6E3C1;
 }
-
 .close-icon {
     position: absolute;
     top: 16px;
@@ -147,19 +134,15 @@ body {
         padding: 35px 28px 20px 28px;
         align-items: center;
     }
-
     .nav {
         display: none;
     }
-
     .hamburger {
         display: flex;
     }
-
     .title .desktop {
         display: none;
     }
-
     .title .mobile {
         display: inline;
     }
@@ -169,31 +152,28 @@ body {
 .hero {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px); /* slightly higher hero */
+    align-items: flex-start; /* move hero slightly higher */
+    padding-top: 60px; /* added space from top */
+    height: calc(100vh - 90px);
     text-align: center;
-    padding: 0 20px;
 }
-
 .hero ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .hero li {
     font-weight: bold;
-    margin: 14px 0; /* a bit more space between lines */
-    font-size: clamp(20px, 4vw, 28px); /* scales proportionally */
+    margin: 12px 0; /* slightly more spacing between lines */
+    font-size: clamp(20px, 3vw, 24px); /* responsive shrinking */
+    line-height: 1.5; /* extra line spacing */
 }
-
 .hero li em {
     font-style: italic;
 }
 </style>
 </head>
 <body>
-
 <!-- Header -->
 <div class="header">
     <div class="title">
@@ -202,20 +182,17 @@ body {
             <span class="mobile">Max Thackara</span>
         </a>
     </div>
-
     <div class="nav">
         <a href="books.html">Books</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
-
     <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 </div>
-
 <div class="line"></div>
 
 <!-- Hero Section -->
@@ -240,14 +217,8 @@ body {
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
-
-    if (menu.classList.contains('show')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 </script>
-
 </body>
 </html>
