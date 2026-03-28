@@ -37,8 +37,8 @@ body {
 
 .title .mobile {
     display: none;
-    font-size: clamp(18px, 6vw, 28px); /* Responsive like No.1 */
-    white-space: nowrap; /* Prevent wrapping */
+    font-size: clamp(18px, 6vw, 28px);
+    white-space: nowrap;
 }
 
 /* Navigation */
@@ -161,7 +161,7 @@ body {
     }
 
     .title .mobile {
-        display: inline; /* Show full name on mobile */
+        display: inline;
     }
 }
 
@@ -170,8 +170,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 90px); /* Full height minus header/line */
+    height: calc(100vh - 80px); /* slightly higher hero */
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero ul {
@@ -182,8 +183,8 @@ body {
 
 .hero li {
     font-weight: bold;
-    margin: 10px 0;
-    font-size: 24px;
+    margin: 14px 0; /* a bit more space between lines */
+    font-size: clamp(20px, 4vw, 28px); /* scales proportionally */
 }
 
 .hero li em {
