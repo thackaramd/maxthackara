@@ -27,7 +27,6 @@ body {
 /* Title */
 .title {
     font-size: 28px;
-    transition: font-size 0.2s ease;
 }
 
 .title a {
@@ -37,8 +36,8 @@ body {
 
 .title .mobile {
     display: none;
-    font-size: clamp(18px, 6vw, 28px); 
-    white-space: nowrap; 
+    font-size: clamp(18px, 6vw, 28px);
+    white-space: nowrap;
 }
 
 /* Navigation */
@@ -46,16 +45,11 @@ body {
     display: flex;
     gap: 25px;
     font-size: 16px;
-    transition: gap 0.2s ease, font-size 0.2s ease;
 }
 
 .nav a {
     text-decoration: none;
     color: #43554F;
-}
-
-.nav a:hover {
-    color: #000;
 }
 
 .nav a.italic {
@@ -141,7 +135,7 @@ body {
     }
 }
 
-/* Mobile */
+/* Mobile adjustments */
 @media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
@@ -170,15 +164,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 90px); 
-    text-align: center;
+    height: calc(100vh - 90px);
+    text-align: left; /* Align bullets properly */
 }
 
 .hero ul {
     list-style: disc;
-    padding-left: 20px; /* Align bullets neatly */
+    padding-left: 1.5em; /* keeps bullets aligned */
     margin: 0;
-    font-size: 20px; /* Smaller text for hero */
+    font-size: clamp(18px, 3vw, 24px); /* Responsive font size */
 }
 
 .hero li {
@@ -239,12 +233,7 @@ body {
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
-
-    if (menu.classList.contains('show')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
 }
 </script>
 
