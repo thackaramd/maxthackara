@@ -21,12 +21,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 35px 60px 20px 60px;
+    padding: 25px 60px 15px 60px; /* slightly reduced top/bottom padding */
 }
 
 /* Title */
 .title {
-    font-size: 28px;
+    font-size: 30px; /* 2px bigger */
     transition: font-size 0.2s ease;
 }
 
@@ -37,15 +37,15 @@ body {
 
 .title .mobile {
     display: none;
-    font-size: clamp(18px, 6vw, 28px); 
+    font-size: clamp(20px, 6vw, 30px); /* 2px bigger than before */
     white-space: nowrap; 
 }
 
 /* Navigation */
 .nav {
     display: flex;
-    gap: 25px;
-    font-size: 16px;
+    gap: 27px; /* 2px bigger spacing */
+    font-size: 18px; /* 2px bigger */
     transition: gap 0.2s ease, font-size 0.2s ease;
 }
 
@@ -109,7 +109,7 @@ body {
 .mobile-menu a {
     color: #F7E4D3;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px; /* 2px bigger */
     margin: 16px 0;
 }
 
@@ -125,7 +125,7 @@ body {
     position: absolute;
     top: 16px;
     right: 16px;
-    font-size: 32px;
+    font-size: 34px; /* 2px bigger */
     color: #F7E4D3;
     cursor: pointer;
 }
@@ -133,18 +133,18 @@ body {
 /* Responsive scaling */
 @media (max-width: 1150px) {
     .title .desktop {
-        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
+        font-size: calc(22px + (30 - 22) * ((100vw - 750px) / 400));
     }
     .nav {
-        gap: calc(10px + 15 * ((100vw - 750px) / 400));
-        font-size: calc(12px + 4 * ((100vw - 750px) / 400));
+        gap: calc(12px + 15 * ((100vw - 750px) / 400));
+        font-size: calc(14px + 4 * ((100vw - 750px) / 400));
     }
 }
 
 /* Mobile */
 @media (max-width: 750px) {
     .header {
-        padding: 35px 28px 20px 28px;
+        padding: 25px 28px 15px 28px; /* reduced padding for smaller screens */
         align-items: center;
     }
 
@@ -171,14 +171,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 70px); /* slightly taller hero, moves it up */
     text-align: center;
 }
 
 .hero p {
     font-weight: bold;
     margin: 2vh 0;
-    font-size: clamp(18px, 4vw, 24px);
+    font-size: clamp(20px, 4vw, 26px); /* 2px bigger */
 }
 
 .hero p em {
