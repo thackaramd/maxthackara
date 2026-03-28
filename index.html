@@ -27,6 +27,7 @@ body {
 /* Title */
 .title {
     font-size: 28px;
+    transition: font-size 0.2s ease;
 }
 
 .title a {
@@ -36,8 +37,8 @@ body {
 
 .title .mobile {
     display: none;
-    font-size: clamp(18px, 6vw, 28px);
-    white-space: nowrap;
+    font-size: clamp(18px, 6vw, 28px); /* Responsive like No.1 */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 /* Navigation */
@@ -45,11 +46,16 @@ body {
     display: flex;
     gap: 25px;
     font-size: 16px;
+    transition: gap 0.2s ease, font-size 0.2s ease;
 }
 
 .nav a {
     text-decoration: none;
     color: #43554F;
+}
+
+.nav a:hover {
+    color: #000;
 }
 
 .nav a.italic {
@@ -135,7 +141,7 @@ body {
     }
 }
 
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width: 750px) {
     .header {
         padding: 35px 28px 20px 28px;
@@ -155,7 +161,7 @@ body {
     }
 
     .title .mobile {
-        display: inline; 
+        display: inline; /* Show full name on mobile */
     }
 }
 
@@ -164,20 +170,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 90px);
-    text-align: left; /* Align bullets properly */
+    height: calc(100vh - 90px); /* Full height minus header/line */
+    text-align: center;
 }
 
 .hero ul {
-    list-style: disc;
-    padding-left: 1.5em; /* keeps bullets aligned */
+    list-style: none;
+    padding: 0;
     margin: 0;
-    font-size: clamp(18px, 3vw, 24px); /* Responsive font size */
 }
 
 .hero li {
     font-weight: bold;
-    margin: 10px 0;
+    margin: 18px 0; /* Increased line spacing */
+    font-size: 20px; /* Smaller font size */
 }
 
 .hero li em {
@@ -233,7 +239,12 @@ body {
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('show');
-    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
+
+    if (menu.classList.contains('show')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 }
 </script>
 
