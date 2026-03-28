@@ -33,8 +33,8 @@ body {
 
 .title .mobile {
     display: none;
-    font-size: clamp(16px, 5vw, 24px); /* slightly smaller for mobile */
-    white-space: nowrap;
+    font-size: clamp(18px, 6vw, 28px); /* Responsive full name */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .nav {
@@ -98,8 +98,8 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 18px; /* slightly smaller */
-    height: 14px; /* slightly smaller */
+    width: 22px;
+    height: 16px;
     cursor: pointer;
 }
 
@@ -181,8 +181,7 @@ body {
     }
 
     .title .mobile {
-        display: inline;
-        font-size: clamp(16px, 5vw, 24px); /* slightly smaller for mobile */
+        display: inline; /* Show full name */
     }
 
     .books-container {
