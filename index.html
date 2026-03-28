@@ -33,7 +33,7 @@ body {
 }
 .title .mobile {
     display: none;
-    font-size: clamp(18px, 6vw, 28px); /* Responsive like No.1 */
+    font-size: clamp(18px, 6vw, 28px);
     white-space: nowrap;
 }
 
@@ -152,10 +152,10 @@ body {
 .hero {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* move hero slightly higher */
-    padding-top: 60px; /* added space from top */
+    align-items: center; /* vertically centered */
     height: calc(100vh - 90px);
     text-align: center;
+    margin-top: -15px; /* slight upward nudge */
 }
 .hero ul {
     list-style: none;
@@ -164,7 +164,7 @@ body {
 }
 .hero li {
     font-weight: bold;
-    margin: 12px 0; /* slightly more spacing between lines */
+    margin: 12px 0; /* more spacing between lines */
     font-size: clamp(20px, 3vw, 24px); /* responsive shrinking */
     line-height: 1.5; /* extra line spacing */
 }
