@@ -85,13 +85,14 @@ body {
 }
 
 .book {
-    flex: 1 1 clamp(120px, 15%, 140px); /* smaller max size for desktop */
+    flex: 1 1 clamp(120px, 12%, 130px); /* slightly smaller max size for desktop */
     display: block;
     min-height: 180px;
 }
 
 .book img {
     width: 100%;
+    max-width: 130px; /* strict maximum so images never get too big */
     display: block;
     border-radius: 4px;
     height: auto;
