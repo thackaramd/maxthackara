@@ -24,7 +24,7 @@ body {
 /* Main site title */
 .title {
     font-size: 28px;
-    margin-bottom: 16px; /* space before divider line */
+    margin-bottom: 16px;
 }
 
 .title a {
@@ -37,7 +37,7 @@ body {
     width: 60px;
     height: 1px;
     background-color: #43554F;
-    margin: 0 auto 28px auto; /* extra space after line before nav */
+    margin: 0 auto 28px auto; /* space after line before nav */
 }
 
 /* Horizontal nav under title */
@@ -46,7 +46,7 @@ body {
     justify-content: center;
     gap: 32px;
     font-size: 18px;
-    margin-bottom: 50px;
+    margin-bottom: 80px; /* more space to books on desktop */
 }
 
 .page-nav a {
@@ -64,8 +64,8 @@ body {
 
 /* Highlight current page */
 .page-nav a.current {
-    font-weight: bold;
-    text-decoration: underline;
+    font-weight: bold; /* bold only, no underline */
+    text-decoration: none;
 }
 
 /* Books layout */
@@ -85,7 +85,7 @@ body {
 }
 
 .book {
-    flex: 1 1 clamp(120px, 20%, 180px);
+    flex: 1 1 clamp(120px, 18%, 160px); /* slightly smaller max size on desktop */
     display: block;
     min-height: 180px;
 }
@@ -125,7 +125,7 @@ body {
         flex-direction: row;
         gap: 24px;
         font-size: 16px;
-        margin-bottom: 60px;
+        margin-bottom: 60px; /* mobile spacing */
     }
 
     .title {
@@ -133,7 +133,7 @@ body {
     }
 
     .underline {
-        margin-bottom: 30px; /* slightly more space to nav on mobile */
+        margin-bottom: 30px;
     }
 }
 </style>
