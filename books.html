@@ -15,10 +15,10 @@ body {
     color: #43554F;
 }
 
-/* Container for titles */
+/* Header with main title */
 .header-container {
     text-align: center;
-    margin-top: 40px; /* moved higher */
+    margin-top: 80px; /* original spacing */
 }
 
 /* Main site title */
@@ -27,18 +27,34 @@ body {
     margin-bottom: 8px;
 }
 
-/* Small underline under main title */
+/* Underline under main title */
 .underline {
     width: 60px;
     height: 1px;
     background-color: #43554F;
-    margin: 0 auto 20px auto; /* less space before Books title */
+    margin: 0 auto 16px auto;
 }
 
-/* Page title */
-.page-title {
-    font-size: 22px; /* slightly smaller than main title */
+/* Page subtitle / nav row */
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px; /* spacing between links */
+    font-size: 20px;
     margin-bottom: 40px; /* space before books layout */
+}
+
+.page-nav a {
+    text-decoration: none;
+    color: #43554F;
+}
+
+.page-nav a.italic {
+    font-style: italic;
+}
+
+.page-nav a:hover {
+    color: #000;
 }
 
 /* Books layout */
@@ -85,16 +101,19 @@ body {
     .book-shelf {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 30px;
     }
 
     .book {
-        width: 60%;
-        max-width: 220px;
+        width: 50%; /* slightly smaller on mobile */
+        max-width: 180px;
     }
 
-    .header-container {
-        margin-top: 30px;
+    .page-nav {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 18px;
+        margin-bottom: 30px;
     }
 }
 </style>
@@ -104,7 +123,13 @@ body {
 <div class="header-container">
     <div class="title">Max Thackara</div>
     <div class="underline"></div>
-    <div class="page-title">Books</div>
+
+    <!-- Nav row under title -->
+    <div class="page-nav">
+        <a href="books.html">Books</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+        <a href="mailto:contact@maxthackara.uk">Contact</a>
+    </div>
 </div>
 
 <main class="books-container">
