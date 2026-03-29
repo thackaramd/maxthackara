@@ -18,13 +18,13 @@ body {
 /* Header container with title and nav */
 .header-container {
     text-align: center;
-    margin-top: 50px; /* moved slightly higher */
+    margin-top: 50px; /* slightly higher */
 }
 
 /* Main site title */
 .title {
     font-size: 28px;
-    margin-bottom: 8px;
+    margin-bottom: 12px; /* a bit more space before nav */
 }
 
 /* Small underline under main title */
@@ -40,8 +40,8 @@ body {
     display: flex;
     justify-content: center;
     gap: 32px; /* spacing between links */
-    font-size: 20px;
-    margin-bottom: 40px; /* space before books layout */
+    font-size: 18px; /* slightly smaller */
+    margin-bottom: 50px; /* more space before books */
 }
 
 .page-nav a {
@@ -101,7 +101,7 @@ body {
     .book-shelf {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 40px; /* slightly more vertical space */
     }
 
     .book {
@@ -113,8 +113,12 @@ body {
     .page-nav {
         flex-direction: row;
         gap: 24px;
-        font-size: 18px;
-        margin-bottom: 30px;
+        font-size: 16px; /* smaller for mobile */
+        margin-bottom: 60px; /* more space before images */
+    }
+
+    .title {
+        margin-bottom: 16px; /* a little more space between title and nav */
     }
 }
 </style>
