@@ -4,220 +4,77 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Max Thackara</title>
-<!-- Prata Font -->
+
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
     background-color: #F7E4D3;
     font-family: 'Prata', serif;
     color: #43554F;
-}
 
-/* Header */
-.header {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 35px 60px 20px 60px;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-/* Title */
+/* Container */
+.container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Name */
 .title {
     font-size: 28px;
-    transition: font-size 0.2s ease;
+    margin-bottom: 8px;
 }
-.title a {
-    text-decoration: none;
-    color: inherit;
-}
-.title .mobile {
-    display: none;
-    font-size: clamp(18px, 6vw, 28px);
-    white-space: nowrap;
+
+/* Small underline */
+.underline {
+    width: 60px;
+    height: 1px;
+    background-color: #43554F;
+    margin: 0 auto 30px auto;
 }
 
 /* Navigation */
 .nav {
     display: flex;
-    gap: 25px;
-    font-size: 16px;
-    transition: gap 0.2s ease, font-size 0.2s ease;
+    flex-direction: column;
+    gap: 18px;
 }
+
 .nav a {
     text-decoration: none;
     color: #43554F;
+    font-size: 18px;
 }
+
 .nav a:hover {
     color: #000;
 }
+
 .nav a.italic {
-    font-style: italic;
-}
-
-/* Line under header */
-.line {
-    height: 1px;
-    background-color: #43554F;
-    width: 100%;
-}
-
-/* Hamburger menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 22px;
-    height: 16px;
-    cursor: pointer;
-}
-.hamburger div {
-    height: 2px;
-    background-color: #43554F;
-}
-
-/* Mobile menu overlay */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #041A14;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-.mobile-menu.show {
-    display: flex;
-    opacity: 1;
-}
-.mobile-menu a {
-    color: #F7E4D3;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 16px 0;
-}
-.mobile-menu a.italic {
-    font-style: italic;
-}
-.mobile-menu a:hover {
-    color: #A6E3C1;
-}
-.close-icon {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 32px;
-    color: #F7E4D3;
-    cursor: pointer;
-}
-
-/* Responsive scaling */
-@media (max-width: 1150px) {
-    .title .desktop {
-        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
-    }
-    .nav {
-        gap: calc(10px + 15 * ((100vw - 750px) / 400));
-        font-size: calc(12px + 4 * ((100vw - 750px) / 400));
-    }
-}
-
-/* Mobile */
-@media (max-width: 750px) {
-    .header {
-        padding: 35px 28px 20px 28px;
-        align-items: center;
-    }
-    .nav {
-        display: none;
-    }
-    .hamburger {
-        display: flex;
-    }
-    .title .desktop {
-        display: none;
-    }
-    .title .mobile {
-        display: inline;
-    }
-}
-
-/* Hero section */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* vertically centered */
-    height: calc(100vh - 90px);
-    text-align: center;
-    margin-top: -42px; /* nudged further upward */
-}
-.hero ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.hero li {
-    font-weight: bold;
-    margin: 12px 0; /* spacing between lines */
-    font-size: clamp(18px, 2.8vw, 22px); /* slightly smaller */
-    line-height: 1.5; /* extra line spacing */
-}
-.hero li em {
     font-style: italic;
 }
 </style>
 </head>
+
 <body>
-<!-- Header -->
-<div class="header">
-    <div class="title">
-        <a href="index.html">
-            <span class="desktop">Max Thackara</span>
-            <span class="mobile">Max Thackara</span>
-        </a>
-    </div>
+
+<div class="container">
+    <div class="title">Max Thackara</div>
+    <div class="underline"></div>
+
     <div class="nav">
         <a href="books.html">Books</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
-<div class="line"></div>
-
-<!-- Hero Section -->
-<div class="hero">
-    <ul>
-        <li></li>
-        <li></li>
-        <li><em></em></li>
-    </ul>
 </div>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-    <div class="close-icon" onclick="toggleMenu()">×</div>
-    <a href="books.html">Books</a>
-    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener">The Parlour</a>
-    <a href="mailto:contact@maxthackara.uk">Contact</a>
-</div>
-
-<script>
-function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
-}
-</script>
 </body>
 </html>
