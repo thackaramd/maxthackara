@@ -18,13 +18,18 @@ body {
 /* Header container with title and nav */
 .header-container {
     text-align: center;
-    margin-top: 50px; /* slightly higher */
+    margin-top: 50px;
 }
 
 /* Main site title */
 .title {
     font-size: 28px;
-    margin-bottom: 12px; /* a bit more space before nav */
+    margin-bottom: 16px; /* space before divider line */
+}
+
+.title a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Small underline under main title */
@@ -32,16 +37,16 @@ body {
     width: 60px;
     height: 1px;
     background-color: #43554F;
-    margin: 0 auto 16px auto;
+    margin: 0 auto 28px auto; /* extra space after line before nav */
 }
 
 /* Horizontal nav under title */
 .page-nav {
     display: flex;
     justify-content: center;
-    gap: 32px; /* spacing between links */
-    font-size: 18px; /* slightly smaller */
-    margin-bottom: 50px; /* more space before books */
+    gap: 32px;
+    font-size: 18px;
+    margin-bottom: 50px;
 }
 
 .page-nav a {
@@ -55,6 +60,12 @@ body {
 
 .page-nav a:hover {
     color: #000;
+}
+
+/* Highlight current page */
+.page-nav a.current {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /* Books layout */
@@ -101,11 +112,11 @@ body {
     .book-shelf {
         flex-direction: column;
         align-items: center;
-        gap: 40px; /* slightly more vertical space */
+        gap: 40px;
     }
 
     .book {
-        width: 50%; /* slightly smaller on mobile */
+        width: 50%;
         max-width: 180px;
     }
 
@@ -113,12 +124,16 @@ body {
     .page-nav {
         flex-direction: row;
         gap: 24px;
-        font-size: 16px; /* smaller for mobile */
-        margin-bottom: 60px; /* more space before images */
+        font-size: 16px;
+        margin-bottom: 60px;
     }
 
     .title {
-        margin-bottom: 16px; /* a little more space between title and nav */
+        margin-bottom: 16px;
+    }
+
+    .underline {
+        margin-bottom: 30px; /* slightly more space to nav on mobile */
     }
 }
 </style>
@@ -126,12 +141,14 @@ body {
 <body>
 
 <div class="header-container">
-    <div class="title">Max Thackara</div>
+    <div class="title">
+        <a href="index.html">Max Thackara</a>
+    </div>
     <div class="underline"></div>
 
     <!-- Horizontal nav -->
     <div class="page-nav">
-        <a href="books.html">Books</a>
+        <a href="books.html" class="current">Books</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
         <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
