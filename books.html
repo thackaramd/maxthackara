@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Books — Max Thackara</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
 <style>
@@ -14,55 +15,46 @@ body {
     color: #43554F;
 }
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 35px 60px 20px 60px;
+/* Container for title and back button */
+.header-container {
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
 }
 
-.title {
-    font-size: 28px;
-}
-
-.title a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.title .mobile {
-    display: none;
-    font-size: clamp(18px, 6vw, 28px); /* Responsive full name */
-    white-space: nowrap; /* Prevent wrapping */
-}
-
-.nav {
-    display: flex;
-    gap: 25px;
-    font-size: 16px;
-}
-
-.nav a {
+/* Back button */
+.back-link {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    font-size: 18px;
     text-decoration: none;
     color: #43554F;
 }
 
-.nav a.italic {
-    font-style: italic;
+.back-link:hover {
+    color: #000;
 }
 
-.line {
+/* Site title */
+.title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Small underline under title */
+.underline {
+    width: 60px;
     height: 1px;
     background-color: #43554F;
-    width: 100%;
+    margin: 0 auto 50px auto; /* space to books */
 }
 
 /* Books layout */
 .books-container {
-    padding: 140px 40px 80px 40px;
     display: flex;
     justify-content: center;
+    padding: 0 40px 80px 40px;
 }
 
 .book-shelf {
@@ -93,99 +85,10 @@ body {
     transform: translateY(-10px);
 }
 
-/* Hamburger */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 22px;
-    height: 16px;
-    cursor: pointer;
-}
-
-.hamburger div {
-    height: 2px;
-    background-color: #43554F;
-}
-
-/* Mobile menu */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #041A14;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.mobile-menu.show {
-    display: flex;
-    opacity: 1;
-}
-
-.mobile-menu a {
-    color: #F7E4D3;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 16px 0;
-}
-
-.mobile-menu a.italic {
-    font-style: italic;
-}
-
-.close-icon {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 32px;
-    color: #F7E4D3;
-    cursor: pointer;
-}
-
-/* Responsive scaling */
-@media (max-width: 1150px) {
-    .title .desktop {
-        font-size: calc(20px + (28 - 20) * ((100vw - 750px) / 400));
-    }
-    .nav {
-        gap: calc(10px + 15 * ((100vw - 750px) / 400));
-        font-size: calc(12px + 4 * ((100vw - 750px) / 400));
-    }
-}
-
 /* Mobile adjustments */
 @media (max-width: 750px) {
-    .header {
-        padding: 35px 28px 20px 28px;
-        align-items: center;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .title .desktop {
-        display: none;
-    }
-
-    .title .mobile {
-        display: inline; /* Show full name */
-    }
-
     .books-container {
-        padding: 60px 20px 60px 20px;
+        padding: 0 20px 60px 20px;
     }
 
     .book-shelf {
@@ -198,33 +101,21 @@ body {
         width: 60%;
         max-width: 220px;
     }
+
+    .back-link {
+        left: 16px;
+        top: -10px;
+    }
 }
 </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="title">
-        <a href="index.html">
-            <span class="desktop">Max Thackara</span>
-            <span class="mobile">Max Thackara</span> <!-- Full name for mobile -->
-        </a>
-    </div>
-
-    <nav class="nav">
-        <a href="books.html">Books</a>
-        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-        <a href="mailto:contact@maxthackara.uk">Contact</a>
-    </nav>
-
-    <div class="hamburger" tabindex="0" aria-label="Toggle navigation menu" role="button">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</header>
-
-<div class="line"></div>
+<div class="header-container">
+    <a href="index.html" class="back-link">&lt; Back</a>
+    <div class="title">Max Thackara</div>
+    <div class="underline"></div>
+</div>
 
 <main class="books-container">
     <div class="book-shelf">
@@ -242,36 +133,6 @@ body {
         </a>
     </div>
 </main>
-
-<div class="mobile-menu" id="mobileMenu">
-    <div class="close-icon" onclick="toggleMenu()" aria-label="Close menu">×</div>
-    <a href="books.html">Books</a>
-    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-    <a href="mailto:contact@maxthackara.uk">Contact</a>
-</div>
-
-<script>
-function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-    document.body.style.overflow = menu.classList.contains('show') ? 'hidden' : 'auto';
-}
-
-// Click and keyboard accessibility
-const hamburger = document.querySelector('.hamburger');
-hamburger.addEventListener('click', toggleMenu);
-hamburger.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') toggleMenu();
-});
-
-// Close menu with Escape
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const menu = document.getElementById('mobileMenu');
-        if (menu.classList.contains('show')) toggleMenu();
-    }
-});
-</script>
 
 </body>
 </html>
