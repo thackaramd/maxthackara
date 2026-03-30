@@ -18,7 +18,7 @@ body {
 /* Header container with title and nav */
 .header-container {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 60px; /* Desktop default */
 }
 
 /* Main site title */
@@ -105,6 +105,10 @@ body {
 
 /* Mobile adjustments */
 @media (max-width: 750px) {
+    .header-container {
+        margin-top: 50px; /* Reduced top margin on mobile */
+    }
+
     .books-container {
         padding: 0 20px 60px 20px;
     }
