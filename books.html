@@ -9,162 +9,153 @@
 
 <style>
 body {
-    margin: 0;
-    background-color: #F7E4D3;
-    font-family: 'Prata', serif;
-    color: #43554F;
+  margin: 0;
+  background-color: #F7E4D3;
+  font-family: 'Prata', serif;
+  color: #43554F;
 }
 
 /* Header container with title and nav */
 .header-container {
-    text-align: center;
-    margin-top: 70px;
+  text-align: center;
+  margin-top: 70px;
 }
 
 /* Main site title */
 .title {
-    font-size: 26px;
-    margin-bottom: 10px;
+  font-size: 26px;
+  margin-bottom: 10px;
 }
 
 .title a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Underline */
+/* Small underline under main title */
 .underline {
-    width: 60px;
-    height: 2px;
-    background-color: #43554F;
-    margin: 0 auto 24px auto;
-    border-radius: 4px;
+  width: 60px;
+  height: 2px;
+  background-color: #43554F;
+  margin: 0 auto 24px auto;
+  border-radius: 4px;
 }
 
-/* Desktop nav (unchanged) */
+/* Nav */
 .page-nav {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    font-size: 18px;
-    margin-bottom: 90px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 18px;
+  margin-bottom: 90px;
+  flex-wrap: nowrap; /* desktop stays in one row */
 }
 
 .page-nav a {
-    text-decoration: none;
-    color: #43554F;
+  text-decoration: none;
+  color: #43554F;
 }
 
 .page-nav a.italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .page-nav a:hover {
-    color: #000;
+  color: #000;
 }
 
+/* Highlight current page */
 .page-nav a.current {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+/* Hidden break by default */
+.nav-break {
+  display: none;
 }
 
 /* Books layout */
 .books-container {
-    display: flex;
-    justify-content: center;
-    padding: 0 40px 80px 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0 40px 80px 40px;
 }
 
 .book-shelf {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(20px, 5vw, 60px);
-    max-width: 1000px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(20px, 5vw, 60px);
+  max-width: 1000px;
+  width: 100%;
 }
 
 .book {
-    flex: 1 1 clamp(120px, 15%, 140px);
-    display: block;
-    min-height: 180px;
+  flex: 1 1 clamp(120px, 15%, 140px);
+  display: block;
+  min-height: 180px;
 }
 
 .book img {
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .book:hover img {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
-/* MOBILE */
+/* Mobile adjustments */
 @media (max-width: 750px) {
+  .header-container {
+    margin-top: 45px;
+  }
 
-    .header-container {
-        margin-top: 45px;
-    }
+  .books-container {
+    padding: 0 20px 60px 20px;
+  }
 
-    .books-container {
-        padding: 0 20px 60px 20px;
-    }
+  .book-shelf {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
 
-    .book-shelf {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
+  .book {
+    width: 50%;
+    max-width: 180px;
+  }
 
-    .book {
-        width: 50%;
-        max-width: 180px;
-    }
+  /* Wrapped, centered nav */
+  .page-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+    font-size: 16px;
+    margin-bottom: 60px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .underline {
-        margin-bottom: 28px;
-    }
+  /* Force second row */
+  .nav-break {
+    display: block;
+    flex-basis: 100%;
+    height: 0;
+  }
 
-    /* NAV WRAPPER (controls indent + peek) */
-    .nav-wrapper {
-        overflow: hidden;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+  .title {
+    margin-bottom: 10px;
+  }
 
-    /* SCROLLABLE NAV */
-    .page-nav {
-        display: flex;
-        gap: 8px; /* tighter spacing */
-        font-size: 16px;
-        margin-bottom: 60px;
-
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-
-        width: max-content;
-        justify-content: flex-start; /* important */
-    }
-
-    .page-nav a {
-        flex: 0 0 30%; /* 3 items visible */
-        scroll-snap-align: start;
-        text-align: center;
-        white-space: nowrap;
-    }
-
-    /* Hide scrollbars */
-    .page-nav::-webkit-scrollbar {
-        display: none;
-    }
-    .page-nav {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
+  .underline {
+    margin-bottom: 28px;
+  }
 }
 </style>
 </head>
@@ -172,53 +163,43 @@ body {
 <body>
 
 <div class="header-container">
-    <div class="title">
-        <a href="index.html">Max Thackara</a>
-    </div>
-    <div class="underline"></div>
+  <div class="title">
+    <a href="index.html">Max Thackara</a>
+  </div>
 
-    <!-- NAV WRAPPER -->
-    <div class="nav-wrapper">
-        <div class="page-nav">
-            <a href="books.html" class="current">Books</a>
-            <a href="https://theparlour.org.uk" class="italic" target="_blank">The Parlour</a>
-            <a href="workshops.html">Workshops</a>
-            <a href="1:1.html">1:1</a>
-            <a href="mailto:contact@maxthackara.uk">Contact</a>
-        </div>
-    </div>
+  <div class="underline"></div>
+
+  <div class="page-nav">
+    <a href="books.html" class="current">Books</a>
+    <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+    <a href="workshops.html">Workshops</a>
+
+    <span class="nav-break"></span>
+
+    <a href="1:1.html">1:1</a>
+    <a href="mailto:contact@maxthackara.uk">Contact</a>
+  </div>
 </div>
 
 <main class="books-container">
-    <div class="book-shelf">
-        <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank">
-            <img src="images/book1.png" alt="The Artist's Journey" loading="lazy">
-        </a>
-        <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank">
-            <img src="images/book2.png" alt="First Cup Poetry" loading="lazy">
-        </a>
-        <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank">
-            <img src="images/book3.png" alt="Sketches of Early Womanhood" loading="lazy">
-        </a>
-        <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank">
-            <img src="images/book4.png" alt="Journal" loading="lazy">
-        </a>
-    </div>
-</main>
+  <div class="book-shelf">
+    <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
+      <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
+    </a>
 
-<!-- AUTO-SCROLL CURRENT ITEM -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const current = document.querySelector('.page-nav a.current');
-    if (current) {
-        current.scrollIntoView({
-            behavior: "auto",
-            inline: "start",
-            block: "nearest"
-        });
-    }
-});
-</script>
+    <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
+      <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
+    </a>
+
+    <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
+      <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
+    </a>
+
+    <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
+      <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
+    </a>
+  </div>
+</main>
 
 </body>
 </html>
