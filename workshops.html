@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Max Thackara</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background-color: #F7E4D3;
+    font-family: 'Prata', serif;
+    color: #43554F;
+}
+
+/* Header container with title and nav */
+.header-container {
+    text-align: center;
+    margin-top: 70px; /* Desktop default */
+}
+
+/* Main site title */
+.title {
+    font-size: 26px;
+    margin-bottom: 10px; /* space before divider line */
+}
+
+.title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Small underline under main title */
+.underline {
+    width: 60px;
+    height: 2px;
+    background-color: #43554F;
+    margin: 0 auto 24px auto; /* space after line before nav */
+    border-radius: 4px;
+}
+
+/* Horizontal nav under title */
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 18px;
+    margin-bottom: 90px; /* increased space to books on desktop */
+}
+
+.page-nav a {
+    text-decoration: none;
+    color: #43554F;
+}
+
+.page-nav a.italic {
+    font-style: italic;
+}
+
+.page-nav a:hover {
+    color: #000;
+}
+
+/* Highlight current page */
+.page-nav a.current,
+.page-nav a.highlight {
+    font-weight: bold; /* bold only, no underline */
+    text-decoration: none;
+}
+
+/* Books layout placeholder */
+.books-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px 80px 40px;
+}
+
+.book-shelf {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(20px, 5vw, 60px);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.book {
+    flex: 1 1 clamp(120px, 15%, 140px);
+    display: block;
+    min-height: 180px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 750px) {
+    .header-container {
+        margin-top: 45px;
+    }
+
+    .books-container {
+        padding: 0 20px 60px 20px;
+    }
+
+    .book-shelf {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .book {
+        width: 50%;
+        max-width: 180px;
+    }
+
+    .page-nav {
+        flex-direction: row;
+        gap: 24px;
+        font-size: 16px;
+        margin-bottom: 60px;
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .underline {
+        margin-bottom: 28px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="header-container">
+    <div class="title">
+        <a href="index.html">Max Thackara</a>
+    </div>
+    <div class="underline"></div>
+
+    <!-- Horizontal nav -->
+    <div class="page-nav">
+        <a href="books.html" class="current">Books</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+        <a href="workshops.html" class="highlight">Workshops</a>
+        <a href="mailto:contact@maxthackara.uk">Contact</a>
+    </div>
+</div>
+
+<main class="books-container">
+    <div class="book-shelf">
+        <!-- Placeholder for books, currently removed -->
+    </div>
+</main>
+
+</body>
+</html>
