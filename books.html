@@ -125,20 +125,38 @@ body {
         max-width: 180px;
     }
 
-    /* Keep nav horizontal on mobile */
-    .page-nav {
-        flex-direction: row;
-        gap: 24px;
-        font-size: 16px;
-        margin-bottom: 60px; /* mobile spacing */
-    }
-
     .title {
         margin-bottom: 10px;
     }
 
     .underline {
         margin-bottom: 28px;
+    }
+
+    /* Mobile-only scrollable nav */
+    .page-nav {
+        display: flex;
+        gap: 24px;
+        font-size: 16px;
+        margin-bottom: 60px;
+
+        overflow-x: auto; /* horizontal scroll */
+        -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+        scroll-snap-type: x mandatory; /* optional snap */
+    }
+
+    .page-nav a {
+        flex: 0 0 auto; /* prevent shrinking */
+        scroll-snap-align: start; /* optional snap alignment */
+    }
+
+    /* Hide scrollbars for a cleaner look */
+    .page-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .page-nav {
+        -ms-overflow-style: none;  /* IE/Edge */
+        scrollbar-width: none;     /* Firefox */
     }
 }
 </style>
