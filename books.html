@@ -18,13 +18,13 @@ body {
 /* Header container with title and nav */
 .header-container {
     text-align: center;
-    margin-top: 70px; /* Desktop default */
+    margin-top: 70px;
 }
 
 /* Main site title */
 .title {
     font-size: 26px;
-    margin-bottom: 10px; /* space before divider line */
+    margin-bottom: 10px;
 }
 
 .title a {
@@ -32,22 +32,22 @@ body {
     color: inherit;
 }
 
-/* Small underline under main title */
+/* Underline */
 .underline {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 0 auto 24px auto; /* space after line before nav */
+    margin: 0 auto 24px auto;
     border-radius: 4px;
 }
 
-/* Horizontal nav under title */
+/* Desktop nav (unchanged) */
 .page-nav {
     display: flex;
     justify-content: center;
     gap: 32px;
     font-size: 18px;
-    margin-bottom: 90px; /* increased space to books on desktop */
+    margin-bottom: 90px;
 }
 
 .page-nav a {
@@ -63,10 +63,8 @@ body {
     color: #000;
 }
 
-/* Highlight current page */
 .page-nav a.current {
-    font-weight: bold; /* bold only, no underline */
-    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Books layout */
@@ -86,7 +84,7 @@ body {
 }
 
 .book {
-    flex: 1 1 clamp(120px, 15%, 140px); /* smaller max size for desktop */
+    flex: 1 1 clamp(120px, 15%, 140px);
     display: block;
     min-height: 180px;
 }
@@ -95,7 +93,6 @@ body {
     width: 100%;
     display: block;
     border-radius: 4px;
-    height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -104,10 +101,11 @@ body {
     transform: translateY(-10px);
 }
 
-/* Mobile adjustments */
+/* MOBILE */
 @media (max-width: 750px) {
+
     .header-container {
-        margin-top: 45px; /* Reduced top margin on mobile */
+        margin-top: 45px;
     }
 
     .books-container {
@@ -125,37 +123,38 @@ body {
         max-width: 180px;
     }
 
-    .title {
-        margin-bottom: 10px;
-    }
-
     .underline {
         margin-bottom: 28px;
     }
 
-    /* Mobile-only scrollable nav with peek */
+    /* NAV WRAPPER (controls indent + peek) */
     .nav-wrapper {
         overflow: hidden;
-        padding-left: 16px; /* left indent */
-        padding-right: 16px; /* right indent for peek */
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
+    /* SCROLLABLE NAV */
     .page-nav {
         display: flex;
-        gap: 16px; /* space between items */
+        gap: 8px; /* tighter spacing */
         font-size: 16px;
         margin-bottom: 60px;
 
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
-        width: max-content; /* only as wide as items */
+        scroll-behavior: smooth;
+
+        width: max-content;
+        justify-content: flex-start; /* important */
     }
 
     .page-nav a {
-        flex: 0 0 30%; /* roughly 3 items visible */
+        flex: 0 0 30%; /* 3 items visible */
         scroll-snap-align: start;
         text-align: center;
+        white-space: nowrap;
     }
 
     /* Hide scrollbars */
@@ -163,12 +162,13 @@ body {
         display: none;
     }
     .page-nav {
-        -ms-overflow-style: none;  
-        scrollbar-width: none;     
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 }
 </style>
 </head>
+
 <body>
 
 <div class="header-container">
@@ -177,11 +177,11 @@ body {
     </div>
     <div class="underline"></div>
 
-    <!-- Scrollable nav wrapper for mobile -->
+    <!-- NAV WRAPPER -->
     <div class="nav-wrapper">
         <div class="page-nav">
             <a href="books.html" class="current">Books</a>
-            <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+            <a href="https://theparlour.org.uk" class="italic" target="_blank">The Parlour</a>
             <a href="workshops.html">Workshops</a>
             <a href="1:1.html">1:1</a>
             <a href="mailto:contact@maxthackara.uk">Contact</a>
@@ -191,20 +191,34 @@ body {
 
 <main class="books-container">
     <div class="book-shelf">
-        <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank" rel="noopener">
-            <img src="images/book1.png" alt="The Artist's Journey by Max Thackara" loading="lazy">
+        <a href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D" class="book" target="_blank">
+            <img src="images/book1.png" alt="The Artist's Journey" loading="lazy">
         </a>
-        <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank" rel="noopener">
-            <img src="images/book2.png" alt="First Cup: Poetry Collection by Max Thackara" loading="lazy">
+        <a href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF" class="book" target="_blank">
+            <img src="images/book2.png" alt="First Cup Poetry" loading="lazy">
         </a>
-        <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank" rel="noopener">
-            <img src="images/book3.png" alt="Sketches of Early Womanhood by Max Thackara" loading="lazy">
+        <a href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2" class="book" target="_blank">
+            <img src="images/book3.png" alt="Sketches of Early Womanhood" loading="lazy">
         </a>
-        <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank" rel="noopener">
-            <img src="images/book4.png" alt="Journal by Max Thackara" loading="lazy">
+        <a href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG" class="book" target="_blank">
+            <img src="images/book4.png" alt="Journal" loading="lazy">
         </a>
     </div>
 </main>
+
+<!-- AUTO-SCROLL CURRENT ITEM -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const current = document.querySelector('.page-nav a.current');
+    if (current) {
+        current.scrollIntoView({
+            behavior: "auto",
+            inline: "start",
+            block: "nearest"
+        });
+    }
+});
+</script>
 
 </body>
 </html>
