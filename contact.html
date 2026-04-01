@@ -105,8 +105,8 @@ body {
 
 /* Portrait image */
 .portrait {
-    width: 300px;
-    max-width: 60%;
+    width: 320px;
+    max-width: 70%;
     height: auto;
     display: block;
     border-radius: 12px;
@@ -131,7 +131,8 @@ body {
     font-weight: bold;
     margin: 0;
     text-align: center;
-    padding-bottom: 0; /* remove extra space */
+    line-height: 1;      /* removes extra vertical spacing */
+    padding-bottom: 0;
 }
 
 /* Horizontal divider under subtitle */
@@ -139,7 +140,7 @@ body {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: -2px auto 0 auto; /* almost touching subtitle */
+    margin: 0 auto 0 auto; /* flush with subtitle */
     border-radius: 4px;
 }
 
@@ -225,7 +226,7 @@ body {
     }
 
     .contact-right {
-        gap: 30px; /* slightly reduced for mobile compactness */
+        gap: 30px; /* compact but readable */
         align-items: center;
     }
 
@@ -241,7 +242,7 @@ body {
 
     /* Mobile stacked layout gap adjustment */
     .contact-content {
-        gap: 40px; /* more space between email and subtitle/divider */
+        gap: 40px; /* space between email and subtitle/divider */
     }
 }
 
@@ -255,7 +256,7 @@ body {
     }
 
     .contact-left {
-        margin-left: 0px; /* move slightly right to reduce empty space */
+        margin-left: 0px; 
         align-items: flex-start; 
     }
 
