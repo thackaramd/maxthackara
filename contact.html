@@ -75,6 +75,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 0 40px 80px 40px;
+    position: relative;
 }
 
 .contact-content {
@@ -82,6 +83,7 @@ body {
     flex-direction: column; /* mobile default */
     align-items: center;
     gap: 20px;
+    position: relative;
 }
 
 /* Left side: portrait + email */
@@ -90,7 +92,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    position: relative;
 }
 
 /* Right side: subtitle + download button + bullet points */
@@ -100,7 +101,6 @@ body {
     align-items: center; 
     justify-content: center; 
     gap: 30px;
-    position: relative;
 }
 
 /* Vertical divider (desktop) */
@@ -143,8 +143,7 @@ body {
     font-weight: bold;
     margin: 0;
     text-align: center;
-    position: relative;
-    padding-bottom: 8px;
+    padding-bottom: 4px; /* smaller gap for sub-divider */
 }
 
 /* Horizontal divider under subtitle */
@@ -152,7 +151,7 @@ body {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 4px auto 0 auto;
+    margin: 0 auto;
     border-radius: 4px;
 }
 
@@ -238,7 +237,7 @@ body {
     }
 
     .contact-right {
-        gap: 32px; /* more space between subtitle → CV → bullets */
+        gap: 40px; /* more space between subtitle → CV → bullets */
         align-items: center;
     }
 
@@ -276,13 +275,14 @@ body {
 
     .contact-subtitle {
         text-align: center;
+        padding-bottom: 4px; /* tighter under-subtitle */
     }
 
     .portrait {
         width: 360px;
     }
 
-    /* Show vertical divider on desktop */
+    /* Show vertical divider between sections */
     .divider-vertical {
         display: block;
     }
@@ -315,8 +315,10 @@ body {
             <p class="contact-email">
                 <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
             </p>
-            <div class="divider-vertical"></div>
         </div>
+
+        <!-- Vertical divider between left and right -->
+        <div class="divider-vertical"></div>
 
         <!-- Right side: Subtitle + Download + bullets -->
         <div class="contact-right">
