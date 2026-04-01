@@ -84,7 +84,7 @@ body {
 
 .contact-content {
     display: flex;
-    flex-direction: column; /* default stacked for mobile */
+    flex-direction: column; /* stacked by default for mobile */
     align-items: center;
     gap: 20px;
 }
@@ -97,18 +97,18 @@ body {
     gap: 12px;
 }
 
-/* Right side: subtitle + download button */
+/* Right side: subtitle + download button + bullet points */
 .contact-right {
     display: flex;
     flex-direction: column;
     align-items: center; /* center content horizontally */
-    justify-content: center; /* center vertically relative to left section */
-    gap: 12px;
+    justify-content: center; /* vertical centering */
+    gap: 20px; /* more space between subtitle and CV button */
 }
 
 /* Portrait image */
 .portrait {
-    width: 300px; /* bigger on desktop */
+    width: 360px; /* desktop size */
     max-width: 70%;
     height: auto;
     display: block;
@@ -117,7 +117,9 @@ body {
 
 /* Email styling */
 .contact-email a {
-    font-style: italic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px; /* slightly bigger */
     text-decoration: none;
     color: #43554F;
 }
@@ -126,14 +128,12 @@ body {
     color: #000;
 }
 
-/* Subtitle under email */
+/* Subtitle */
 .contact-subtitle {
     font-size: 22px;
     font-weight: bold;
-    font-style: normal;
-    color: #43554F;
     margin: 0;
-    text-align: center; /* centered inside its container */
+    text-align: center;
 }
 
 /* Download button styling */
@@ -150,6 +150,27 @@ body {
 
 .contact-download a:hover {
     background-color: #1A2B5C;
+}
+
+/* Bullet points below CV button */
+.contact-bullets {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+    text-align: left;
+    color: #43554F;
+}
+
+.contact-bullets li {
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.contact-certifications {
+    margin-top: 10px;
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
 }
 
 /* Mobile adjustments */
@@ -190,29 +211,45 @@ body {
     .portrait {
         width: 60%;
     }
+
+    .contact-right {
+        gap: 16px;
+    }
+
+    .contact-bullets {
+        text-align: center;
+        padding-left: 0;
+        list-style-position: inside;
+    }
+
+    .contact-certifications {
+        font-size: 14px;
+    }
 }
 
 /* Desktop layout */
 @media (min-width: 751px) {
     .contact-content {
         flex-direction: row;        /* horizontal layout */
-        align-items: flex-start;    /* align top initially */
+        align-items: flex-start;
         justify-content: center;
-        gap: 100px;                 /* more space between left and right */
+        gap: 120px;                 /* more space between sections */
+    }
+
+    .contact-left {
+        margin-left: -40px; /* push portrait/email slightly left */
+        align-items: flex-start; /* left align portrait & email */
     }
 
     .contact-right {
-        align-items: center;       /* center content horizontally */
-        justify-content: center;   /* center content vertically */
-        text-align: center;        /* center subtitle & button */
+        align-items: center; /* horizontally center content inside right section */
+        justify-content: center; /* vertically center */
+        text-align: center; /* subtitle & button centered */
+        gap: 30px; /* more space between subtitle and CV button */
     }
 
     .contact-subtitle {
         text-align: center;
-    }
-
-    .portrait {
-        width: 360px; /* slightly bigger */
     }
 }
 </style>
@@ -245,12 +282,17 @@ body {
             </p>
         </div>
 
-        <!-- Right side: Subtitle + Download -->
+        <!-- Right side: Subtitle + Download + bullets -->
         <div class="contact-right">
             <p class="contact-subtitle">CV and Certifications</p>
             <p class="contact-download">
                 <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener">Download My CV</a>
             </p>
+            <ul class="contact-bullets">
+                <li>Qualified Teacher Status (QTS)</li>
+                <li>Enhanced DBS</li>
+            </ul>
+            <p class="contact-certifications">Certifications available upon request.</p>
         </div>
     </div>
 </main>
