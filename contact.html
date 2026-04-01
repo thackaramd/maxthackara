@@ -101,9 +101,9 @@ body {
 .contact-right {
     display: flex;
     flex-direction: column;
-    align-items: center; /* center content horizontally */
+    align-items: center; /* center horizontally */
     justify-content: center; /* vertical centering */
-    gap: 20px; /* more space between subtitle and CV button */
+    gap: 30px; /* space between subtitle and CV button (desktop default) */
 }
 
 /* Portrait image */
@@ -212,8 +212,15 @@ body {
         width: 60%;
     }
 
+    /* Increase space between stacked elements on mobile */
+    .contact-left {
+        gap: 24px; /* more space between portrait and email */
+        align-items: center;
+    }
+
     .contact-right {
-        gap: 16px;
+        gap: 24px; /* space between subtitle → CV → bullets */
+        align-items: center;
     }
 
     .contact-bullets {
@@ -233,7 +240,7 @@ body {
         flex-direction: row;        /* horizontal layout */
         align-items: flex-start;
         justify-content: center;
-        gap: 120px;                 /* more space between sections */
+        gap: clamp(60px, 10vw, 100px); /* compressing gap as screen shrinks */
     }
 
     .contact-left {
@@ -245,11 +252,15 @@ body {
         align-items: center; /* horizontally center content inside right section */
         justify-content: center; /* vertically center */
         text-align: center; /* subtitle & button centered */
-        gap: 30px; /* more space between subtitle and CV button */
+        gap: 30px; /* space between subtitle and CV button */
     }
 
     .contact-subtitle {
         text-align: center;
+    }
+
+    .portrait {
+        width: 360px; /* desktop size */
     }
 }
 </style>
