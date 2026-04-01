@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Books — Max Thackara</title>
+<title>Contact — Max Thackara</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
@@ -75,26 +75,35 @@ body {
     display: none;
 }
 
-/* Books layout placeholder */
-.books-container {
+/* Contact layout */
+.contact-container {
     display: flex;
-    justify-content: center;
-    padding: 0 40px 80px 40px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 80px 20px;
 }
 
-.book-shelf {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(20px, 5vw, 60px);
-    max-width: 1000px;
-    width: 100%;
+/* Portrait image */
+.portrait {
+    width: 140px;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
 }
 
-.book {
-    flex: 1 1 clamp(120px, 15%, 140px);
-    display: block;
-    min-height: 180px;
+/* Email styling */
+.contact-email {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.contact-email a {
+    text-decoration: none;
+    color: #43554F;
+}
+
+.contact-email a:hover {
+    color: #000;
 }
 
 /* Mobile adjustments */
@@ -103,19 +112,8 @@ body {
         margin-top: 45px;
     }
 
-    .books-container {
+    .contact-container {
         padding: 0 20px 60px 20px;
-    }
-
-    .book-shelf {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .book {
-        width: 50%;
-        max-width: 180px;
     }
 
     /* Wrapped, centered nav */
@@ -167,10 +165,12 @@ body {
     </div>
 </div>
 
-<main class="books-container">
-    <div class="book-shelf">
-        <!-- Placeholder for books -->
-    </div>
+<main class="contact-container">
+    <img src="Portrait.JPG" alt="Portrait of Max Thackara" class="portrait">
+
+    <p class="contact-email">
+        <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+    </p>
 </main>
 
 </body>
