@@ -103,18 +103,6 @@ body {
     gap: 30px;
 }
 
-/* Vertical divider (desktop) */
-.divider-vertical {
-    display: none;
-    width: 1px;
-    background-color: #43554F;
-    position: absolute;
-    top: 10%;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 /* Portrait image */
 .portrait {
     width: 360px;
@@ -143,7 +131,7 @@ body {
     font-weight: bold;
     margin: 0;
     text-align: center;
-    padding-bottom: 4px; /* smaller gap for sub-divider */
+    padding-bottom: 4px; /* tight under-subtitle */
 }
 
 /* Horizontal divider under subtitle */
@@ -262,7 +250,7 @@ body {
     }
 
     .contact-left {
-        margin-left: -40px; 
+        margin-left: 0px; /* move slightly right to reduce empty space */
         align-items: flex-start; 
     }
 
@@ -275,16 +263,11 @@ body {
 
     .contact-subtitle {
         text-align: center;
-        padding-bottom: 4px; /* tighter under-subtitle */
+        padding-bottom: 4px;
     }
 
     .portrait {
         width: 360px;
-    }
-
-    /* Show vertical divider between sections */
-    .divider-vertical {
-        display: block;
     }
 }
 </style>
@@ -316,9 +299,6 @@ body {
                 <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
             </p>
         </div>
-
-        <!-- Vertical divider between left and right -->
-        <div class="divider-vertical"></div>
 
         <!-- Right side: Subtitle + Download + bullets -->
         <div class="contact-right">
