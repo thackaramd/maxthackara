@@ -131,7 +131,7 @@ body {
     font-weight: bold;
     margin: 0;
     text-align: center;
-    padding-bottom: 2px; /* reduced spacing */
+    padding-bottom: 0; /* remove extra space */
 }
 
 /* Horizontal divider under subtitle */
@@ -139,7 +139,7 @@ body {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 4px auto 0 auto; /* small gap under subtitle, no extra bottom space */
+    margin: -2px auto 0 auto; /* almost touching subtitle */
     border-radius: 4px;
 }
 
@@ -225,7 +225,7 @@ body {
     }
 
     .contact-right {
-        gap: 40px; /* more space between subtitle → CV → bullets */
+        gap: 30px; /* slightly reduced for mobile compactness */
         align-items: center;
     }
 
@@ -237,6 +237,11 @@ body {
 
     .contact-certifications {
         font-size: 14px;
+    }
+
+    /* Mobile stacked layout gap adjustment */
+    .contact-content {
+        gap: 40px; /* more space between email and subtitle/divider */
     }
 }
 
@@ -259,11 +264,6 @@ body {
         justify-content: center; 
         text-align: center; 
         gap: 30px; 
-    }
-
-    .contact-subtitle {
-        text-align: center;
-        padding-bottom: 2px; /* same as mobile */
     }
 
     .portrait {
