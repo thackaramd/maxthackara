@@ -75,26 +75,31 @@ body {
     display: none;
 }
 
-/* Contact layout */
-.contact-container {
+/* Contact content */
+.books-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px 80px 40px;
+}
+
+.contact-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px 80px 20px;
+    gap: 20px;
 }
 
-/* Portrait image — NO sizing constraints */
+/* Portrait image */
 .portrait {
-    margin-bottom: 20px;
+    width: 180px;
+    max-width: 60%;
+    height: auto;
+    display: block;
 }
 
 /* Email styling */
-.contact-email {
-    font-style: italic;
-    font-size: 18px;
-}
-
 .contact-email a {
+    font-style: italic;
     text-decoration: none;
     color: #43554F;
 }
@@ -109,10 +114,11 @@ body {
         margin-top: 45px;
     }
 
-    .contact-container {
+    .books-container {
         padding: 0 20px 60px 20px;
     }
 
+    /* Wrapped, centered nav */
     .page-nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -124,6 +130,7 @@ body {
         margin-right: auto;
     }
 
+    /* Force second row */
     .nav-break {
         display: block;
         flex-basis: 100%;
@@ -160,12 +167,14 @@ body {
     </div>
 </div>
 
-<main class="contact-container">
-    <img src="portrait.png" alt="Portrait of Max Thackara" class="portrait">
+<main class="books-container">
+    <div class="contact-content">
+        <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
 
-    <p class="contact-email">
-        <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
-    </p>
+        <p class="contact-email">
+            <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+        </p>
+    </div>
 </main>
 
 </body>
