@@ -84,9 +84,25 @@ body {
 
 .contact-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* default: stacked for mobile */
     align-items: center;
     gap: 20px;
+}
+
+/* Left side: portrait + email */
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Right side: subtitle + download button */
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 /* Portrait image */
@@ -111,29 +127,29 @@ body {
 
 /* Subtitle under email */
 .contact-subtitle {
-    font-size: 22px;        /* bigger */
-    font-weight: bold;      /* bold */
-    font-style: normal;     /* not italic */
-    color: #43554F;         /* same dark font as the rest of the page */
-    margin: 20px 0 12px 0;  /* spacing: 20px top, 12px bottom */
-    text-align: center;     /* center under portrait */
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    color: #43554F;
+    margin: 20px 0 12px 0;
+    text-align: center;
 }
 
 /* Download button styling */
 .contact-download a {
     padding: 10px 20px;
-    background-color: #0B1D3F; /* dark navy */
-    color: #F7E4D3;            /* cream */
+    background-color: #0B1D3F;
+    color: #F7E4D3;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
     display: inline-block;
-    margin-top: 8px;          /* small gap from subtitle */
+    margin-top: 8px;
 }
 
 .contact-download a:hover {
-    background-color: #1A2B5C; /* slightly lighter navy on hover */
+    background-color: #1A2B5C;
 }
 
 /* Mobile adjustments */
@@ -173,6 +189,26 @@ body {
         margin-bottom: 28px;
     }
 }
+
+/* Desktop adjustments: side-by-side layout */
+@media (min-width: 751px) {
+    .contact-content {
+        flex-direction: row;        /* horizontal layout */
+        align-items: flex-start;    /* align top */
+        justify-content: center;    /* center both blocks horizontally */
+        gap: 60px;                  /* space between left and right */
+    }
+
+    .contact-right {
+        align-items: flex-start;    /* left-align text/button */
+        text-align: left;
+    }
+
+    .contact-subtitle {
+        text-align: left;
+        margin: 0 0 12px 0;
+    }
+}
 </style>
 </head>
 <body>
@@ -197,21 +233,21 @@ body {
 
 <main class="books-container">
     <div class="contact-content">
-        <!-- Portrait Image -->
-        <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
+        <!-- Left side: Portrait + Email -->
+        <div class="contact-left">
+            <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
+            <p class="contact-email">
+                <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+            </p>
+        </div>
 
-        <!-- Email -->
-        <p class="contact-email">
-            <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
-        </p>
-
-        <!-- Subtitle -->
-        <p class="contact-subtitle">CV and Certifications</p>
-
-        <!-- Downloadable CV button -->
-        <p class="contact-download">
-            <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener">Download My CV</a>
-        </p>
+        <!-- Right side: Subtitle + Download -->
+        <div class="contact-right">
+            <p class="contact-subtitle">CV and Certifications</p>
+            <p class="contact-download">
+                <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener">Download My CV</a>
+            </p>
+        </div>
     </div>
 </main>
 
