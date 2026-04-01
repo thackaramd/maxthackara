@@ -84,7 +84,7 @@ body {
 
 .contact-content {
     display: flex;
-    flex-direction: column; /* default: stacked for mobile */
+    flex-direction: column; /* default stacked for mobile */
     align-items: center;
     gap: 20px;
 }
@@ -101,14 +101,15 @@ body {
 .contact-right {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* center content horizontally */
+    justify-content: center; /* center vertically relative to left section */
     gap: 12px;
 }
 
 /* Portrait image */
 .portrait {
-    width: 280px;
-    max-width: 60%;
+    width: 320px; /* bigger on desktop */
+    max-width: 70%;
     height: auto;
     display: block;
     border-radius: 12px;
@@ -131,8 +132,8 @@ body {
     font-weight: bold;
     font-style: normal;
     color: #43554F;
-    margin: 20px 0 12px 0;
-    text-align: center;
+    margin: 0;
+    text-align: center; /* centered inside its container */
 }
 
 /* Download button styling */
@@ -145,7 +146,6 @@ body {
     font-weight: bold;
     transition: background-color 0.3s ease;
     display: inline-block;
-    margin-top: 8px;
 }
 
 .contact-download a:hover {
@@ -162,7 +162,6 @@ body {
         padding: 0 20px 60px 20px;
     }
 
-    /* Wrapped, centered nav */
     .page-nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -174,7 +173,6 @@ body {
         margin-right: auto;
     }
 
-    /* Force second row */
     .nav-break {
         display: block;
         flex-basis: 100%;
@@ -188,25 +186,33 @@ body {
     .underline {
         margin-bottom: 28px;
     }
+
+    .portrait {
+        width: 60%;
+    }
 }
 
-/* Desktop adjustments: side-by-side layout */
+/* Desktop layout */
 @media (min-width: 751px) {
     .contact-content {
         flex-direction: row;        /* horizontal layout */
-        align-items: flex-start;    /* align top */
-        justify-content: center;    /* center both blocks horizontally */
-        gap: 60px;                  /* space between left and right */
+        align-items: flex-start;    /* align top initially */
+        justify-content: center;
+        gap: 100px;                 /* more space between left and right */
     }
 
     .contact-right {
-        align-items: flex-start;    /* left-align text/button */
-        text-align: left;
+        align-items: center;       /* center content horizontally */
+        justify-content: center;   /* center content vertically */
+        text-align: center;        /* center subtitle & button */
     }
 
     .contact-subtitle {
-        text-align: left;
-        margin: 0 0 12px 0;
+        text-align: center;
+    }
+
+    .portrait {
+        width: 360px; /* slightly bigger */
     }
 }
 </style>
@@ -223,9 +229,7 @@ body {
         <a href="books.html">Books</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
         <a href="workshops.html">Workshops</a>
-
         <span class="nav-break"></span>
-        
         <a href="https://www.superprof.co.uk/primary-english-tutor-with-qualified-teacher-status-helping-children-read-write-and-succeed.html" target="_blank" rel="noopener">Tutoring</a>
         <a href="contact.html" class="current">Contact</a>
     </div>
