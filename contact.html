@@ -109,6 +109,28 @@ body {
     color: #000;
 }
 
+/* Subtitle under email */
+.contact-subtitle {
+    font-size: 16px;
+    font-style: italic;
+    color: #6b6b6b;
+    margin-top: -4px; /* slight spacing adjustment */
+}
+
+/* Download button styling */
+.contact-download a {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.contact-download a:hover {
+    background-color: #45a049;
+}
+
 /* Mobile adjustments */
 @media (max-width: 750px) {
     .header-container {
@@ -170,10 +192,20 @@ body {
 
 <main class="books-container">
     <div class="contact-content">
+        <!-- Portrait Image -->
         <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
 
+        <!-- Email -->
         <p class="contact-email">
             <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+        </p>
+
+        <!-- Subtitle -->
+        <p class="contact-subtitle">CV and Certifications</p>
+
+        <!-- Downloadable CV button -->
+        <p class="contact-download">
+            <a href="docs/Max_Thackara_CV.pdf" download>Download My CV</a>
         </p>
     </div>
 </main>
