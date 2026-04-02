@@ -93,6 +93,8 @@ body {
     margin: 0 auto 60px auto;
     text-align: justify;
     hyphens: auto;
+    padding: 0 20px; /* added horizontal padding on desktop */
+    box-sizing: border-box;
 }
 
 /* OPTIONS */
@@ -171,8 +173,8 @@ body {
         max-width: 100%;
         text-align: justify;
         hyphens: auto;
-        padding: 0 12px; /* added padding to avoid hugging edges */
-        box-sizing: border-box; /* ensure padding doesn't overflow */
+        padding: 0 12px; /* slightly tighter on mobile */
+        box-sizing: border-box;
     }
 }
 </style>
