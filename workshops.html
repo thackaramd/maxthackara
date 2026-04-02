@@ -18,7 +18,7 @@ body {
 /* Header */
 .header-container {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 60px; /* raised title closer to nav */
 }
 
 .title {
@@ -45,7 +45,7 @@ body {
     justify-content: center;
     gap: 32px;
     font-size: 18px;
-    margin-bottom: 70px; /* reduced from 90px */
+    margin-bottom: 60px; /* reduced spacing below nav */
     flex-wrap: nowrap;
 }
 
@@ -81,16 +81,17 @@ body {
 
 .page-heading {
     font-size: 28px;
-    margin-bottom: 32px; /* increased spacing below title */
+    margin-bottom: 36px; /* increased spacing to intro text */
 }
 
-/* UPDATED INTRO TEXT */
+/* INTRO TEXT */
 .intro-text {
     font-size: 17px;
     line-height: 1.7;
-    max-width: 620px;   /* narrower column */
+    max-width: 680px;   /* slightly wider margins */
     margin: 0 auto 60px auto;
     text-align: justify; /* justified text */
+    hyphens: auto;
 }
 
 /* OPTIONS */
@@ -148,7 +149,7 @@ body {
         justify-content: center;
         gap: 16px 24px;
         font-size: 16px;
-        margin-bottom: 50px; /* slightly tighter on mobile too */
+        margin-bottom: 50px; 
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;
@@ -166,8 +167,9 @@ body {
 
     .intro-text {
         font-size: 16px;
-        text-align: left; /* better readability on small screens */
         max-width: 100%;
+        text-align: justify; /* keep justification on mobile */
+        hyphens: auto;
     }
 }
 </style>
