@@ -15,13 +15,12 @@ body {
     color: #43554F;
 }
 
-/* Header container with title and nav */
+/* Header */
 .header-container {
     text-align: center;
     margin-top: 70px;
 }
 
-/* Main site title */
 .title {
     font-size: 26px;
     margin-bottom: 10px;
@@ -32,7 +31,6 @@ body {
     color: inherit;
 }
 
-/* Small underline under main title */
 .underline {
     width: 60px;
     height: 2px;
@@ -64,61 +62,85 @@ body {
     color: #000;
 }
 
-/* Highlight current page */
 .page-nav a.current,
 .page-nav a.highlight {
     font-weight: bold;
 }
 
-/* Hidden break by default */
 .nav-break {
     display: none;
 }
 
-/* Books layout placeholder */
-.books-container {
-    display: flex;
-    justify-content: center;
+/* MAIN CONTENT */
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
     padding: 0 40px 80px 40px;
+    text-align: center;
 }
 
-.book-shelf {
+.page-heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto 60px auto;
+}
+
+/* OPTIONS */
+.options-container {
     display: flex;
+    gap: 40px;
     justify-content: center;
     flex-wrap: wrap;
-    gap: clamp(20px, 5vw, 60px);
-    max-width: 1000px;
-    width: 100%;
 }
 
-.book {
-    flex: 1 1 clamp(120px, 15%, 140px);
-    display: block;
-    min-height: 180px;
+.option-box {
+    background-color: #FDF6EE;
+    padding: 30px 28px;
+    flex: 1 1 320px;
+    max-width: 420px;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 6px;
 }
 
-/* Mobile adjustments */
+.option-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.option-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.option-box ul {
+    padding-left: 18px;
+    margin-bottom: 20px;
+}
+
+.option-box li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.option-cta {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* Mobile */
 @media (max-width: 750px) {
     .header-container {
         margin-top: 45px;
     }
 
-    .books-container {
-        padding: 0 20px 60px 20px;
-    }
-
-    .book-shelf {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .book {
-        width: 50%;
-        max-width: 180px;
-    }
-
-    /* Wrapped, centered nav */
     .page-nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -130,23 +152,23 @@ body {
         margin-right: auto;
     }
 
-    /* Force second row */
     .nav-break {
         display: block;
         flex-basis: 100%;
         height: 0;
     }
 
-    .title {
-        margin-bottom: 10px;
+    .content-container {
+        padding: 0 20px 60px 20px;
     }
 
-    .underline {
-        margin-bottom: 28px;
+    .intro-text {
+        font-size: 16px;
     }
 }
 </style>
 </head>
+
 <body>
 
 <div class="header-container">
@@ -167,10 +189,46 @@ body {
     </div>
 </div>
 
-<main class="books-container">
-    <div class="book-shelf">
-        <!-- Placeholder for books -->
+<main class="content-container">
+    
+    <div class="page-heading">Creative Writing Workshops</div>
+
+    <div class="intro-text">
+        I offer creative writing workshops for primary and secondary students, designed to encourage imagination, build confidence, and develop a genuine enjoyment of writing.
+        <br><br>
+        Sessions are calm, discussion-based, and responsive to each group. Students are supported in exploring their own ideas, experimenting with language, and developing their voice in a low-pressure, engaging environment.
     </div>
+
+    <div class="options-container">
+
+        <!-- PRIMARY -->
+        <div class="option-box" onclick="location.href='primary.html'">
+            <div class="option-title">Primary Workshops</div>
+            <ul>
+                <li>KS1–KS2 (ages 5–11)</li>
+                <li>Playful, imaginative approach to storytelling</li>
+                <li>Focus on building confidence and enjoyment in writing</li>
+                <li>Exploration of ideas through discussion and creative prompts</li>
+                <li>Flexible activities shaped around the group</li>
+            </ul>
+            <div class="option-cta">Find out more →</div>
+        </div>
+
+        <!-- SECONDARY -->
+        <div class="option-box" onclick="location.href='secondary.html'">
+            <div class="option-title">Secondary Workshops</div>
+            <ul>
+                <li>KS3–KS4 (ages 11–16)</li>
+                <li>Developing voice, style, and confidence in writing</li>
+                <li>Exploration of structure, tone, and creative techniques</li>
+                <li>Space for independent ideas and experimentation</li>
+                <li>Supportive, low-pressure environment</li>
+            </ul>
+            <div class="option-cta">Find out more →</div>
+        </div>
+
+    </div>
+
 </main>
 
 </body>
