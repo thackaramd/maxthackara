@@ -18,25 +18,24 @@ body {
 /* Header */
 .header-container {
     text-align: center;
-    margin-top: 70px; /* raised title closer to nav */
+    margin-top: 70px; /* restore site title spacing */
 }
 
 .title {
     font-size: 26px;
-    margin-bottom: 6px; /* reduced gap between title and underline/nav */
+    margin-bottom: 10px;
 }
 
 .title a {
     text-decoration: none;
     color: inherit;
-    font-weight: bold; /* make the title bold */
 }
 
 .underline {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 0 auto 16px auto; /* slightly reduced spacing to nav */
+    margin: 0 auto 24px auto;
     border-radius: 4px;
 }
 
@@ -46,7 +45,7 @@ body {
     justify-content: center;
     gap: 32px;
     font-size: 18px;
-    margin-bottom: 60px; /* reduced spacing below nav */
+    margin-bottom: 60px; /* distance from nav to page title */
     flex-wrap: nowrap;
 }
 
@@ -81,17 +80,18 @@ body {
 }
 
 .page-heading {
-    font-size: 24px;
-    margin-bottom: 36px; /* increased spacing to intro text */
+    font-size: 28px;
+    font-weight: bold; /* bold page title */
+    margin-bottom: 36px;
 }
 
 /* INTRO TEXT */
 .intro-text {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.7;
-    max-width: 680px;   /* slightly wider margins */
+    max-width: 680px;   
     margin: 0 auto 60px auto;
-    text-align: justify; /* justified text */
+    text-align: justify;
     hyphens: auto;
 }
 
@@ -169,7 +169,7 @@ body {
     .intro-text {
         font-size: 16px;
         max-width: 100%;
-        text-align: justify; /* keep justification on mobile */
+        text-align: justify;
         hyphens: auto;
     }
 }
