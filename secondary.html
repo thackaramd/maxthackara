@@ -79,23 +79,36 @@ body {
     text-align: center;
 }
 
-.page-heading {
+/* Cream content box */
+.content-box {
+    background-color: #FDF6EE;
+    padding: 40px 36px;
+    border-radius: 6px;
+    text-align: left;
+    max-width: 720px;  /* narrower than before */
+    margin: 0 auto;    /* center the box */
+}
+
+/* Page heading inside content box */
+.content-box .page-heading {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 40px;
+    text-align: center;
 }
 
-/* TEXT */
+/* Intro text */
 .intro-text {
     font-size: 17px;
     line-height: 1.7;
-    max-width: 740px;
-    margin: 0 auto 60px auto;
+    max-width: 680px;  /* slightly smaller than box to keep padding */
+    margin: 0 auto;
     text-align: justify;
     hyphens: auto;
     box-sizing: border-box;
 }
 
+/* List styling */
 .intro-text ul {
     padding-left: 20px;
     margin: 15px 0 25px 0;
@@ -132,6 +145,11 @@ body {
         padding: 0 20px 60px 20px;
     }
 
+    .content-box {
+        padding: 28px 20px;
+        max-width: 100%;
+    }
+
     .intro-text {
         font-size: 16px;
         max-width: 100%;
@@ -155,7 +173,7 @@ body {
     <div class="page-nav">
         <a href="books.html">Books</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-        <a href="workshops.html">Workshops</a>
+        <a href="workshops.html" class="current">Workshops</a>
 
         <span class="nav-break"></span>
         
@@ -165,59 +183,63 @@ body {
 </div>
 
 <main class="content-container">
-    
-    <div class="page-heading">Secondary Workshops</div>
 
-    <div class="intro-text">
-        <strong>KS3–KS4 (Ages 11–16)</strong><br><br>
+    <div class="content-box">
 
-        My secondary workshops are designed to support students in developing their voice, confidence, and control as writers. Through thoughtful prompts and discussion, students explore how ideas can be shaped into engaging, original pieces of writing.
-        <br><br>
-        Sessions balance creativity with skill development, helping students to experiment with style, structure, and tone in a supportive, low-pressure environment.
-        <br><br>
+        <div class="page-heading">Secondary Workshops</div>
 
-        <strong>What to expect</strong><br><br>
-        Workshops are structured to encourage both independence and collaboration, giving students the space to think creatively while developing their technical skills.
-        <br><br>
-        Students will:
-        <ul>
-            <li>Explore a range of creative prompts and themes</li>
-            <li>Experiment with voice, perspective, and narrative style</li>
-            <li>Develop awareness of structure, tone, and language choices</li>
-            <li>Share ideas through discussion (with no pressure to read aloud)</li>
-            <li>Build confidence in expressing their own viewpoints and creative identity</li>
-        </ul>
+        <div class="intro-text">
+            <strong>KS3–KS4 (Ages 11–16)</strong><br><br>
 
-        <strong>Approach</strong><br><br>
-        My teaching style is calm, respectful, and discussion-led. I aim to create an environment where students feel comfortable taking creative risks without fear of judgement.
-        <br><br>
-        Workshops are responsive to each group, allowing students to pursue their own ideas while being gently guided in developing their writing skills.
-        <br><br>
-        Sessions can also be adapted to support curriculum links where appropriate, including creative writing elements of GCSE English.
-        <br><br>
+            My secondary workshops are designed to support students in developing their voice, confidence, and control as writers. Through thoughtful prompts and discussion, students explore how ideas can be shaped into engaging, original pieces of writing.
+            <br><br>
+            Sessions balance creativity with skill development, helping students to experiment with style, structure, and tone in a supportive, low-pressure environment.
+            <br><br>
 
-        <strong>Workshop formats</strong><br><br>
-        Workshops are flexible and can be tailored to your setting:
-        <ul>
-            <li>One-off sessions</li>
-            <li>Half-day or full-day workshops</li>
-            <li>Short series (e.g. weekly sessions)</li>
-        </ul>
-        Available for schools, libraries, and community groups in and around Bedford.
-        <br><br>
+            <strong>What to expect</strong><br><br>
+            Workshops are structured to encourage both independence and collaboration, giving students the space to think creatively while developing their technical skills.
+            <br><br>
+            Students will:
+            <ul>
+                <li>Explore a range of creative prompts and themes</li>
+                <li>Experiment with voice, perspective, and narrative style</li>
+                <li>Develop awareness of structure, tone, and language choices</li>
+                <li>Share ideas through discussion (with no pressure to read aloud)</li>
+                <li>Build confidence in expressing their own viewpoints and creative identity</li>
+            </ul>
 
-        <strong>Safeguarding & experience</strong><br><br>
-        I am a qualified teacher (QTS) with primary classroom experience and extensive experience working with secondary-aged students through tutoring and creative writing feedback.
-        <br><br>
-        I hold an Enhanced DBS and have a strong understanding of safeguarding practices, including DSL protocols.
-        <br><br>
-        I am experienced in supporting a wide range of student needs and creating an inclusive environment where all participants feel respected and able to contribute.
-        <br><br>
+            <strong>Approach</strong><br><br>
+            My teaching style is calm, respectful, and discussion-led. I aim to create an environment where students feel comfortable taking creative risks without fear of judgement.
+            <br><br>
+            Workshops are responsive to each group, allowing students to pursue their own ideas while being gently guided in developing their writing skills.
+            <br><br>
+            Sessions can also be adapted to support curriculum links where appropriate, including creative writing elements of GCSE English.
+            <br><br>
 
-        <strong>Enquire / Book</strong><br><br>
-        If you’d like to discuss a workshop or check availability, please get in touch:
-        <br><br>
-        [Contact button / email here]
+            <strong>Workshop formats</strong><br><br>
+            Workshops are flexible and can be tailored to your setting:
+            <ul>
+                <li>One-off sessions</li>
+                <li>Half-day or full-day workshops</li>
+                <li>Short series (e.g. weekly sessions)</li>
+            </ul>
+            Available for schools, libraries, and community groups in and around Bedford.
+            <br><br>
+
+            <strong>Safeguarding & experience</strong><br><br>
+            I am a qualified teacher (QTS) with primary classroom experience and extensive experience working with secondary-aged students through tutoring and creative writing feedback.
+            <br><br>
+            I hold an Enhanced DBS and have a strong understanding of safeguarding practices, including DSL protocols.
+            <br><br>
+            I am experienced in supporting a wide range of student needs and creating an inclusive environment where all participants feel respected and able to contribute.
+            <br><br>
+
+            <strong>Enquire / Book</strong><br><br>
+            If you’d like to discuss a workshop or check availability, please get in touch:
+            <br><br>
+            [Contact button / email here]
+        </div>
+
     </div>
 
 </main>
