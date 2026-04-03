@@ -85,23 +85,32 @@ body {
     padding: 40px 36px;
     border-radius: 6px;
     text-align: left;
-    max-width: 720px;  /* narrower than before */
-    margin: 0 auto;    /* center the box */
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 /* Page heading inside content box */
 .content-box .page-heading {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 16px; /* smaller than before to allow divider */
     text-align: center;
+}
+
+/* Divider line under heading */
+.divider {
+    width: 60px;
+    height: 2px;
+    background-color: #43554F;
+    margin: 0 auto 32px auto;
+    border-radius: 2px;
 }
 
 /* Intro text */
 .intro-text {
     font-size: 17px;
     line-height: 1.7;
-    max-width: 680px;  /* slightly smaller than box to keep padding */
+    max-width: 680px;
     margin: 0 auto;
     text-align: justify;
     hyphens: auto;
@@ -187,6 +196,7 @@ body {
     <div class="content-box">
 
         <div class="page-heading">Secondary Workshops</div>
+        <div class="divider"></div>
 
         <div class="intro-text">
             <strong>KS3–KS4 (Ages 11–16)</strong><br><br>
