@@ -75,6 +75,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 0 40px 80px 40px;
+    box-sizing: border-box;
 }
 
 .contact-page {
@@ -83,6 +84,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 900px;
+    box-sizing: border-box;
 }
 
 /* Top contact block */
@@ -95,8 +97,8 @@ body {
 }
 
 .portrait {
-    width: 260px;
-    max-width: 55%;
+    width: 100%;
+    max-width: 180px;
     height: auto;
     display: block;
     border-radius: 12px;
@@ -136,6 +138,7 @@ body {
     align-items: flex-start;
     gap: clamp(50px, 8vw, 100px);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-section {
@@ -145,6 +148,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .contact-section > *:not(.contact-subtitle):not(.sub-divider) {
@@ -247,7 +251,7 @@ body {
     }
 
     .books-container {
-        padding: 0 20px 60px 20px;
+        padding: 0 16px 60px 16px;
     }
 
     .page-nav {
@@ -268,13 +272,12 @@ body {
     }
 
     .portrait {
-        width: 60%;
-        max-width: 300px;
+        max-width: 180px;
     }
 
     .contact-intro {
         font-size: 16px;
-        padding: 0 28px;
+        padding: 0 20px;
     }
 
     .contact-top {
@@ -285,28 +288,24 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 50px;
+        width: 100%;
+        max-width: 320px;
+        padding: 0 8px;
+        box-sizing: border-box;
     }
 
     .contact-section {
         width: 100%;
-        max-width: 340px;
-        padding: 0 12px;
+        max-width: 100%;
+        padding: 0;
     }
 
     .contact-bullets {
-        padding-left: 24px;
+        padding-left: 22px;
     }
 
     .contact-certifications {
         font-size: 14px;
-    }
-}
-
-/* Desktop */
-@media (min-width: 751px) {
-    .portrait {
-        width: 280px;
-        max-width: 280px;
     }
 }
 </style>
