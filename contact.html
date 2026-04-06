@@ -61,7 +61,8 @@ body {
     color: #000;
 }
 
-.page-nav a.current {
+.page-nav a.current,
+.page-nav a.highlight {
     font-weight: bold;
 }
 
@@ -69,31 +70,45 @@ body {
     display: none;
 }
 
-/* Main container */
+/* Main layout */
 .books-container {
     display: flex;
     justify-content: center;
     padding: 0 40px 80px 40px;
 }
 
-/* New vertical layout */
-.contact-stack {
+.contact-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    width: 100%;
+    max-width: 900px;
 }
 
-/* Portrait */
+/* Top contact block */
+.contact-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
 .portrait {
     width: 300px;
     max-width: 60%;
     height: auto;
+    display: block;
     border-radius: 12px;
+    margin-bottom: 18px;
 }
 
-/* Email */
+.contact-email {
+    margin: 0 0 18px 0;
+}
+
 .contact-email a {
+    font-style: normal;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
@@ -104,25 +119,53 @@ body {
     color: #000;
 }
 
-/* Subtitle */
+.contact-intro {
+    margin: 0;
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Lower two-column section */
+.contact-sections {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(50px, 8vw, 100px);
+    width: 100%;
+}
+
+.contact-section {
+    flex: 1 1 0;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .contact-subtitle {
     font-size: 22px;
     font-weight: bold;
-    margin: 20px 0 0 0;
+    margin: 0;
     text-align: center;
-    line-height: 1;
+    line-height: 1.2;
 }
 
-/* Divider */
 .sub-divider {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 0 auto;
+    margin: 14px auto 28px auto;
     border-radius: 4px;
 }
 
-/* Button */
+/* Buttons */
+.contact-download {
+    margin: 0 0 22px 0;
+}
+
 .contact-download a {
     padding: 10px 20px;
     background-color: #0B1D3F;
@@ -138,24 +181,61 @@ body {
     background-color: #1A2B5C;
 }
 
-/* Bullets */
+/* Credentials list */
 .contact-bullets {
+    list-style-type: disc;
     list-style-position: inside;
     padding: 0;
-    margin: 0;
+    margin: 0 0 14px 0;
     text-align: center;
+    color: #43554F;
 }
 
 .contact-bullets li {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-size: 16px;
+    line-height: 1.5;
 }
 
-/* Certifications */
 .contact-certifications {
+    margin: 0;
     font-size: 16px;
     font-style: italic;
     text-align: center;
+    line-height: 1.5;
+}
+
+/* Papers */
+.paper-entry {
+    margin-bottom: 26px;
+    width: 100%;
+}
+
+.paper-entry:last-child {
+    margin-bottom: 0;
+}
+
+.paper-title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.paper-description {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.paper-link a {
+    color: #43554F;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.paper-link a:hover {
+    color: #000;
 }
 
 /* Mobile */
@@ -170,6 +250,7 @@ body {
 
     .page-nav {
         flex-wrap: wrap;
+        justify-content: center;
         gap: 16px 24px;
         font-size: 16px;
         margin-bottom: 60px;
@@ -181,19 +262,44 @@ body {
     .nav-break {
         display: block;
         flex-basis: 100%;
+        height: 0;
     }
 
     .portrait {
         width: 60%;
     }
 
+    .contact-intro {
+        font-size: 16px;
+    }
+
+    .contact-top {
+        margin-bottom: 46px;
+    }
+
+    .contact-sections {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .contact-section {
+        max-width: 100%;
+    }
+
     .contact-certifications {
         font-size: 14px;
     }
 }
+
+/* Desktop */
+@media (min-width: 751px) {
+    .portrait {
+        width: 360px;
+    }
+}
 </style>
 </head>
-
 <body>
 
 <div class="header-container">
@@ -204,58 +310,75 @@ body {
 
     <div class="page-nav">
         <a href="books.html">Books</a>
-        <a href="https://theparlour.org.uk" class="italic" target="_blank">The Parlour</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
         <a href="workshops.html">Workshops</a>
         <span class="nav-break"></span>
-        <a href="https://www.superprof.co.uk/primary-english-tutor-with-qualified-teacher-status-helping-children-read-write-and-succeed.html" target="_blank">Tutoring</a>
+        <a href="https://www.superprof.co.uk/primary-english-tutor-with-qualified-teacher-status-helping-children-read-write-and-succeed.html" target="_blank" rel="noopener noreferrer">Tutoring</a>
         <a href="contact.html" class="current">Contact</a>
     </div>
 </div>
 
 <main class="books-container">
-    <div class="contact-stack">
+    <div class="contact-page">
 
-        <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
+        <div class="contact-top">
+            <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
 
-        <p class="contact-email">
-            <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
-        </p>
+            <p class="contact-email">
+                <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+            </p>
 
-        <!-- CV SECTION -->
-        <p class="contact-subtitle">CV and Certifications</p>
-        <div class="sub-divider"></div>
+            <p class="contact-intro">
+                For enquiries regarding teaching, writing, workshops, publications, or research, please get in touch by email.
+            </p>
+        </div>
 
-        <p class="contact-download">
-            <a href="docs/Max_Thackara_CV.pdf" download target="_blank">
-                Download My CV
-            </a>
-        </p>
+        <div class="contact-sections">
 
-        <ul class="contact-bullets">
-            <li>Qualified Teacher Status (QTS)</li>
-            <li>Enhanced DBS</li>
-        </ul>
+            <section class="contact-section">
+                <h2 class="contact-subtitle">CV and Credentials</h2>
+                <div class="sub-divider"></div>
 
-        <p class="contact-certifications">
-            Certifications available upon request.
-        </p>
+                <p class="contact-download">
+                    <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener noreferrer">Download My CV</a>
+                </p>
 
-        <!-- PAPERS SECTION -->
-        <p class="contact-subtitle">Papers</p>
-        <div class="sub-divider"></div>
+                <ul class="contact-bullets">
+                    <li>Qualified Teacher Status (QTS)</li>
+                    <li>Enhanced DBS</li>
+                </ul>
 
-        <p class="contact-download">
-            <a href="docs/Ontology_Max_Thackara.pdf" target="_blank">
-                Ontology
-            </a>
-        </p>
+                <p class="contact-certifications">
+                    Certifications available upon request.
+                </p>
+            </section>
 
-        <p class="contact-download">
-            <a href="docs/Generative_Influence_Paper_Max_Thackara.pdf" target="_blank">
-                Generative Influence
-            </a>
-        </p>
+            <section class="contact-section">
+                <h2 class="contact-subtitle">Research Papers</h2>
+                <div class="sub-divider"></div>
 
+                <div class="paper-entry">
+                    <p class="paper-title">Ontology</p>
+                    <p class="paper-description">
+                        A research paper available in PDF format.
+                    </p>
+                    <p class="paper-link">
+                        <a href="docs/Ontology_Max_Thackara.pdf" target="_blank" rel="noopener noreferrer">Read Ontology (PDF)</a>
+                    </p>
+                </div>
+
+                <div class="paper-entry">
+                    <p class="paper-title">Generative Influence</p>
+                    <p class="paper-description">
+                        A research paper available in PDF format.
+                    </p>
+                    <p class="paper-link">
+                        <a href="docs/Generative_Influence_Paper_Max_Thackara.pdf" target="_blank" rel="noopener noreferrer">Read Generative Influence (PDF)</a>
+                    </p>
+                </div>
+            </section>
+
+        </div>
     </div>
 </main>
 
