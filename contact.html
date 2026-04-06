@@ -122,6 +122,8 @@ body {
 .contact-intro {
     margin: 0;
     max-width: 620px;
+    padding: 0 18px;
+    box-sizing: border-box;
     font-size: 17px;
     line-height: 1.6;
     text-align: center;
@@ -145,6 +147,11 @@ body {
     text-align: center;
 }
 
+.contact-section > *:not(.contact-subtitle):not(.sub-divider) {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .contact-subtitle {
     font-size: 22px;
     font-weight: bold;
@@ -161,33 +168,31 @@ body {
     border-radius: 4px;
 }
 
-/* Buttons */
+/* Links */
 .contact-download {
     margin: 0 0 22px 0;
+    text-align: left;
 }
 
-.contact-download a {
-    padding: 10px 20px;
-    background-color: #0B1D3F;
-    color: #F7E4D3;
-    text-decoration: none;
-    border-radius: 5px;
+.contact-download a,
+.paper-link a {
+    color: #43554F;
+    text-decoration: underline;
     font-weight: bold;
-    transition: background-color 0.3s ease;
-    display: inline-block;
 }
 
-.contact-download a:hover {
-    background-color: #1A2B5C;
+.contact-download a:hover,
+.paper-link a:hover {
+    color: #000;
 }
 
 /* Credentials list */
 .contact-bullets {
     list-style-type: disc;
-    list-style-position: inside;
-    padding: 0;
+    list-style-position: outside;
+    padding-left: 22px;
     margin: 0 0 14px 0;
-    text-align: center;
+    text-align: left;
     color: #43554F;
 }
 
@@ -201,11 +206,11 @@ body {
     margin: 0;
     font-size: 16px;
     font-style: italic;
-    text-align: center;
+    text-align: justify;
     line-height: 1.5;
 }
 
-/* Papers / writing */
+/* Writing */
 .paper-entry {
     margin-bottom: 26px;
     width: 100%;
@@ -220,22 +225,19 @@ body {
     font-size: 18px;
     font-style: italic;
     line-height: 1.4;
+    text-align: left;
 }
 
 .paper-description {
     margin: 0 0 12px 0;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
+    text-align: justify;
 }
 
-.paper-link a {
-    color: #43554F;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.paper-link a:hover {
-    color: #000;
+.paper-link {
+    margin: 0;
+    text-align: left;
 }
 
 /* Mobile */
@@ -272,6 +274,7 @@ body {
 
     .contact-intro {
         font-size: 16px;
+        padding: 0 24px;
     }
 
     .contact-top {
@@ -342,7 +345,7 @@ body {
                 <div class="sub-divider"></div>
 
                 <p class="contact-download">
-                    <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener noreferrer">Download My CV</a>
+                    <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener noreferrer">Read CV (PDF)</a>
                 </p>
 
                 <ul class="contact-bullets">
