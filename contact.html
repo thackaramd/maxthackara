@@ -15,7 +15,7 @@ body {
     color: #43554F;
 }
 
-/* Header container with title and nav */
+/* Header */
 .header-container {
     text-align: center;
     margin-top: 60px;
@@ -61,8 +61,7 @@ body {
     color: #000;
 }
 
-.page-nav a.current,
-.page-nav a.highlight {
+.page-nav a.current {
     font-weight: bold;
 }
 
@@ -70,51 +69,31 @@ body {
     display: none;
 }
 
-/* Contact content */
+/* Main container */
 .books-container {
     display: flex;
     justify-content: center;
     padding: 0 40px 80px 40px;
-    position: relative;
 }
 
-.contact-content {
+/* New vertical layout */
+.contact-stack {
     display: flex;
-    flex-direction: column; /* mobile default */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
-    position: relative;
 }
 
-/* Left side: portrait + email */
-.contact-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Right side: subtitle + download button + bullet points */
-.contact-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    gap: 30px;
-}
-
-/* Portrait image */
+/* Portrait */
 .portrait {
     width: 300px;
     max-width: 60%;
     height: auto;
-    display: block;
     border-radius: 12px;
 }
 
-/* Email styling */
+/* Email */
 .contact-email a {
-    font-style: normal;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
@@ -129,22 +108,21 @@ body {
 .contact-subtitle {
     font-size: 22px;
     font-weight: bold;
-    margin: 0;
+    margin: 20px 0 0 0;
     text-align: center;
-    line-height: 1;      /* removes extra vertical spacing */
-    padding-bottom: 0;
+    line-height: 1;
 }
 
-/* Horizontal divider under subtitle */
+/* Divider */
 .sub-divider {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 0 auto 0 auto; /* flush with subtitle */
+    margin: 0 auto;
     border-radius: 4px;
 }
 
-/* Download button styling */
+/* Button */
 .contact-download a {
     padding: 10px 20px;
     background-color: #0B1D3F;
@@ -160,13 +138,12 @@ body {
     background-color: #1A2B5C;
 }
 
-/* Bullet points below CV button */
+/* Bullets */
 .contact-bullets {
-    list-style-type: disc;
-    padding-left: 20px;
+    list-style-position: inside;
+    padding: 0;
     margin: 0;
-    text-align: left;
-    color: #43554F;
+    text-align: center;
 }
 
 .contact-bullets li {
@@ -174,14 +151,14 @@ body {
     font-size: 16px;
 }
 
+/* Certifications */
 .contact-certifications {
-    margin-top: 10px;
     font-size: 16px;
     font-style: italic;
     text-align: center;
 }
 
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width: 750px) {
     .header-container {
         margin-top: 45px;
@@ -193,7 +170,6 @@ body {
 
     .page-nav {
         flex-wrap: wrap;
-        justify-content: center;
         gap: 16px 24px;
         font-size: 16px;
         margin-bottom: 60px;
@@ -205,76 +181,19 @@ body {
     .nav-break {
         display: block;
         flex-basis: 100%;
-        height: 0;
-    }
-
-    .title {
-        margin-bottom: 10px;
-    }
-
-    .underline {
-        margin-bottom: 28px;
     }
 
     .portrait {
         width: 60%;
     }
 
-    .contact-left {
-        gap: 24px; 
-        align-items: center;
-        text-align: center;
-    }
-
-    .contact-right {
-        gap: 30px;
-        align-items: center;
-    }
-
-    .contact-bullets {
-        text-align: center;
-        padding-left: 0;
-        list-style-position: inside;
-    }
-
     .contact-certifications {
         font-size: 14px;
-    }
-
-    /* Mobile stacked layout gap adjustment */
-    .contact-content {
-        gap: 40px; /* space between email and subtitle/divider */
-    }
-}
-
-/* Desktop layout */
-@media (min-width: 751px) {
-    .contact-content {
-        flex-direction: row;        
-        align-items: flex-start;
-        justify-content: center;
-        gap: clamp(60px, 10vw, 90px); 
-    }
-
-    .contact-left {
-        align-items: center; 
-        text-align: center;  
-        margin-left: -50px; /* slight nudge to the left for visual alignment */
-    }
-
-    .contact-right {
-        align-items: center; 
-        justify-content: center; 
-        text-align: center; 
-        gap: 30px; 
-    }
-
-    .portrait {
-        width: 360px;
     }
 }
 </style>
 </head>
+
 <body>
 
 <div class="header-container">
@@ -285,37 +204,58 @@ body {
 
     <div class="page-nav">
         <a href="books.html">Books</a>
-        <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
+        <a href="https://theparlour.org.uk" class="italic" target="_blank">The Parlour</a>
         <a href="workshops.html">Workshops</a>
         <span class="nav-break"></span>
-        <a href="https://www.superprof.co.uk/primary-english-tutor-with-qualified-teacher-status-helping-children-read-write-and-succeed.html" target="_blank" rel="noopener">Tutoring</a>
+        <a href="https://www.superprof.co.uk/primary-english-tutor-with-qualified-teacher-status-helping-children-read-write-and-succeed.html" target="_blank">Tutoring</a>
         <a href="contact.html" class="current">Contact</a>
     </div>
 </div>
 
 <main class="books-container">
-    <div class="contact-content">
-        <!-- Left side: Portrait + Email -->
-        <div class="contact-left">
-            <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
-            <p class="contact-email">
-                <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
-            </p>
-        </div>
+    <div class="contact-stack">
 
-        <!-- Right side: Subtitle + Download + bullets -->
-        <div class="contact-right">
-            <p class="contact-subtitle">CV and Certifications</p>
-            <div class="sub-divider"></div>
-            <p class="contact-download">
-                <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener">Download My CV</a>
-            </p>
-            <ul class="contact-bullets">
-                <li>Qualified Teacher Status (QTS)</li>
-                <li>Enhanced DBS</li>
-            </ul>
-            <p class="contact-certifications">Certifications available upon request.</p>
-        </div>
+        <img src="images/portrait.png" alt="Portrait of Max Thackara" class="portrait">
+
+        <p class="contact-email">
+            <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+        </p>
+
+        <!-- CV SECTION -->
+        <p class="contact-subtitle">CV and Certifications</p>
+        <div class="sub-divider"></div>
+
+        <p class="contact-download">
+            <a href="docs/Max_Thackara_CV.pdf" download target="_blank">
+                Download My CV
+            </a>
+        </p>
+
+        <ul class="contact-bullets">
+            <li>Qualified Teacher Status (QTS)</li>
+            <li>Enhanced DBS</li>
+        </ul>
+
+        <p class="contact-certifications">
+            Certifications available upon request.
+        </p>
+
+        <!-- PAPERS SECTION -->
+        <p class="contact-subtitle">Papers</p>
+        <div class="sub-divider"></div>
+
+        <p class="contact-download">
+            <a href="docs/Ontology_Max_Thackara.pdf" target="_blank">
+                Ontology
+            </a>
+        </p>
+
+        <p class="contact-download">
+            <a href="docs/Generative_Influence_Paper_Max_Thackara.pdf" target="_blank">
+                Generative Influence
+            </a>
+        </p>
+
     </div>
 </main>
 
