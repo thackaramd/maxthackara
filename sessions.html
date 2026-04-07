@@ -15,13 +15,12 @@ body {
     color: #43554F;
 }
 
-/* Header container with title and nav */
+/* Header */
 .header-container {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
-/* Main site title */
 .title {
     font-size: 26px;
     margin-bottom: 10px;
@@ -32,7 +31,6 @@ body {
     color: inherit;
 }
 
-/* Small underline under main title */
 .underline {
     width: 60px;
     height: 2px;
@@ -47,7 +45,7 @@ body {
     justify-content: center;
     gap: 32px;
     font-size: 18px;
-    margin-bottom: 90px;
+    margin-bottom: 65px;
     flex-wrap: nowrap;
 }
 
@@ -64,52 +62,58 @@ body {
     color: #000;
 }
 
-/* Highlight current page */
 .page-nav a.current,
 .page-nav a.highlight {
     font-weight: bold;
 }
 
-/* Hidden break by default */
 .nav-break {
     display: none;
 }
 
-/* Content layout */
+/* MAIN CONTENT */
 .content-container {
-    display: flex;
-    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 0 40px 80px 40px;
+    text-align: center;
 }
 
-.content {
-    max-width: 700px;
+.page-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* Divider under heading */
+.divider {
+    width: 60px;
+    height: 2px;
+    background-color: #43554F;
+    margin: 0 auto 32px auto;
+    border-radius: 2px;
+}
+
+/* TEXT BLOCK */
+.intro-text {
+    font-size: 17px;
     line-height: 1.7;
-    font-size: 18px;
+    max-width: 740px;  
+    margin: 0 auto;
+    text-align: justify;
+    hyphens: auto;
+    box-sizing: border-box;
 }
 
-.content p {
+/* SPACING BETWEEN PARAGRAPHS */
+.intro-text p {
     margin-bottom: 22px;
 }
 
-.section-title {
-    margin-top: 40px;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width: 750px) {
     .header-container {
         margin-top: 45px;
-    }
-
-    .content-container {
-        padding: 0 20px 60px 20px;
-    }
-
-    .content {
-        font-size: 16px;
     }
 
     .page-nav {
@@ -117,7 +121,7 @@ body {
         justify-content: center;
         gap: 16px 24px;
         font-size: 16px;
-        margin-bottom: 60px;
+        margin-bottom: 50px; 
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;
@@ -129,16 +133,22 @@ body {
         height: 0;
     }
 
-    .title {
-        margin-bottom: 10px;
+    .content-container {
+        padding: 0 20px 60px 20px;
     }
 
-    .underline {
-        margin-bottom: 28px;
+    .intro-text {
+        font-size: 16px;
+        max-width: 100%;
+        text-align: justify;
+        hyphens: auto;
+        padding: 0 12px;
+        box-sizing: border-box;
     }
 }
 </style>
 </head>
+
 <body>
 
 <div class="header-container">
@@ -161,15 +171,17 @@ body {
 </div>
 
 <main class="content-container">
-    <div class="content">
+    
+    <div class="page-heading">Clarity Sessions</div>
+    <div class="divider"></div>
 
-        <p>Sometimes things don’t need fixing.<br>
-        They just aren’t clear.</p>
+    <div class="intro-text">
+
+        <p>Sometimes things don’t need fixing. They just aren’t clear.</p>
 
         <p>I don’t think people are broken.</p>
 
-        <p>Most of the time, something just gets clouded—<br>
-        in thinking, in language, in how a situation is being held.</p>
+        <p>Most of the time, something just gets clouded—in thinking, in language, in how a situation is being held.</p>
 
         <p>You can be wrong about something without anything being wrong with you.</p>
 
@@ -179,14 +191,11 @@ body {
 
         <p>I listen carefully, stay with what you’re saying, and help you find a way of putting things that actually fits.</p>
 
-        <p>Sometimes that means slowing things down.<br>
-        Sometimes it means questioning something.<br>
-        Sometimes it’s just staying with it a bit longer than you would on your own.</p>
+        <p>Sometimes that means slowing things down. Sometimes it means questioning something. Sometimes it’s just staying with it a bit longer than you would on your own.</p>
 
         <p>What tends to happen is that things become clearer.</p>
 
-        <p>Not because something new is added,<br>
-        but because what’s already there starts to make sense again.</p>
+        <p>Not because something new is added, but because what’s already there starts to make sense again.</p>
 
         <p>You don’t need to come with anything prepared.</p>
 
@@ -194,11 +203,8 @@ body {
 
         <p>You can just start where you are.</p>
 
-        <div class="section-title">Practical details</div>
-
-        <p>
-        60 minutes<br>
-        One-to-one<br>
+        <p style="margin-top: 30px;">
+        60 minutes · One-to-one<br>
         Online or in person (Bedford)
         </p>
 
@@ -209,10 +215,13 @@ body {
 
         <p>If this sounds useful, you’re welcome to get in touch.</p>
 
-        <p>If you’re curious about where this comes from, you’re welcome to explore the rest of the site.<br>
-        I’m not presenting this as expertise or a system—just something that has held up through my own experience over time.</p>
+        <p style="margin-top: 30px;">
+        If you’re curious about where this comes from, you’re welcome to explore the rest of the site.<br>
+        I’m not presenting this as expertise or a system—just something that has held up through my own experience over time.
+        </p>
 
     </div>
+
 </main>
 
 </body>
