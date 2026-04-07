@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sessions — Max Thackara</title>
+<title>Clarity Sessions — Max Thackara</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
@@ -75,26 +75,27 @@ body {
     display: none;
 }
 
-/* Books layout placeholder */
-.books-container {
+/* Content layout */
+.content-container {
     display: flex;
     justify-content: center;
     padding: 0 40px 80px 40px;
 }
 
-.book-shelf {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(20px, 5vw, 60px);
-    max-width: 1000px;
-    width: 100%;
+.content {
+    max-width: 700px;
+    line-height: 1.7;
+    font-size: 18px;
 }
 
-.book {
-    flex: 1 1 clamp(120px, 15%, 140px);
-    display: block;
-    min-height: 180px;
+.content p {
+    margin-bottom: 22px;
+}
+
+.section-title {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 /* Mobile adjustments */
@@ -103,22 +104,14 @@ body {
         margin-top: 45px;
     }
 
-    .books-container {
+    .content-container {
         padding: 0 20px 60px 20px;
     }
 
-    .book-shelf {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+    .content {
+        font-size: 16px;
     }
 
-    .book {
-        width: 50%;
-        max-width: 180px;
-    }
-
-    /* Wrapped, centered nav */
     .page-nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -130,7 +123,6 @@ body {
         margin-right: auto;
     }
 
-    /* Force second row */
     .nav-break {
         display: block;
         flex-basis: 100%;
@@ -157,7 +149,7 @@ body {
 
     <div class="page-nav">
         <a href="books.html">Books</a>
-        <a href="sessions.html" class="current">Sessions</a>
+        <a href="sessions.html" class="current">Clarity Sessions</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
 
         <span class="nav-break"></span>
@@ -168,9 +160,58 @@ body {
     </div>
 </div>
 
-<main class="books-container">
-    <div class="book-shelf">
-        <!-- Placeholder for content -->
+<main class="content-container">
+    <div class="content">
+
+        <p>Sometimes things don’t need fixing.<br>
+        They just aren’t clear.</p>
+
+        <p>I don’t think people are broken.</p>
+
+        <p>Most of the time, something just gets clouded—<br>
+        in thinking, in language, in how a situation is being held.</p>
+
+        <p>You can be wrong about something without anything being wrong with you.</p>
+
+        <p>I don’t offer advice or try to lead you anywhere.</p>
+
+        <p>We just talk.</p>
+
+        <p>I listen carefully, stay with what you’re saying, and help you find a way of putting things that actually fits.</p>
+
+        <p>Sometimes that means slowing things down.<br>
+        Sometimes it means questioning something.<br>
+        Sometimes it’s just staying with it a bit longer than you would on your own.</p>
+
+        <p>What tends to happen is that things become clearer.</p>
+
+        <p>Not because something new is added,<br>
+        but because what’s already there starts to make sense again.</p>
+
+        <p>You don’t need to come with anything prepared.</p>
+
+        <p>You don’t need to be a certain way.</p>
+
+        <p>You can just start where you are.</p>
+
+        <div class="section-title">Practical details</div>
+
+        <p>
+        60 minutes<br>
+        One-to-one<br>
+        Online or in person (Bedford)
+        </p>
+
+        <p>
+        £60 — introductory session<br>
+        £90 — standard session
+        </p>
+
+        <p>If this sounds useful, you’re welcome to get in touch.</p>
+
+        <p>If you’re curious about where this comes from, you’re welcome to explore the rest of the site.<br>
+        I’m not presenting this as expertise or a system—just something that has held up through my own experience over time.</p>
+
     </div>
 </main>
 
