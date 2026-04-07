@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workshops — Max Thackara</title>
+<title>Clarity Sessions — Max Thackara</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
@@ -85,7 +85,6 @@ body {
     margin-bottom: 16px;
 }
 
-/* Divider under heading */
 .divider {
     width: 60px;
     height: 2px;
@@ -94,63 +93,35 @@ body {
     border-radius: 2px;
 }
 
-/* INTRO TEXT */
+/* TEXT */
 .intro-text {
     font-size: 17px;
     line-height: 1.7;
-    max-width: 740px;  
+    max-width: 740px;
     margin: 0 auto 60px auto;
     text-align: justify;
     hyphens: auto;
     box-sizing: border-box;
 }
 
-/* OPTIONS */
-.options-container {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
+.section {
+    margin-bottom: 38px;
 }
 
-.option-box {
-    background-color: #FFF1E6;
-    padding: 30px 28px;
-    flex: 1 1 320px;
-    max-width: 420px;
-    text-align: left;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border-radius: 6px;
-}
-
-.option-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.option-title {
-    font-size: 20px;
+.section-title {
+    font-size: 17px;
     font-weight: bold;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+    margin-top: 8px;
     text-align: center;
 }
 
-.option-box ul {
-    padding-left: 18px;
-    margin-bottom: 20px;
+.intro-text p {
+    margin: 0 0 14px 0;
 }
 
-.option-box li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.option-cta {
-    margin-top: 10px;
-    font-size: 15px;
+.center-note {
     text-align: center;
-    font-weight: bold;
 }
 
 /* Mobile */
@@ -164,7 +135,7 @@ body {
         justify-content: center;
         gap: 16px 24px;
         font-size: 16px;
-        margin-bottom: 50px; 
+        margin-bottom: 50px;
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;
@@ -188,6 +159,10 @@ body {
         padding: 0 12px;
         box-sizing: border-box;
     }
+
+    .section-title {
+        font-size: 16px;
+    }
 }
 </style>
 </head>
@@ -202,51 +177,61 @@ body {
 
     <div class="page-nav">
         <a href="books.html">Books</a>
+        <a href="sessions.html" class="current">Sessions</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
-        <a href="workshops.html" class="current">Workshops</a>
 
         <span class="nav-break"></span>
-        
+
+        <a href="workshops.html">Workshops</a>
         <a href="https://www.superprof.co.uk/primary-english-tutor-with-qualified-teacher-status-helping-children-read-write-and-succeed.html" target="_blank" rel="noopener">Tutoring</a>
-        <a href="contact.html">Contact</a>
+        <a href="mailto:contact@maxthackara.uk">Contact</a>
     </div>
 </div>
 
 <main class="content-container">
     
-    <div class="page-heading">Creative Writing Workshops</div>
+    <div class="page-heading">Clarity Sessions</div>
     <div class="divider"></div>
 
     <div class="intro-text">
-        As a qualified teacher and self-published author based in Bedford, I deliver creative writing workshops for primary and secondary students that inspire imagination, build confidence, and foster a genuine love of writing.
-        <br><br>
-        My sessions are calm, discussion-led, and tailored to each group. Students are encouraged to explore their own ideas, experiment with language, and develop their voice in a supportive, low-pressure environment.
-        <br><br>
-        <p style="text-align: center; font-style: italic;">Qualified Teacher (QTS) · Enhanced DBS · Safeguarding trained</p>
-    </div>
 
-    <div class="options-container">
-
-        <div class="option-box" onclick="location.href='primary.html'">
-            <div class="option-title">Primary Workshops</div>
-            <ul>
-                <li>KS1–KS2 (ages 5–11)</li>
-                <li>Playful, imaginative approach to storytelling</li>
-                <li>Focus on building confidence and enjoyment in writing</li>
-                <li>Exploration of ideas through discussion and creative prompts</li>
-            </ul>
-            <div class="option-cta">Find out more →</div>
+        <div class="section">
+            <div class="section-title">My position</div>
+            <p>I don’t think people are broken.</p>
+            <p>Most of the time, something just gets clouded—in thinking, in language, in how a situation is being held.</p>
+            <p>You can be wrong about something without anything being wrong with you. You can also be misunderstood without that making you incoherent.</p>
         </div>
 
-        <div class="option-box" onclick="location.href='secondary.html'">
-            <div class="option-title">Secondary Workshops</div>
-            <ul>
-                <li>KS3–KS4 (ages 11–16)</li>
-                <li>Developing voice, style, and confidence in writing</li>
-                <li>Exploration of structure, tone, and creative techniques</li>
-                <li>Space for independent ideas and experimentation</li>
-            </ul>
-            <div class="option-cta">Find out more →</div>
+        <div class="section">
+            <div class="section-title">What I do</div>
+            <p>I don’t offer advice or try to lead you anywhere.</p>
+            <p>We just talk.</p>
+            <p>I listen carefully, stay with what you’re saying, and help you find a way of putting things that actually fits.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">What happens</div>
+            <p>We sit with what you bring and work through it together, in conversation.</p>
+            <p>Sometimes that means slowing things down. Sometimes it means questioning something. Sometimes it’s just staying with it a bit longer than you would on your own.</p>
+            <p>What tends to happen is that things become clearer—not because something new is added, but because what’s already there starts to make sense again.</p>
+            <p>You don’t need to come with anything prepared.</p>
+            <p>You don’t need to be a certain way.</p>
+            <p>You can just start where you are.</p>
+        </div>
+
+        <div class="section center-note">
+            <div class="section-title">Practical details</div>
+            <p>60 minutes · One-to-one<br>
+            Online or in person (Bedford)</p>
+            <p>£60 — introductory session<br>
+            £90 — standard session</p>
+            <p>If this feels useful, you’re welcome to get in touch.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">A quiet note</div>
+            <p>If you’re curious about where this comes from, you’re welcome to explore the rest of the site.</p>
+            <p>I’m not presenting this as expertise or a system—just something that has held up through my own experience over time.</p>
         </div>
 
     </div>
