@@ -35,7 +35,7 @@ body {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 0 auto 24px auto;
+    margin: 0 auto 28px auto;
     border-radius: 4px;
 }
 
@@ -79,60 +79,57 @@ body {
     text-align: center;
 }
 
-.page-heading {
+/* Cream content box */
+.content-box {
+    background-color: #FFEBD6;
+    padding: 40px 36px;
+    border-radius: 6px;
+    text-align: left;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Page heading inside content box */
+.content-box .page-heading {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 16px;
+    text-align: center;
 }
 
+/* Divider line under heading */
 .divider {
     width: 60px;
     height: 2px;
     background-color: #43554F;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 32px auto;
     border-radius: 2px;
 }
 
-/* TEXT */
+/* Intro text */
 .intro-text {
-    font-size: 17px;
-    line-height: 1.75;
-    max-width: 740px;
-    margin: 0 auto 60px auto;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto;
     text-align: justify;
     hyphens: auto;
     box-sizing: border-box;
 }
 
-.section {
-    margin-bottom: 48px;
-}
-
-.section-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 24px;
-    text-align: center;
-}
-
 .intro-text p {
-    margin: 0 0 18px 0;
-}
-
-/* Email block */
-.email-block {
-    margin-top: 12px;
+    margin-bottom: 18px;
 }
 
 .email-block p {
-    text-align: left;
+    margin-bottom: 8px;
 }
 
 .email-block a {
     display: block;
     text-align: center;
     margin-top: 16px;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
@@ -154,7 +151,7 @@ body {
         justify-content: center;
         gap: 16px 24px;
         font-size: 16px;
-        margin-bottom: 50px;
+        margin-bottom: 50px; 
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;
@@ -170,17 +167,18 @@ body {
         padding: 0 20px 60px 20px;
     }
 
-    .intro-text {
-        font-size: 16px;
+    .content-box {
+        padding: 28px 20px;
         max-width: 100%;
-        text-align: justify;
-        hyphens: auto;
-        padding: 0 12px;
-        box-sizing: border-box;
     }
 
-    .section-title {
-        font-size: 17px;
+    .content-box .intro-text {
+        font-size: 14px; /* smaller text for mobile */
+        padding: 0 12px;
+    }
+
+    .content-box .page-heading {
+        font-size: 20px; /* smaller heading for mobile */
     }
 }
 </style>
@@ -207,60 +205,63 @@ body {
 </div>
 
 <main class="content-container">
-    
-    <div class="page-heading">Clarity Sessions</div>
-    <div class="divider"></div>
 
-    <div class="intro-text">
+    <div class="content-box">
 
-        <div class="section">
-            <p>I offer one-to-one conversations where you can think things through out loud and arrive at a clearer sense of where you stand.</p>
-            <p>Often, things feel more settled—or more fine—than you might have expected.</p>
-        </div>
+        <div class="page-heading">Clarity Sessions</div>
+        <div class="divider"></div>
 
-        <div class="section">
-            <div class="section-title">My Position</div>
-            <p>I don’t think people are broken.</p>
-            <p>Most of the time, something just gets clouded—in thinking, in language, or in how a situation is being held.</p>
-            <p>You can be wrong about something without anything being wrong with you. You can also be misunderstood without that making you incoherent.</p>
-            <p><strong>I pay close attention to what is actually real, and I stay with it.</strong></p>
-        </div>
+        <div class="intro-text">
 
-        <div class="section">
-            <div class="section-title">What I Do</div>
-            <p>I don’t offer advice or try to lead you anywhere.</p>
-            <p>I listen carefully, stay with what you’re saying, and help you find a way of putting things that actually fits—sometimes by reflecting something back, sometimes by questioning it, sometimes by staying with it a little longer.</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">What Happens</div>
-            <p>We sit with what you bring and work through it together, in conversation.</p>
-            <p>That might mean slowing things down, questioning something, or staying with it a bit longer than you would on your own.</p>
-            <p>What tends to happen is that things become clearer—not because something new is added, but because what’s already there starts to make sense again.</p>
-            <p>You don’t need to come with anything prepared. You don’t need to be a certain way. You can just start where you are.</p>
-            <p>This kind of conversation isn’t for everyone. It may appeal if you’re not looking to be fixed or guided, but simply want space to think and speak without pressure.</p>
-            <p>It isn’t a substitute for more structured or clinical forms of support.</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Practical Details</div>
-            <p>60 minutes · One-to-one<br>
-            Online or in-person (Bedford)</p>
-            <p>£60 — introductory session<br>
-            £90 — standard session</p>
-
-            <p>If this feels useful, you’re welcome to get in touch.</p>
-
-            <div class="email-block">
-                <p>Please send an enquiry with the subject <strong>SESSIONS</strong> to:</p>
-                <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+            <div class="section">
+                <p>I offer one-to-one conversations where you can think things through out loud and arrive at a clearer sense of where you stand.</p>
+                <p>Often, things feel more settled—or more fine—than you might have expected.</p>
             </div>
-        </div>
 
-        <div class="section">
-            <div class="section-title">A Quiet Note</div>
-            <p>If you’re curious about where this comes from, you’re welcome to explore the rest of the site.</p>
-            <p>This isn’t a system or a method. It’s something I’ve stayed with over time, and it’s held.</p>
+            <div class="section">
+                <div class="section-title"><strong>My Position</strong></div>
+                <p>I don’t think people are broken.</p>
+                <p>Most of the time, something just gets clouded—in thinking, in language, or in how a situation is being held.</p>
+                <p>You can be wrong about something without anything being wrong with you. You can also be misunderstood without that making you incoherent.</p>
+                <p><strong>I pay close attention to what is actually real, and I stay with it.</strong></p>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><strong>What I Do</strong></div>
+                <p>I don’t offer advice or try to lead you anywhere.</p>
+                <p>I listen carefully, stay with what you’re saying, and help you find a way of putting things that actually fits—sometimes by reflecting something back, sometimes by questioning it, sometimes by staying with it a little longer.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><strong>What Happens</strong></div>
+                <p>We sit with what you bring and work through it together, in conversation.</p>
+                <p>That might mean slowing things down, questioning something, or staying with it a bit longer than you would on your own.</p>
+                <p>What tends to happen is that things become clearer—not because something new is added, but because what’s already there starts to make sense again.</p>
+                <p>You don’t need to come with anything prepared. You don’t need to be a certain way. You can just start where you are.</p>
+                <p>This kind of conversation isn’t for everyone. It may appeal if you’re not looking to be fixed or guided, but simply want space to think and speak without pressure.</p>
+                <p>It isn’t a substitute for more structured or clinical forms of support.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><strong>Practical Details</strong></div>
+                <p>60 minutes · One-to-one<br>
+                Online or in-person (Bedford)</p>
+                <p>£60 — introductory session<br>
+                £90 — standard session</p>
+                <p>If this feels useful, you’re welcome to get in touch.</p>
+
+                <div class="email-block">
+                    <p>Please send an enquiry with the subject <strong>SESSIONS</strong> to:</p>
+                    <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><strong>A Quiet Note</strong></div>
+                <p>If you’re curious about where this comes from, you’re welcome to explore the rest of the site.</p>
+                <p>This isn’t a system or a method. It’s something I’ve stayed with over time, and it’s held.</p>
+            </div>
+
         </div>
 
     </div>
