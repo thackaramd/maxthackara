@@ -122,13 +122,13 @@ body {
 }
 
 .contact-intro {
-    margin: 0 0 18px 0;
+    margin: 0 0 18px 0; /* added spacing */
     max-width: 620px;
     padding: 0 18px;
     box-sizing: border-box;
     font-size: 17px;
     line-height: 1.6;
-    text-align: justify;
+    text-align: justify; /* changed to justify */
 }
 
 /* Lower two-column section */
@@ -278,7 +278,7 @@ body {
     .contact-intro {
         font-size: 16px;
         padding: 0 20px;
-        text-align: center;
+        text-align: center; /* keep mobile readable */
     }
 
     .contact-top {
@@ -342,12 +342,56 @@ body {
             <p class="contact-email">
                 <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
             </p>
+
         </div>
 
         <div class="contact-sections">
-            <!-- rest unchanged -->
-        </div>
 
+            <section class="contact-section">
+                <h2 class="contact-subtitle">CV and Credentials</h2>
+                <div class="sub-divider"></div>
+
+                <p class="contact-download">
+                    <a href="docs/Max_Thackara_CV.pdf" download target="_blank" rel="noopener noreferrer">Read CV (PDF)</a>
+                </p>
+
+                <ul class="contact-bullets">
+                    <li>Qualified Teacher Status (QTS, 2022)</li>
+                    <li>Enhanced DBS</li>
+                    <li>Safeguarding Training (Young People – Refresher, 2024)</li>
+                </ul>
+
+                <p class="contact-certifications">
+                    Certifications available upon request.
+                </p>
+            </section>
+
+            <section class="contact-section">
+                <h2 class="contact-subtitle">Philosophical Writing</h2>
+                <div class="sub-divider"></div>
+
+                <div class="paper-entry">
+                    <p class="paper-title">Ontology</p>
+                    <p class="paper-description">
+                        Working notes on experience, relation, and consciousness.
+                    </p>
+                    <p class="paper-link">
+                        <a href="docs/Ontology_Max_Thackara.pdf" target="_blank" rel="noopener noreferrer">Read Ontology (PDF)</a>
+                    </p>
+                </div>
+
+                <div class="paper-entry">
+                    <p class="paper-title">Generative Influence</p>
+                    <p class="paper-description">
+                        A structural philosophy of how ideas generate durable systemic change.
+                    </p>
+                    <p class="paper-link">
+                        <a href="docs/Generative_Influence_Paper_Max_Thackara.pdf" target="_blank" rel="noopener noreferrer">Read Generative Influence (PDF)</a>
+                    </p>
+                </div>
+            </section>
+
+        </div>
     </div>
 </main>
 
