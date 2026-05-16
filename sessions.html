@@ -6,26 +6,30 @@
 <title>Sessions — Max Thackara</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-
 <link rel="icon" type="image/png" href="/images/favicon.png">
-    
+
 <style>
+
 body {
     margin: 0;
     background-color: #FFE5C9;
     font-family: 'Prata', serif;
     color: #43554F;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 /* Header */
+
 .header-container {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 64px;
 }
 
 .title {
     font-size: 26px;
     margin-bottom: 10px;
+    letter-spacing: 0.01em;
 }
 
 .title a {
@@ -34,238 +38,258 @@ body {
 }
 
 .underline {
-    width: 60px;
-    height: 2px;
+    width: 58px;
+    height: 1px;
     background-color: #43554F;
-    margin: 0 auto 24px auto;
-    border-radius: 4px;
+    margin: 0 auto 30px auto;
+    opacity: 0.55;
 }
 
-/* Nav */
+/* Navigation */
+
 .page-nav {
     display: flex;
     justify-content: center;
-    gap: 32px;
-    font-size: 18px;
-    margin-bottom: 65px;
+    gap: 34px;
+    font-size: 17px;
+    margin-bottom: 80px;
     flex-wrap: nowrap;
 }
 
 .page-nav a {
     text-decoration: none;
     color: #43554F;
+    transition: opacity 0.2s ease;
+}
+
+.page-nav a:hover {
+    opacity: 0.65;
 }
 
 .page-nav a.italic {
     font-style: italic;
 }
 
-.page-nav a:hover {
-    color: #000;
+.page-nav a.current {
+    opacity: 1;
 }
 
-.page-nav a.current,
-.page-nav a.highlight {
-    font-weight: bold;
-}
+/* Main Content */
 
-.nav-break {
-    display: none;
-}
-
-/* MAIN CONTENT */
 .content-container {
-    max-width: 900px;
+    max-width: 660px;
     margin: 0 auto;
-    padding: 0 40px 80px 40px;
-    text-align: center;
+    padding: 0 28px 100px 28px;
 }
 
 .page-heading {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
-}
-
-.divider {
-    width: 60px;
-    height: 2px;
-    background-color: #43554F;
-    margin: 0 auto 35px auto;
-    border-radius: 2px;
-}
-
-/* TEXT */
-.intro-text {
-    font-size: 16px;
-    line-height: 1.75;
-    max-width: 740px;
-    margin: 0 auto 60px auto;
-    text-align: justify;
-    hyphens: auto;
-    box-sizing: border-box;
-}
-
-.section {
-    margin-bottom: 40px;
-}
-
-.section-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 24px;
+    font-size: 30px;
+    margin-bottom: 42px;
     text-align: center;
+    font-weight: normal;
+}
+
+.intro-text {
+    font-size: 17px;
+    line-height: 1.9;
 }
 
 .intro-text p {
-    margin: 0 0 18px 0;
+    margin: 0 0 28px 0;
 }
 
-/* Email block */
+/* Dividers */
+
+.section-divider {
+    text-align: center;
+    margin: 52px 0;
+    opacity: 0.5;
+}
+
+/* Session blocks */
+
+.session-block {
+    margin-bottom: 34px;
+}
+
+.session-title {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+/* Email */
+
 .email-block {
-    margin-top: 12px;
-}
-
-.email-block p {
-    text-align: left;
+    margin-top: 26px;
 }
 
 .email-block a {
-    display: block;
-    text-align: center;
-    margin-top: 16px;
-    font-size: 19px;
-    font-weight: bold;
+    display: inline-block;
+    margin-top: 12px;
     font-style: italic;
     text-decoration: none;
-    color: #43554F;
+    color: inherit;
 }
 
 .email-block a:hover {
     text-decoration: underline;
 }
 
+/* Small note */
+
+.small-note {
+    margin-top: 10px;
+    font-size: 15px;
+    opacity: 0.92;
+    line-height: 1.8;
+}
+
 /* Mobile */
+
 @media (max-width: 750px) {
+
     .header-container {
-        margin-top: 45px;
+        margin-top: 48px;
     }
 
     .page-nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px 24px;
+        gap: 14px 22px;
         font-size: 16px;
-        margin-bottom: 50px;
+        margin-bottom: 64px;
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .nav-break {
-        display: block;
-        flex-basis: 100%;
-        height: 0;
+    .content-container {
+        padding: 0 24px 80px 24px;
     }
 
-    .content-container {
-        padding: 0 20px 60px 20px;
+    .page-heading {
+        font-size: 28px;
     }
 
     .intro-text {
         font-size: 16px;
-        max-width: 100%;
-        text-align: justify;
-        hyphens: auto;
-        padding: 0 12px;
-        box-sizing: border-box;
+        line-height: 1.85;
     }
 
-    .section-title {
-        font-size: 17px;
-    }
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="header-container">
+
     <div class="title">
         <a href="index.html">Max Thackara</a>
     </div>
+
     <div class="underline"></div>
 
     <div class="page-nav">
         <a href="books.html">Books</a>
         <a href="https://theparlour.org.uk" class="italic" target="_blank" rel="noopener noreferrer">The Parlour</a>
         <a href="sessions.html" class="current">Sessions</a>
-
-        <span class="nav-break"></span>
-
         <a href="workshops.html">Workshops</a>
         <a href="contact.html">Contact</a>
     </div>
+
 </div>
 
 <main class="content-container">
-    
+
     <div class="page-heading">Sessions</div>
-    <div class="divider"></div>
 
     <div class="intro-text">
 
-        <div class="section">
-            <p>I offer one-to-one conversations where you can think things through out loud and arrive at a clearer sense of where you stand.</p>
-            <p>Things often become more settled—and more straightforward—than they first appear.</p>
+        <p>
+            I offer one-to-one conversations where you can think things through out loud and arrive at a clearer sense of where you stand.
+        </p>
+
+        <p>
+            Things often become more settled—and more straightforward—than they first appear.
+        </p>
+
+        <div class="section-divider">*</div>
+
+        <p>
+            People are already coherent.
+        </p>
+
+        <p>
+            Most of the time, something simply becomes clouded—in thinking, in language, or in how a situation is being held.
+        </p>
+
+        <p>
+            You can be wrong about something without anything being wrong with you. You can also be misunderstood without that making you incoherent.
+        </p>
+
+        <p>
+            The conversation is a way of staying with what is already there long enough for it to become clearer and more workable in language.
+        </p>
+
+        <p>
+            I listen closely, work with what you’re saying, and help refine how it is being held—sometimes by reflecting something back, sometimes by questioning it, sometimes by staying with it a little longer than you would on your own.
+        </p>
+
+        <p>
+            I don’t offer advice or try to direct you toward a particular outcome.
+        </p>
+
+        <p>
+            Clarity tends to emerge through the process itself—not as a sudden insight, but as something that gradually becomes more precise and stable as we stay with it.
+        </p>
+
+        <p>
+            You don’t need to prepare anything. You don’t need to present yourself in a particular way. You can begin exactly where you are.
+        </p>
+
+        <div class="section-divider">*</div>
+
+        <p>
+            These conversations tend to suit people who are not looking to be advised, coached, or fixed, but who want space to think carefully and speak without pressure, in a way that actually holds.
+        </p>
+
+        <p>
+            They are not a substitute for clinical or therapeutic support.
+        </p>
+
+        <div class="section-divider">*</div>
+
+        <div class="session-block">
+            <div class="session-title">First Session</div>
+            <p>30 minutes · Online<br>£30</p>
         </div>
 
-        <div class="section">
-            <div class="section-title">My Position</div>
-            <p>People are already coherent.</p>
-            <p>Most of the time, something just gets clouded—in thinking, in language, or in how a situation is being held.</p>
-            <p>You can be wrong about something without anything being wrong with you. You can also be misunderstood without that making you incoherent.</p>
+        <div class="session-block">
+            <div class="session-title">Standard Sessions</div>
+            <p>60 minutes · Online or in person (Bedford)<br>£100</p>
         </div>
 
-        <div class="section">
-            <div class="section-title">What I Do</div>
-            <p>I listen closely, work with what you’re saying, and help refine how it is being held—sometimes by reflecting something back, sometimes by questioning it, sometimes by staying with it a little longer than you would on your own.</p>
-            <p>I don’t offer advice or try to direct you toward a particular outcome.</p>
-            <p>The aim is not to add new ideas, but to help what is already there become more precise and workable in language.</p>
+        <p>
+            If this feels useful, you’re welcome to get in touch.
+        </p>
+
+        <div class="email-block">
+            <p>Please send an enquiry with the subject <em>SESSIONS</em> to:</p>
+            <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
         </div>
 
-        <div class="section">
-            <div class="section-title">What Happens</div>
-            <p>We take what you bring and work through it together in conversation.</p>
-            <p>That might involve slowing things down, testing a thought, or following a line of reasoning further than you might usually go.</p>
-            <p>Clarity tends to emerge through that process—not as a sudden insight, but as something that becomes more precise and stable as we stay with it.</p>
-            <p>You don’t need to prepare anything. You don’t need to present yourself in a particular way. You can start exactly where you are.</p>
-        </div>
+        <div class="section-divider">*</div>
 
-        <div class="section">
-            <div class="section-title">Who's It For</div>
-            <p>It tends to suit people who are not looking to be advised, coached, or fixed—but who want space to think carefully and speak without pressure, in a way that actually holds.</p>
-            <p>It is not a substitute for clinical or therapeutic support.</p>
-        </div>
+        <div class="small-note">
+            <p>
+                If you’re curious about where this comes from, you’re welcome to explore the rest of the site.
+            </p>
 
-        <div class="section">
-            <div class="section-title">Practical Details</div>
-            <p><strong>One-to-One Sessions</strong><br>
-            60 minutes - Online or in person (Bedford)<br>
-            £100</p>
-
-            <p>If this feels useful, you’re welcome to get in touch.</p>
-
-            <div class="email-block">
-                <p>Please send an enquiry with the subject <strong>SESSIONS</strong> to:</p>
-                <a href="mailto:contact@maxthackara.uk">contact@maxthackara.uk</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">A Quiet Note</div>
-            <p>If you’re curious about where this comes from, you’re welcome to explore the rest of the site.</p>
-            <p>This isn’t a system or a method. It’s something I’ve developed through staying closely with this kind of conversation over time.</p>
+            <p>
+                This isn’t a system or a method. It’s something developed through staying closely with this kind of conversation over time.
+            </p>
         </div>
 
     </div>
