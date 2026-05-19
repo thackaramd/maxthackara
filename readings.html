@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Readings — Max Thackara</title>
 
@@ -11,9 +15,14 @@
     rel="stylesheet"
 >
 
-<link rel="icon" type="image/svg" href="/images/favicon.svg">
+<link
+    rel="icon"
+    type="image/svg"
+    href="/images/favicon.svg"
+>
 
 <style>
+
 :root {
 
     --bg: #FFE5C9;
@@ -40,6 +49,7 @@
 
 html,
 body {
+
     margin: 0;
     min-height: 100%;
 }
@@ -51,6 +61,7 @@ body {
     color: var(--text);
 
     min-height: 100vh;
+    min-height: 100dvh;
 
     display: flex;
     flex-direction: column;
@@ -66,6 +77,9 @@ body {
     overflow-x: hidden;
 
     position: relative;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 /* subtle paper grain */
@@ -85,16 +99,33 @@ body::before {
         url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 }
 
+/* MAIN LAYOUT */
+
+main {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding:
+        56px
+        48px
+        90px;
+
+    position: relative;
+    z-index: 2;
+}
+
 /* HEADER */
 
 .header-container {
 
     text-align: center;
 
-    margin-top: 72px;
-
-    position: relative;
-    z-index: 2;
+    width: 100%;
 
     animation: fadeIn 1.1s ease;
 }
@@ -184,27 +215,14 @@ body::before {
     display: none;
 }
 
-/* MAIN */
-
-main {
-    flex: 1;
-}
-
-/* MAIN CONTENT */
+/* CONTENT */
 
 .content-container {
 
-    max-width: 980px;
+    width: 100%;
 
-    margin: 0 auto;
-
-    padding:
-        0
-        40px
-        100px;
-
-    position: relative;
-    z-index: 2;
+    display: flex;
+    justify-content: center;
 }
 
 /* CONTENT PANEL */
@@ -227,8 +245,7 @@ main {
     border-radius: 10px;
 
     max-width: 760px;
-
-    margin: 0 auto;
+    width: 100%;
 
     box-shadow: var(--shadow);
 }
@@ -391,7 +408,7 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
-/* FADE */
+/* SUBTLE FADE */
 
 @keyframes fadeIn {
 
@@ -410,8 +427,12 @@ a:focus-visible {
 
 @media (max-width: 980px) {
 
-    .header-container {
-        margin-top: 60px;
+    main {
+
+        padding:
+            48px
+            34px
+            80px;
     }
 
     .title {
@@ -427,14 +448,6 @@ a:focus-visible {
         margin-bottom: 62px;
     }
 
-    .content-container {
-
-        padding:
-            0
-            28px
-            80px;
-    }
-
     .content-panel {
 
         padding:
@@ -447,8 +460,12 @@ a:focus-visible {
 
 @media (max-width: 750px) {
 
-    .header-container {
-        margin-top: 48px;
+    main {
+
+        padding:
+            38px
+            20px
+            70px;
     }
 
     .title {
@@ -492,14 +509,6 @@ a:focus-visible {
         height: 0;
     }
 
-    .content-container {
-
-        padding:
-            0
-            18px
-            70px;
-    }
-
     .content-panel {
 
         padding:
@@ -539,210 +548,230 @@ a:focus-visible {
         font-size: 1rem;
     }
 }
+
+/* VERY SMALL PHONES */
+
+@media (max-height: 700px) {
+
+    main {
+
+        padding-top: 28px;
+    }
+
+    .page-nav {
+
+        margin-bottom: 40px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="header-container">
+<main>
 
-    <div class="title">
+    <div class="header-container">
 
-        <a href="index.html">
-            Max Thackara
-        </a>
+        <div class="title">
 
-    </div>
+            <a href="index.html">
+                Max Thackara
+            </a>
 
-    <div class="underline"></div>
-
-    <div class="page-nav">
-
-        <a href="books.html">
-            Books
-        </a>
-
-        <a href="sessions.html">
-            Sessions
-        </a>
-
-        <a href="workshops.html">
-            Workshops
-        </a>
-        
-        <span class="nav-break"></span>
-        
-        <a
-            href="readings.html"
-            class="current"
-        >
-            Readings
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </div>
-
-</div>
-
-<main class="content-container">
-
-    <div class="content-panel">
-
-        <div class="page-heading">
-            Readings
         </div>
 
-        <div class="divider"></div>
+        <div class="underline"></div>
 
-        <div class="intro-text">
+        <div class="page-nav">
 
-            <div class="section">
+            <a href="books.html">
+                Books
+            </a>
 
-                <p>
-                    I offer close written readings of poems,
-                    fiction, essays, and other creative work,
-                    with attention to language, structure,
-                    tone, and what the piece seems to be
-                    reaching toward.
-                </p>
+            <a href="sessions.html">
+                Sessions
+            </a>
 
-                <p>
-                    The aim is not simply to evaluate a piece
-                    of writing, but to stay with it carefully
-                    enough for its strengths, tensions,
-                    patterns, and possibilities to become
-                    clearer in language.
-                </p>
+            <a href="workshops.html">
+                Workshops
+            </a>
 
+            <span class="nav-break"></span>
+
+            <a
+                href="readings.html"
+                class="current"
+            >
+                Readings
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+    <section class="content-container">
+
+        <div class="content-panel">
+
+            <div class="page-heading">
+                Readings
             </div>
 
-            <div class="dot-divider">•</div>
+            <div class="divider"></div>
 
-            <div class="section">
+            <div class="intro-text">
 
-                <p>
-                    Most pieces already know more than they
-                    first appear to.
-                </p>
-
-                <p>
-                    Often, something in the work is trying
-                    to emerge more fully, while another part
-                    is holding too tightly to explanation,
-                    certainty, or control.
-                </p>
-
-                <p>
-                    A close reading can help clarify where
-                    the writing feels most alive, where it
-                    begins to flatten, and where the deeper
-                    movement of the piece may actually be
-                    taking place.
-                </p>
-
-            </div>
-
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    My responses tend to focus less on rules
-                    or prescriptions and more on presence:
-                    what the language is doing, where the
-                    energy of the work gathers, what remains
-                    unresolved, and where the writing seems
-                    most fully itself.
-                </p>
-
-                <p>
-                    I’m particularly interested in work
-                    that is willing to take imaginative,
-                    emotional, or stylistic risks.
-                </p>
-
-                <p>
-                    The feedback itself is often exploratory
-                    and developmental rather than corrective.
-                </p>
-
-                <p>
-                    Sometimes this means discussing structure
-                    or clarity in direct terms.
-                </p>
-
-                <p>
-                    Sometimes it means staying with an image,
-                    tonal movement, or unresolved tension
-                    long enough for something more precise
-                    to emerge from it.
-                </p>
-
-            </div>
-
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    <strong>Written Readings</strong><br>
-                    Detailed written feedback on submitted work<br>
-                    £50
-                </p>
-
-                <p>
-                    <strong>One-to-one Readings</strong><br>
-                    Close discussion of a submitted piece
-                    in conversation<br>
-                    60 minutes · Online or in person (Bedford)<br>
-                    £75
-                </p>
-
-                <p>
-                    You’re welcome to send poetry, fiction,
-                    essays, fragments, or unfinished work.
-                </p>
-
-                <div class="email-block">
+                <div class="section">
 
                     <p>
-                        Please send enquiries with the subject
-                        <strong>READINGS</strong> to:
+                        I offer close written readings of poems,
+                        fiction, essays, and other creative work,
+                        with attention to language, structure,
+                        tone, and what the piece seems to be
+                        reaching toward.
                     </p>
 
-                    <a href="mailto:contact@maxthackara.uk">
-                        contact@maxthackara.uk
-                    </a>
+                    <p>
+                        The aim is not simply to evaluate a piece
+                        of writing, but to stay with it carefully
+                        enough for its strengths, tensions,
+                        patterns, and possibilities to become
+                        clearer in language.
+                    </p>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        Most pieces already know more than they
+                        first appear to.
+                    </p>
+
+                    <p>
+                        Often, something in the work is trying
+                        to emerge more fully, while another part
+                        is holding too tightly to explanation,
+                        certainty, or control.
+                    </p>
+
+                    <p>
+                        A close reading can help clarify where
+                        the writing feels most alive, where it
+                        begins to flatten, and where the deeper
+                        movement of the piece may actually be
+                        taking place.
+                    </p>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        My responses tend to focus less on rules
+                        or prescriptions and more on presence:
+                        what the language is doing, where the
+                        energy of the work gathers, what remains
+                        unresolved, and where the writing seems
+                        most fully itself.
+                    </p>
+
+                    <p>
+                        I’m particularly interested in work
+                        that is willing to take imaginative,
+                        emotional, or stylistic risks.
+                    </p>
+
+                    <p>
+                        The feedback itself is often exploratory
+                        and developmental rather than corrective.
+                    </p>
+
+                    <p>
+                        Sometimes this means discussing structure
+                        or clarity in direct terms.
+                    </p>
+
+                    <p>
+                        Sometimes it means staying with an image,
+                        tonal movement, or unresolved tension
+                        long enough for something more precise
+                        to emerge from it.
+                    </p>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        <strong>Written Readings</strong><br>
+                        Detailed written feedback on submitted work<br>
+                        £50
+                    </p>
+
+                    <p>
+                        <strong>One-to-one Readings</strong><br>
+                        Close discussion of a submitted piece
+                        in conversation<br>
+                        60 minutes · Online or in person (Bedford)<br>
+                        £75
+                    </p>
+
+                    <p>
+                        You’re welcome to send poetry, fiction,
+                        essays, fragments, or unfinished work.
+                    </p>
+
+                    <div class="email-block">
+
+                        <p>
+                            Please send enquiries with the subject
+                            <strong>READINGS</strong> to:
+                        </p>
+
+                        <a href="mailto:contact@maxthackara.uk">
+                            contact@maxthackara.uk
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        If you’d like a sense of the kind of
+                        engagement these readings involve,
+                        you may find something of it reflected
+                        in <em>The Parlour</em>.
+                    </p>
+
+                    <p>
+                        The same attention to language,
+                        presence, and imaginative risk
+                        continues here too.
+                    </p>
 
                 </div>
 
             </div>
 
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    If you’d like a sense of the kind of
-                    engagement these readings involve,
-                    you may find something of it reflected
-                    in <em>The Parlour</em>.
-                </p>
-
-                <p>
-                    The same attention to language,
-                    presence, and imaginative risk
-                    continues here too.
-                </p>
-
-            </div>
-
         </div>
 
-    </div>
+    </section>
 
 </main>
 
