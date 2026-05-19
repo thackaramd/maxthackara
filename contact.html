@@ -255,6 +255,41 @@ main {
     box-shadow: var(--shadow);
 }
 
+/* CONTACT NOTES */
+
+.contact-note,
+.parlour-note {
+
+    margin: 0;
+
+    max-width: 420px;
+
+    text-align: center;
+
+    line-height: 1.75;
+
+    color: var(--text-soft);
+}
+
+.contact-note {
+
+    font-size: 0.92rem;
+
+    margin-bottom: 16px;
+}
+
+.parlour-note {
+
+    font-size: 0.88rem;
+
+    margin-top: 16px;
+}
+
+.parlour-note em {
+
+    font-style: italic;
+}
+
 /* EMAIL */
 
 .contact-email {
@@ -354,7 +389,8 @@ main {
 }
 
 .contact-download a,
-.paper-link a {
+.paper-link a,
+.parlour-note a {
 
     color: var(--text);
 
@@ -368,7 +404,8 @@ main {
 }
 
 .contact-download a:hover,
-.paper-link a:hover {
+.paper-link a:hover,
+.parlour-note a:hover {
 
     color: var(--hover);
 }
@@ -630,7 +667,9 @@ a:focus-visible {
 
     .contact-bullets li,
     .paper-description,
-    .contact-certifications {
+    .contact-certifications,
+    .contact-note,
+    .parlour-note {
 
         font-size: 0.92rem;
     }
@@ -716,12 +755,30 @@ a:focus-visible {
                 class="portrait"
             >
 
+            <p class="contact-note">
+                For talks, schools, and other enquiries,
+                please get in touch below.
+            </p>
+
             <p class="contact-email">
 
                 <a href="mailto:contact@maxthackara.uk">
                     contact@maxthackara.uk
                 </a>
 
+            </p>
+
+            <p class="parlour-note">
+                And for anything related to
+                <em>The Parlour</em> magazine,
+                please see
+                <a
+                    href="https://theparlour.org.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    theparlour.org.uk
+                </a>
             </p>
 
         </div>
