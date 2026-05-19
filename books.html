@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Books — Max Thackara</title>
 
@@ -11,9 +15,14 @@
     rel="stylesheet"
 >
 
-<link rel="icon" type="image/svg" href="/images/favicon.svg">
+<link
+    rel="icon"
+    type="image/svg"
+    href="/images/favicon.svg"
+>
 
 <style>
+
 :root {
 
     --bg: #FFE5C9;
@@ -37,6 +46,7 @@
 
 html,
 body {
+
     margin: 0;
     min-height: 100%;
 }
@@ -46,6 +56,12 @@ body {
     font-family: 'Prata', serif;
 
     color: var(--text);
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
 
     background:
         radial-gradient(
@@ -58,6 +74,9 @@ body {
     overflow-x: hidden;
 
     position: relative;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 /* subtle paper grain */
@@ -77,16 +96,33 @@ body::before {
         url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 }
 
+/* MAIN LAYOUT */
+
+main {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding:
+        56px
+        48px
+        90px;
+
+    position: relative;
+    z-index: 2;
+}
+
 /* HEADER */
 
 .header-container {
 
     text-align: center;
 
-    margin-top: 72px;
-
-    position: relative;
-    z-index: 2;
+    width: 100%;
 
     animation: fadeIn 1.1s ease;
 }
@@ -135,7 +171,7 @@ body::before {
 
     font-size: 1.08rem;
 
-    margin-bottom: 96px;
+    margin-bottom: 82px;
 
     flex-wrap: nowrap;
 }
@@ -180,14 +216,13 @@ body::before {
 
 .books-container {
 
+    width: 100%;
+
     display: flex;
     justify-content: center;
-
-    padding:
-        0
-        48px
-        100px;
 }
+
+/* SHELF */
 
 .book-shelf {
 
@@ -275,8 +310,12 @@ a:focus-visible {
 
 @media (max-width: 980px) {
 
-    .header-container {
-        margin-top: 60px;
+    main {
+
+        padding:
+            48px
+            34px
+            80px;
     }
 
     .title {
@@ -289,15 +328,7 @@ a:focus-visible {
 
         font-size: 1rem;
 
-        margin-bottom: 74px;
-    }
-
-    .books-container {
-
-        padding:
-            0
-            34px
-            80px;
+        margin-bottom: 68px;
     }
 }
 
@@ -305,8 +336,12 @@ a:focus-visible {
 
 @media (max-width: 750px) {
 
-    .header-container {
-        margin-top: 48px;
+    main {
+
+        padding:
+            38px
+            20px
+            70px;
     }
 
     .title {
@@ -333,7 +368,7 @@ a:focus-visible {
 
         font-size: 0.98rem;
 
-        margin-bottom: 54px;
+        margin-bottom: 48px;
 
         max-width: 340px;
 
@@ -348,14 +383,6 @@ a:focus-visible {
         flex-basis: 100%;
 
         height: 0;
-    }
-
-    .books-container {
-
-        padding:
-            0
-            20px
-            70px;
     }
 
     .book-shelf {
@@ -374,111 +401,131 @@ a:focus-visible {
         max-width: 190px;
     }
 }
+
+/* VERY SMALL PHONES */
+
+@media (max-height: 700px) {
+
+    main {
+
+        padding-top: 28px;
+    }
+
+    .page-nav {
+
+        margin-bottom: 40px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="header-container">
+<main>
 
-    <div class="title">
+    <div class="header-container">
 
-        <a href="index.html">
-            Max Thackara
-        </a>
+        <div class="title">
+
+            <a href="index.html">
+                Max Thackara
+            </a>
+
+        </div>
+
+        <div class="underline"></div>
+
+        <div class="page-nav">
+
+            <a
+                href="books.html"
+                class="current"
+            >
+                Books
+            </a>
+
+            <a href="sessions.html">
+                Sessions
+            </a>
+
+            <a href="workshops.html">
+                Workshops
+            </a>
+
+            <span class="nav-break"></span>
+
+            <a href="readings.html">
+                Readings
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
 
     </div>
 
-    <div class="underline"></div>
+    <section class="books-container">
 
-    <div class="page-nav">
+        <div class="book-shelf">
 
-        <a
-            href="books.html"
-            class="current"
-        >
-            Books
-        </a>
-
-        <a href="sessions.html">
-            Sessions
-        </a>
-
-        <a href="workshops.html">
-            Workshops
-        </a>
-        
-        <span class="nav-break"></span>
-        
-        <a href="readings.html">
-            Readings
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </div>
-
-</div>
-
-<main class="books-container">
-
-    <div class="book-shelf">
-
-        <a
-            href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D"
-            class="book"
-            target="_blank"
-            rel="noopener"
-        >
-            <img
-                src="images/book1.png"
-                alt="The Artist's Journey by Max Thackara"
-                loading="lazy"
+            <a
+                href="https://www.amazon.co.uk/Artists-Journey-Max-Thackara/dp/B0FFMBZX8D"
+                class="book"
+                target="_blank"
+                rel="noopener"
             >
-        </a>
+                <img
+                    src="images/book1.png"
+                    alt="The Artist's Journey by Max Thackara"
+                    loading="lazy"
+                >
+            </a>
 
-        <a
-            href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF"
-            class="book"
-            target="_blank"
-            rel="noopener"
-        >
-            <img
-                src="images/book2.png"
-                alt="First Cup: Poetry Collection by Max Thackara"
-                loading="lazy"
+            <a
+                href="https://www.amazon.co.uk/First-Cup-Poetry-Collection/dp/B0F92FGWMF"
+                class="book"
+                target="_blank"
+                rel="noopener"
             >
-        </a>
+                <img
+                    src="images/book2.png"
+                    alt="First Cup: Poetry Collection by Max Thackara"
+                    loading="lazy"
+                >
+            </a>
 
-        <a
-            href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2"
-            class="book"
-            target="_blank"
-            rel="noopener"
-        >
-            <img
-                src="images/book4.png"
-                alt="Sketches of Early Womanhood by Max Thackara"
-                loading="lazy"
+            <a
+                href="https://www.amazon.co.uk/Sketches-Early-Womanhood-Max-Thackara/dp/B0FNCQ8SB2"
+                class="book"
+                target="_blank"
+                rel="noopener"
             >
-        </a>
+                <img
+                    src="images/book4.png"
+                    alt="Sketches of Early Womanhood by Max Thackara"
+                    loading="lazy"
+                >
+            </a>
 
-        <a
-            href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG"
-            class="book"
-            target="_blank"
-            rel="noopener"
-        >
-            <img
-                src="images/book3.png"
-                alt="Journal by Max Thackara"
-                loading="lazy"
+            <a
+                href="https://www.amazon.co.uk/Journal-Max-Thackara/dp/B0GD4SKBBG"
+                class="book"
+                target="_blank"
+                rel="noopener"
             >
-        </a>
+                <img
+                    src="images/book3.png"
+                    alt="Journal by Max Thackara"
+                    loading="lazy"
+                >
+            </a>
 
-    </div>
+        </div>
+
+    </section>
 
 </main>
 
