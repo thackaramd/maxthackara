@@ -318,54 +318,43 @@ main {
 
 /* animation */
 @keyframes fadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* TABLET */
 @media (max-width: 980px) {
-
-    main {
-        padding: 48px 34px 80px;
-    }
-
-    .title {
-        font-size: 1.8rem;
-    }
-
-    .page-nav {
-        font-size: 1rem;
-        gap: 22px;
-        margin-bottom: 62px;
-    }
-
-    .content-panel {
-        padding: 44px 40px;
-    }
+    main { padding: 48px 34px 80px; }
+    .title { font-size: 1.8rem; }
+    .page-nav { font-size: 1rem; gap: 22px; margin-bottom: 62px; }
+    .content-panel { padding: 44px 40px; }
 }
 
 /* MOBILE */
 @media (max-width: 750px) {
 
-    main {
-        padding: 38px 20px 70px;
+    main { padding: 38px 20px 70px; }
+
+    .title { font-size: 1.55rem; }
+
+    .underline { width: 46px; margin-bottom: 30px; }
+
+    /* ✅ NAV FIX */
+    .page-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 22px;
+        font-size: 0.98rem;
+        margin-bottom: 52px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .title {
-        font-size: 1.55rem;
-    }
-
-    .underline {
-        width: 46px;
-        margin-bottom: 30px;
+    .nav-break {
+        display: block;
+        flex-basis: 100%;
+        height: 0;
     }
 
     .content-panel {
@@ -373,19 +362,11 @@ main {
         border-radius: 8px;
     }
 
-    .page-heading {
-        font-size: 1.3rem;
-    }
+    .page-heading { font-size: 1.3rem; }
 
-    .divider {
-        width: 46px;
-        margin-bottom: 34px;
-    }
+    .divider { width: 46px; margin-bottom: 34px; }
 
-    .intro-text {
-        font-size: 0.95rem;
-        line-height: 1.9;
-    }
+    .intro-text { font-size: 0.95rem; line-height: 1.9; }
 }
 
 </style>
@@ -423,170 +404,84 @@ main {
 
         <div class="content-panel">
 
-            <div class="page-heading">
-                Editing
-            </div>
+            <div class="page-heading">Editing</div>
 
             <div class="divider"></div>
 
             <div class="intro-text">
 
+                <!-- FULL ORIGINAL CONTENT RESTORED -->
                 <div class="section">
-
-                    <p>
-                        Editing is, for me, less about correcting a manuscript than accompanying a book as it gradually discovers its own form.
-                    </p>
-
-                    <p>
-                        Some projects arrive almost complete, asking only for a careful reader and an attentive editorial eye.
-                    </p>
-
-                    <p>
-                        Others begin as loose collections of writing, images, notebooks, or ideas whose final shape is not yet apparent.
-                    </p>
-
-                    <p>
-                        My role is to work alongside the author, helping the project become more fully itself through conversation, reflection, and careful attention.
-                    </p>
-
+                    <p>Editing is, for me, less about correcting a manuscript than accompanying a book as it gradually discovers its own form.</p>
+                    <p>Some projects arrive almost complete, asking only for a careful reader and an attentive editorial eye.</p>
+                    <p>Others begin as loose collections of writing, images, notebooks, or ideas whose final shape is not yet apparent.</p>
+                    <p>My role is to work alongside the author, helping the project become more fully itself through conversation, reflection, and careful attention.</p>
                 </div>
 
                 <div class="dot-divider">•</div>
 
                 <div class="section">
-
-                    <p>
-                        Every book unfolds differently.
-                    </p>
-
-                    <p>
-                        Sometimes the work centres on language: clarifying a sentence, reshaping a chapter, or finding the rhythm that allows the writing to breathe.
-                    </p>
-
-                    <p>
-                        At other times it is the larger structure that matters most: the ordering of sections, the relationship between text and image, the movement from one page to the next, or the quiet logic that gradually reveals itself over time.
-                    </p>
-
-                    <p>
-                        Rather than imposing a particular vision, I try to listen closely to what the work itself seems to be asking.
-                    </p>
-
-                    <p>
-                        The editorial process becomes less about directing the project than discovering it together.
-                    </p>
-
+                    <p>Every book unfolds differently.</p>
+                    <p>Sometimes the work centres on language: clarifying a sentence, reshaping a chapter, or finding the rhythm that allows the writing to breathe.</p>
+                    <p>At other times it is the larger structure that matters most: the ordering of sections, the relationship between text and image, the movement from one page to the next, or the quiet logic that gradually reveals itself over time.</p>
+                    <p>Rather than imposing a particular vision, I try to listen closely to what the work itself seems to be asking.</p>
+                    <p>The editorial process becomes less about directing the project than discovering it together.</p>
                 </div>
 
                 <div class="dot-divider">•</div>
 
                 <div class="section">
-
-                    <p>
-                        Some collaborations consist of a single consultation.
-                    </p>
-
-                    <p>
-                        Others become longer editorial partnerships, meeting regularly over weeks or months as the manuscript gradually finds its final form.
-                    </p>
-
-                    <p>
-                        I particularly enjoy accompanying projects over time.
-                    </p>
-
-                    <p>
-                        Working at a slower pace often allows unexpected possibilities to emerge, and gives space for decisions to settle before new ones are made.
-                    </p>
-
-                    <p>
-                        No two books ask for quite the same kind of attention.
-                    </p>
-
+                    <p>Some collaborations consist of a single consultation.</p>
+                    <p>Others become longer editorial partnerships, meeting regularly over weeks or months as the manuscript gradually finds its final form.</p>
+                    <p>I particularly enjoy accompanying projects over time.</p>
+                    <p>Working at a slower pace often allows unexpected possibilities to emerge, and gives space for decisions to settle before new ones are made.</p>
+                    <p>No two books ask for quite the same kind of attention.</p>
                 </div>
 
                 <div class="dot-divider">•</div>
 
                 <div class="section">
-
-                    <p>
-                        Some authors choose to publish independently, in which case I can remain involved beyond the manuscript itself.
-                    </p>
-
-                    <p>
-                        This may include preparing files for print, advising on paper and format, liaising with independent printers, managing proof copies, and overseeing production through to finished books.
-                    </p>
-
-                    <p>
-                        Some authors enjoy taking part in every practical decision.
-                    </p>
-
-                    <p>
-                        Others prefer simply to receive the finished books, knowing the production has been carefully managed throughout.
-                    </p>
-
-                    <p>
-                        Either way, the aim is the same: to help bring into the world a book that feels complete, thoughtful, and true to its original intention.
-                    </p>
-
+                    <p>Some authors choose to publish independently, in which case I can remain involved beyond the manuscript itself.</p>
+                    <p>This may include preparing files for print, advising on paper and format, liaising with independent printers, managing proof copies, and overseeing production through to finished books.</p>
+                    <p>Some authors enjoy taking part in every practical decision.</p>
+                    <p>Others prefer simply to receive the finished books, knowing the production has been carefully managed throughout.</p>
+                    <p>Either way, the aim is the same: to help bring into the world a book that feels complete, thoughtful, and true to its original intention.</p>
                 </div>
 
                 <div class="dot-divider">•</div>
 
                 <div class="section">
+                    <p><strong>Editorial Consultation</strong><br>
+                    A single conversation around an existing manuscript or developing project.<br>
+                    From £75</p>
 
-                    <p>
-                        <strong>Editorial Consultation</strong><br>
-                        A single conversation around an existing manuscript or developing project.<br>
-                        From £75
-                    </p>
+                    <p><strong>Editorial Partnership</strong><br>
+                    Ongoing editorial conversations as a project develops over time.<br>
+                    Quoted according to the scope of the work.</p>
 
-                    <p>
-                        <strong>Editorial Partnership</strong><br>
-                        Ongoing editorial conversations as a project develops over time.<br>
-                        Quoted according to the scope of the work.
-                    </p>
+                    <p><strong>Publication Support</strong><br>
+                    Independent publishing, print preparation, production management, and liaison with printers.<br>
+                    Quoted individually.</p>
 
-                    <p>
-                        <strong>Publication Support</strong><br>
-                        Independent publishing, print preparation, production management, and liaison with printers.<br>
-                        Quoted individually.
-                    </p>
-
-                    <p>
-                        <strong>Complete Editorial Partnership</strong><br>
-                        Accompanying a project from its earliest stages through to finished printed copies.<br>
-                        Quoted individually.
-                    </p>
+                    <p><strong>Complete Editorial Partnership</strong><br>
+                    Accompanying a project from its earliest stages through to finished printed copies.<br>
+                    Quoted individually.</p>
 
                     <div class="email-block">
-
-                        <p>
-                            If you're considering a project, you're very welcome to get in touch before anything is committed.
-                        </p>
-
-                        <p>
-                            Please send enquiries with the subject <strong>EDITING</strong> to:
-                        </p>
+                        <p>If you're considering a project, you're very welcome to get in touch before anything is committed.</p>
+                        <p>Please send enquiries with the subject <strong>EDITING</strong> to:</p>
 
                         <a href="mailto:contact@maxthackara.uk">
                             contact@maxthackara.uk
                         </a>
-
                     </div>
-
                 </div>
 
                 <div class="dot-divider">•</div>
 
                 <div class="section">
-
-                    <p>
-                        I have come to think that editing is not simply a technical discipline, but a form of attention.
-                    </p>
-
-                    <p>
-                        Whether we meet once or work together over many months, my hope is always the same: to help create the conditions in which a book can become more fully what it already carries within it.
-                    </p>
-
+                    <p>I have come to think that editing is not simply a technical discipline, but a form of attention.</p>
+                    <p>Whether we meet once or work together over many months, my hope is always the same: to help create the conditions in which a book can become more fully what it already carries within it.</p>
                 </div>
 
             </div>
