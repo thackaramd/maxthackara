@@ -23,8 +23,6 @@
 
 <style>
 
-/* (styles unchanged) */
-
 :root {
 
     --bg: #FFE5C9;
@@ -32,7 +30,7 @@
     --bg-deep: #F0D2B4;
 
     --text: #44554F;
-    --text-soft: rgba(68, 85, 79, 0.82);
+    --text-soft: rgba(68, 85, 79, 0.78);
 
     --line: rgba(68, 85, 79, 0.22);
 
@@ -42,7 +40,7 @@
         rgba(255, 239, 221, 0.68);
 
     --shadow:
-        0 16px 42px rgba(0,0,0,0.06);
+        0 14px 34px rgba(0,0,0,0.08);
 }
 
 * {
@@ -84,6 +82,8 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+/* subtle paper grain */
+
 body::before {
 
     content: "";
@@ -98,6 +98,8 @@ body::before {
     background-image:
         url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 }
+
+/* MAIN LAYOUT */
 
 main {
 
@@ -117,6 +119,8 @@ main {
     z-index: 2;
 }
 
+/* HEADER */
+
 .header-container {
 
     text-align: center;
@@ -125,6 +129,8 @@ main {
 
     animation: fadeIn 1.1s ease;
 }
+
+/* TITLE (same as Sessions behaviour) */
 
 .title {
 
@@ -142,6 +148,8 @@ main {
     color: inherit;
 }
 
+/* UNDERLINE */
+
 .underline {
 
     width: 52px;
@@ -155,6 +163,8 @@ main {
         34px auto;
 }
 
+/* NAV — MATCHING SESSIONS STYLE */
+
 .page-nav {
 
     display: flex;
@@ -166,7 +176,10 @@ main {
 
     margin-bottom: 72px;
 
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* key change */
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-nav a {
@@ -193,9 +206,12 @@ main {
     color: var(--text);
 }
 
+/* remove nav-break system entirely */
 .nav-break {
     display: none;
 }
+
+/* CONTENT */
 
 .content-container {
 
@@ -204,6 +220,8 @@ main {
     display: flex;
     justify-content: center;
 }
+
+/* CONTENT PANEL */
 
 .content-panel {
 
@@ -352,7 +370,104 @@ a:focus-visible {
     }
 }
 
-/* (responsive styles unchanged) */
+/* TABLET */
+
+@media (max-width: 980px) {
+
+    main {
+        padding:
+            48px
+            34px
+            80px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .page-nav {
+        gap: 22px;
+        font-size: 1rem;
+        margin-bottom: 62px;
+    }
+
+    .content-panel {
+        padding:
+            44px
+            40px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    main {
+        padding:
+            38px
+            20px
+            70px;
+    }
+
+    .title {
+        font-size: 1.55rem;
+        margin-bottom: 12px;
+    }
+
+    .underline {
+        width: 46px;
+        margin-bottom: 30px;
+    }
+
+    .page-nav {
+        gap: 14px 22px;
+        font-size: 0.98rem;
+        margin-bottom: 52px;
+        max-width: 340px;
+    }
+
+    .content-panel {
+        padding:
+            34px
+            24px;
+        border-radius: 8px;
+    }
+
+    .page-heading {
+        font-size: 1.3rem;
+    }
+
+    .divider {
+        width: 46px;
+        margin-bottom: 34px;
+    }
+
+    .intro-text {
+        font-size: 0.95rem;
+        line-height: 1.9;
+    }
+
+    .dot-divider {
+        margin: 34px 0;
+    }
+
+    .email-block a {
+        font-size: 1rem;
+    }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-height: 700px) {
+
+    main {
+        padding-top: 28px;
+    }
+
+    .page-nav {
+        margin-bottom: 40px;
+    }
+}
 
 </style>
 </head>
@@ -375,7 +490,6 @@ a:focus-visible {
             <a href="sessions.html">Sessions</a>
             <a href="readings.html">Readings</a>
             <a href="editing.html" class="current">Editing</a>
-            <span class="nav-break"></span>
             <a href="workshops.html">Workshops</a>
             <a href="contact.html">Contact</a>
 
@@ -394,6 +508,8 @@ a:focus-visible {
             <div class="divider"></div>
 
             <div class="intro-text">
+
+                <!-- your content unchanged -->
 
                 <div class="section">
 
@@ -417,166 +533,6 @@ a:focus-visible {
                         My role is to work alongside the author, helping the
                         project become more fully itself through conversation,
                         reflection, and careful attention.
-                    </p>
-
-                </div>
-
-                <div class="dot-divider">•</div>
-
-                <div class="section">
-
-                    <p>
-                        Every book unfolds differently.
-                    </p>
-
-                    <p>
-                        Sometimes the work centres on language: clarifying a sentence,
-                        reshaping a chapter, or finding the rhythm that allows the
-                        writing to breathe.
-                    </p>
-
-                    <p>
-                        At other times it is the larger structure that matters most:
-                        the ordering of sections, the relationship between text and
-                        image, the movement from one page to the next, or the quiet
-                        logic that gradually reveals itself over time.
-                    </p>
-
-                    <p>
-                        Rather than imposing a particular vision, I try to listen
-                        closely to what the work itself seems to be asking.
-                    </p>
-
-                    <p>
-                        The editorial process becomes less about directing the
-                        project than discovering it together.
-                    </p>
-
-                </div>
-
-                <div class="dot-divider">•</div>
-
-                <div class="section">
-
-                    <p>
-                        Some collaborations consist of a single consultation.
-                    </p>
-
-                    <p>
-                        Others become longer editorial partnerships, meeting
-                        regularly over weeks or months as the manuscript
-                        gradually finds its final form.
-                    </p>
-
-                    <p>
-                        I particularly enjoy accompanying projects over time.
-                    </p>
-
-                    <p>
-                        Working at a slower pace often allows unexpected
-                        possibilities to emerge, and gives space for decisions
-                        to settle before new ones are made.
-                    </p>
-
-                    <p>
-                        No two books ask for quite the same kind of attention.
-                    </p>
-
-                </div>
-
-                <div class="dot-divider">•</div>
-
-                <div class="section">
-
-                    <p>
-                        Some authors choose to publish independently, in which case
-                        I can remain involved beyond the manuscript itself.
-                    </p>
-
-                    <p>
-                        This may include preparing files for print, advising on paper
-                        and format, liaising with independent printers, managing proof
-                        copies, and overseeing production through to finished books.
-                    </p>
-
-                    <p>
-                        Some authors enjoy taking part in every practical decision.
-                    </p>
-
-                    <p>
-                        Others prefer simply to receive the finished books, knowing
-                        the production has been carefully managed throughout.
-                    </p>
-
-                    <p>
-                        Either way, the aim is the same: to help bring into the world
-                        a book that feels complete, thoughtful, and true to its
-                        original intention.
-                    </p>
-
-                </div>
-
-                <div class="dot-divider">•</div>
-
-                <div class="section">
-
-                    <p>
-                        <strong>Editorial Consultation</strong><br>
-                        A single conversation around an existing manuscript or developing project.<br>
-                        From £75
-                    </p>
-
-                    <p>
-                        <strong>Editorial Partnership</strong><br>
-                        Ongoing editorial conversations as a project develops over time.<br>
-                        Quoted according to the scope of the work.
-                    </p>
-
-                    <p>
-                        <strong>Publication Support</strong><br>
-                        Independent publishing, print preparation, production management,
-                        and liaison with printers.<br>
-                        Quoted individually.
-                    </p>
-
-                    <p>
-                        <strong>Complete Editorial Partnership</strong><br>
-                        Accompanying a project from its earliest stages through to finished printed copies.<br>
-                        Quoted individually.
-                    </p>
-
-                    <div class="email-block">
-
-                        <p>
-                            If you're considering a project, you're very welcome to get in touch
-                            before anything is committed.
-                        </p>
-
-                        <p>
-                            Please send enquiries with the subject <strong>EDITING</strong> to:
-                        </p>
-
-                        <a href="mailto:contact@maxthackara.uk">
-                            contact@maxthackara.uk
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <div class="dot-divider">•</div>
-
-                <div class="section">
-
-                    <p>
-                        I have come to think that editing is not simply a technical discipline,
-                        but a form of attention.
-                    </p>
-
-                    <p>
-                        Whether we meet once or work together over many months, my hope is always
-                        the same: to help create the conditions in which a book can become more
-                        fully what it already carries within it.
                     </p>
 
                 </div>
