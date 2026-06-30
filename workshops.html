@@ -174,7 +174,7 @@ main {
 
     font-size: 1.08rem;
 
-    margin-bottom: 82px;
+    margin-bottom: 72px;
 
     flex-wrap: nowrap;
 }
@@ -220,9 +220,31 @@ main {
 
     width: 100%;
 
-    max-width: 980px;
+    display: flex;
+    justify-content: center;
+}
 
-    text-align: center;
+.content-panel {
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 241, 225, 0.72),
+            rgba(255, 235, 214, 0.62)
+        );
+
+    backdrop-filter: blur(3px);
+
+    padding:
+        54px
+        54px;
+
+    border-radius: 10px;
+
+    max-width: 760px;
+    width: 100%;
+
+    box-shadow: var(--shadow);
 }
 
 /* PAGE TITLE */
@@ -258,12 +280,6 @@ main {
     font-size: 0.98rem;
 
     line-height: 1.95;
-
-    max-width: 760px;
-
-    margin:
-        0 auto
-        72px auto;
 
     text-align: left;
 
@@ -523,7 +539,14 @@ a:focus-visible {
 
         font-size: 1rem;
 
-        margin-bottom: 68px;
+        margin-bottom: 62px;
+    }
+
+    .content-panel {
+
+        padding:
+            44px
+            40px;
     }
 }
 
@@ -592,13 +615,20 @@ a:focus-visible {
         margin-bottom: 34px;
     }
 
+    .content-panel {
+
+        padding:
+            34px
+            24px;
+
+        border-radius: 8px;
+    }
+
     .intro-text {
 
         font-size: 0.95rem;
 
         line-height: 1.9;
-
-        margin-bottom: 56px;
     }
 
     .options-container {
@@ -697,13 +727,15 @@ a:focus-visible {
 
     <section class="content-container">
 
-        <div class="page-heading">
-            Creative Writing Workshops
-        </div>
+        <div class="content-panel">
 
-        <div class="divider"></div>
+            <div class="page-heading">
+                Creative Writing Workshops
+            </div>
 
-        <div class="intro-text">
+            <div class="divider"></div>
+
+            <div class="intro-text">
 
             <div class="section">
 
@@ -854,6 +886,8 @@ a:focus-visible {
                     Enhanced DBS<br>
                     Safeguarding trained
                 </p>
+
+            </div>
 
             </div>
 
