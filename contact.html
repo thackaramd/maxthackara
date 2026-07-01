@@ -322,13 +322,14 @@ main {
 .contact-affiliations {
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 
-    gap: 28px;
+    gap: clamp(48px, 8vw, 96px);
 
     width: 100%;
-    max-width: 420px;
+    max-width: 720px;
 }
 
 .affiliation {
@@ -487,11 +488,16 @@ a:focus-visible {
 
     .contact-affiliations {
 
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 28px;
+
         max-width: 340px;
     }
 
-    .affiliation,
-    .parlour-note {
+    .affiliation {
 
         font-size: 0.92rem;
     }
@@ -589,6 +595,17 @@ a:focus-visible {
 
             </p>
 
+            <p class="parlour-note">
+                <em>The Parlour</em>:
+                <a
+                    href="https://theparlour.org.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    theparlour.org.uk
+                </a>
+            </p>
+
         </div>
 
         
@@ -625,7 +642,6 @@ a:focus-visible {
             </p>
 
         </div>
-</div>
 
     </div>
 
