@@ -317,80 +317,41 @@ main {
     color: var(--hover);
 }
 
-/* TWO COLUMN LAYOUT */
+/* AFFILIATIONS */
 
-.contact-sections {
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    gap: clamp(60px, 9vw, 120px);
-
-    width: 100%;
-}
-
-/* COLUMN */
-
-.contact-section {
-
-    flex: 1 1 0;
-
-    max-width: 390px;
+.contact-affiliations {
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
 
-    text-align: center;
-}
-
-/* SECTION TITLE */
-
-.contact-subtitle {
-
-    font-size: 1.35rem;
-
-    font-weight: normal;
-
-    line-height: 1.25;
-
-    margin: 0;
-}
-
-/* SMALL DIVIDER */
-
-.sub-divider {
-
-    width: 52px;
-
-    height: 1px;
-
-    background-color: var(--line);
-
-    margin:
-        16px auto
-        34px auto;
-}
-
-/* DOWNLOAD / LINKS */
-
-.contact-download {
-
-    margin:
-        0
-        0
-        28px 0;
+    gap: 28px;
 
     width: 100%;
-
-    text-align: left;
+    max-width: 420px;
 }
 
-.contact-download a,
-.paper-link a,
-.parlour-note a {
+.affiliation {
+
+    margin: 0;
+
+    text-align: center;
+
+    line-height: 1.85;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+}
+
+.affiliation em {
+
+    font-style: italic;
+
+    color: var(--text);
+}
+
+.affiliation a {
 
     color: var(--text);
 
@@ -403,121 +364,9 @@ main {
         opacity 0.22s ease;
 }
 
-.contact-download a:hover,
-.paper-link a:hover,
-.parlour-note a:hover {
+.affiliation a:hover {
 
     color: var(--hover);
-}
-
-/* BULLETS */
-
-.contact-bullets {
-
-    list-style-type: disc;
-
-    list-style-position: outside;
-
-    padding-left: 22px;
-
-    margin:
-        0
-        0
-        18px 0;
-
-    width: 100%;
-
-    text-align: left;
-
-    color: var(--text-soft);
-}
-
-.contact-bullets li {
-
-    margin-bottom: 10px;
-
-    font-size: 0.98rem;
-
-    line-height: 1.7;
-}
-
-/* CERTIFICATIONS */
-
-.contact-certifications {
-
-    margin: 0;
-
-    width: 100%;
-
-    font-size: 0.95rem;
-
-    font-style: italic;
-
-    text-align: left;
-
-    line-height: 1.7;
-
-    color: var(--text-soft);
-}
-
-/* WRITING ENTRIES */
-
-.paper-entry {
-
-    margin-bottom: 38px;
-
-    width: 100%;
-}
-
-.paper-entry:last-child {
-    margin-bottom: 0;
-}
-
-/* PAPER TITLE */
-
-.paper-title {
-
-    margin:
-        0
-        0
-        10px 0;
-
-    font-size: 1.05rem;
-
-    font-style: italic;
-
-    line-height: 1.5;
-
-    text-align: left;
-
-    color: var(--text);
-}
-
-/* PAPER DESCRIPTION */
-
-.paper-description {
-
-    margin:
-        0
-        0
-        14px 0;
-
-    font-size: 0.95rem;
-
-    line-height: 1.85;
-
-    text-align: left;
-
-    color: var(--text-soft);
-}
-
-/* PAPER LINK */
-
-.paper-link {
-
-    margin: 0;
-
-    text-align: left;
 }
 
 /* ACCESSIBILITY */
@@ -569,10 +418,6 @@ a:focus-visible {
         margin-bottom: 68px;
     }
 
-    .contact-sections {
-
-        gap: 60px;
-    }
 }
 
 /* MOBILE */
@@ -640,35 +485,12 @@ a:focus-visible {
         margin-bottom: 22px;
     }
 
-    .contact-sections {
-
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 58px;
-
-        width: 100%;
+    .contact-affiliations {
 
         max-width: 340px;
     }
 
-    .contact-section {
-
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-    .contact-subtitle {
-
-        font-size: 1.2rem;
-    }
-
-    .contact-bullets li,
-    .paper-description,
-    .contact-certifications,
-    .contact-note,
+    .affiliation,
     .parlour-note {
 
         font-size: 0.92rem;
@@ -780,100 +602,41 @@ a:focus-visible {
 
         </div>
 
-        <div class="contact-sections">
+        
+        <div class="contact-affiliations">
 
-            <!-- LEFT COLUMN -->
+            <p class="affiliation">
 
-            <section class="contact-section">
+                Editor,
+                <em>The Parlour</em><br>
 
-                <h2 class="contact-subtitle">
-                    Credentials
-                </h2>
+                <a
+                    href="https://theparlour.org.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    theparlour.org.uk
+                </a>
 
-                <div class="sub-divider"></div>
+            </p>
 
-                <ul class="contact-bullets">
+            <p class="affiliation">
 
-                    <li>
-                        Qualified Teacher Status (QTS, 2022)
-                    </li>
+                Founder &amp; Director,
+                <em>Walkden House Press</em><br>
 
-                    <li>
-                        Enhanced DBS (Update Service)
-                    </li>
+                <a
+                    href="https://walkdenhousepress.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    walkdenhousepress.co.uk
+                </a>
 
-                </ul>
-
-                <p class="contact-certifications">
-                    Available upon request.
-                </p>
-
-            </section>
-
-            <!-- RIGHT COLUMN -->
-
-            <section class="contact-section">
-
-                <h2 class="contact-subtitle">
-                    Essays & Working Papers
-                </h2>
-
-                <div class="sub-divider"></div>
-
-                <div class="paper-entry">
-
-                    <p class="paper-title">
-                        Ontology
-                    </p>
-
-                    <p class="paper-description">
-                        Working notes on experience,
-                        relation, language, and consciousness.
-                    </p>
-
-                    <p class="paper-link">
-
-                        <a
-                            href="docs/Ontology_Max_Thackara.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Read Ontology (PDF)
-                        </a>
-
-                    </p>
-
-                </div>
-
-                <div class="paper-entry">
-
-                    <p class="paper-title">
-                        Generative Influence
-                    </p>
-
-                    <p class="paper-description">
-                        An exploration of how ideas,
-                        institutions, and relationships give
-                        rise to lasting forms of cultural change.
-                    </p>
-
-                    <p class="paper-link">
-
-                        <a
-                            href="docs/Generative_Influence_Paper_Max_Thackara.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Read Generative Influence (PDF)
-                        </a>
-
-                    </p>
-
-                </div>
-
-            </section>
+            </p>
 
         </div>
+</div>
 
     </div>
 
