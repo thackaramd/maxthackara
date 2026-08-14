@@ -5,8 +5,10 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 />
+
+<meta name="theme-color" content="#FFE5C9">
 
 <title>Editing — Max Thackara</title>
 
@@ -17,7 +19,7 @@
 
 <link
     rel="icon"
-    type="image/svg"
+    type="image/svg+xml"
     href="/images/favicon.svg"
 />
 
@@ -47,20 +49,27 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
+
     margin: 0;
+
+    width: 100%;
     min-height: 100%;
+
+    background: var(--bg);
 }
 
 body {
 
+    margin: 0;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
     font-family: 'Prata', serif;
 
     color: var(--text);
-
-    min-height: 100vh;
-    min-height: 100dvh;
 
     display: flex;
     flex-direction: column;
@@ -82,20 +91,29 @@ body {
 }
 
 /* paper grain */
+
 body::before {
+
     content: "";
+
     position: fixed;
     inset: 0;
+
     pointer-events: none;
+
     opacity: 0.04;
+
     background-image:
         url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 }
 
 /* MAIN */
+
 main {
 
     flex: 1;
+
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -103,15 +121,16 @@ main {
     align-items: center;
 
     padding:
-        56px
+        max(56px, env(safe-area-inset-top))
         48px
-        90px;
+        max(90px, env(safe-area-inset-bottom));
 
     position: relative;
     z-index: 2;
 }
 
 /* HEADER */
+
 .header-container {
 
     text-align: center;
@@ -122,6 +141,7 @@ main {
 }
 
 /* WRAPPING TITLE */
+
 .title {
 
     font-size: 2rem;
@@ -148,6 +168,7 @@ main {
 }
 
 /* underline */
+
 .underline {
 
     width: 52px;
@@ -161,6 +182,7 @@ main {
 }
 
 /* NAV */
+
 .page-nav {
 
     display: flex;
@@ -188,11 +210,14 @@ main {
 }
 
 .page-nav a:hover {
+
     color: var(--hover);
+
     transform: translateY(-1px);
 }
 
 .page-nav a.current {
+
     color: var(--text);
 }
 
@@ -201,8 +226,11 @@ main {
 }
 
 /* CONTENT */
+
 .content-container {
+
     width: 100%;
+
     display: flex;
     justify-content: center;
 }
@@ -229,9 +257,11 @@ main {
 }
 
 /* PAGE TITLE */
+
 .page-heading {
 
     font-size: 1.55rem;
+
     text-align: center;
 
     margin-bottom: 18px;
@@ -240,6 +270,7 @@ main {
 }
 
 /* DIVIDER */
+
 .divider {
 
     width: 52px;
@@ -253,6 +284,7 @@ main {
 }
 
 /* DOT */
+
 .dot-divider {
 
     text-align: center;
@@ -268,6 +300,7 @@ main {
 }
 
 /* TEXT */
+
 .intro-text {
 
     font-size: 0.98rem;
@@ -279,49 +312,63 @@ main {
 }
 
 .intro-text p {
+
     margin: 0 0 22px 0;
 }
 
 /* sections */
+
 .section {
+
     margin-bottom: 34px;
 }
 
 .section:last-child {
+
     margin-bottom: 0;
 }
 
 /* EDITING SERVICES */
+
 .service-list {
+
     margin-top: 4px;
 }
 
 .service-item {
+
     padding: 24px 0 22px;
+
     border-top: 1px solid var(--line);
 }
 
 .service-item:first-child {
+
     border-top: none;
+
     padding-top: 0;
 }
 
 .service-title {
+
     display: block;
 
     margin-bottom: 8px;
 
     font-size: 1.05rem;
+
     font-weight: normal;
 
     color: var(--text);
 }
 
 .service-description {
+
     margin: 0 0 8px 0 !important;
 }
 
 .service-detail {
+
     margin: 0 !important;
 
     font-size: 0.92rem;
@@ -331,6 +378,7 @@ main {
 }
 
 .service-note {
+
     margin-top: 22px !important;
     margin-bottom: 30px !important;
 
@@ -343,7 +391,9 @@ main {
 }
 
 /* email */
+
 .email-block {
+
     margin-top: 26px;
 }
 
@@ -363,11 +413,23 @@ main {
 }
 
 .email-block a:hover {
+
     color: var(--hover);
 }
 
+/* accessibility */
+
+a:focus-visible {
+
+    outline: 1px solid var(--text);
+
+    outline-offset: 4px;
+}
+
 /* animation */
+
 @keyframes fadeIn {
+
     from {
         opacity: 0;
         transform: translateY(6px);
@@ -380,85 +442,165 @@ main {
 }
 
 /* TABLET */
+
 @media (max-width: 980px) {
 
     main {
-        padding: 48px 34px 80px;
+
+        padding:
+            max(48px, env(safe-area-inset-top))
+            34px
+            max(80px, env(safe-area-inset-bottom));
     }
 
     .title {
+
         font-size: 1.8rem;
     }
 
     .page-nav {
+
         font-size: 1rem;
+
         gap: 22px;
+
         margin-bottom: 62px;
     }
 
     .content-panel {
+
         padding: 44px 40px;
     }
 }
 
 /* MOBILE */
+
 @media (max-width: 750px) {
 
     main {
-        padding: 38px 20px 70px;
+
+        padding-top:
+            max(38px, env(safe-area-inset-top));
+
+        padding-bottom:
+            max(64px, env(safe-area-inset-bottom));
+
+        padding-left:
+            max(20px, env(safe-area-inset-left));
+
+        padding-right:
+            max(20px, env(safe-area-inset-right));
     }
 
     .title {
+
         font-size: 1.55rem;
     }
 
     .underline {
+
         width: 46px;
+
         margin-bottom: 30px;
     }
 
     .page-nav {
+
         flex-wrap: wrap;
+
         justify-content: center;
+
         gap: 14px 22px;
+
         font-size: 0.98rem;
+
         margin-bottom: 52px;
+
         max-width: 340px;
+
         margin-left: auto;
         margin-right: auto;
     }
 
     .nav-break {
+
         display: block;
+
         flex-basis: 100%;
+
         height: 0;
     }
 
     .content-panel {
+
         padding: 34px 24px;
+
         border-radius: 8px;
     }
 
     .page-heading {
+
         font-size: 1.3rem;
     }
 
     .divider {
+
         width: 46px;
+
         margin-bottom: 34px;
     }
 
     .intro-text {
+
         font-size: 0.95rem;
+
         line-height: 1.9;
     }
 
+    .dot-divider {
+
+        margin: 34px 0;
+    }
+
     .service-item {
+
         padding: 21px 0 20px;
     }
 
     .service-title {
+
         font-size: 1.02rem;
+    }
+
+    .email-block a {
+
+        font-size: 1rem;
+    }
+}
+
+/* SHORT SCREENS */
+
+@media (max-height: 700px) {
+
+    main {
+
+        padding-top:
+            max(28px, env(safe-area-inset-top));
+    }
+
+    .page-nav {
+
+        margin-bottom: 40px;
+    }
+}
+
+/* DYNAMIC MOBILE VIEWPORT */
+
+@supports (height: 100dvh) {
+
+    body {
+
+        min-height: 100dvh;
     }
 }
 
@@ -497,7 +639,9 @@ main {
 
         <div class="content-panel">
 
-            <div class="page-heading">Editing</div>
+            <div class="page-heading">
+                Editing
+            </div>
 
             <div class="divider"></div>
 
