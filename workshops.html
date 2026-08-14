@@ -5,8 +5,10 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
+
+<meta name="theme-color" content="#FFE5C9">
 
 <title>Workshops — Max Thackara</title>
 
@@ -17,7 +19,7 @@
 
 <link
     rel="icon"
-    type="image/svg"
+    type="image/svg+xml"
     href="/images/favicon.svg"
 >
 
@@ -47,21 +49,27 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
 
     margin: 0;
+
+    width: 100%;
     min-height: 100%;
+
+    background: var(--bg);
 }
 
 body {
 
+    margin: 0;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
     font-family: 'Prata', serif;
 
     color: var(--text);
-
-    min-height: 100vh;
-    min-height: 100dvh;
 
     display: flex;
     flex-direction: column;
@@ -105,15 +113,17 @@ main {
 
     flex: 1;
 
+    width: 100%;
+
     display: flex;
     flex-direction: column;
 
     align-items: center;
 
     padding:
-        56px
+        max(56px, env(safe-area-inset-top))
         48px
-        90px;
+        max(90px, env(safe-area-inset-bottom));
 
     position: relative;
     z-index: 2;
@@ -139,6 +149,9 @@ main {
     letter-spacing: 0.3px;
 
     margin-bottom: 14px;
+
+    display: inline-block;
+    max-width: 100%;
 }
 
 .title a {
@@ -146,6 +159,12 @@ main {
     text-decoration: none;
 
     color: inherit;
+
+    display: inline-block;
+    max-width: 100%;
+
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 /* UNDERLINE */
@@ -198,10 +217,9 @@ main {
 }
 
 .page-nav a.italic {
+
     font-style: italic;
 }
-
-/* CURRENT PAGE */
 
 .page-nav a.current {
 
@@ -211,6 +229,7 @@ main {
 /* MOBILE BREAK */
 
 .nav-break {
+
     display: none;
 }
 
@@ -302,6 +321,7 @@ main {
 }
 
 .section:last-child {
+
     margin-bottom: 0;
 }
 
@@ -327,6 +347,8 @@ main {
 
     opacity: 0.75;
 }
+
+/* EMAIL */
 
 .email-block {
 
@@ -509,12 +531,16 @@ a:focus-visible {
 @keyframes fadeIn {
 
     from {
+
         opacity: 0;
+
         transform: translateY(6px);
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
     }
 }
@@ -526,12 +552,13 @@ a:focus-visible {
     main {
 
         padding:
-            48px
+            max(48px, env(safe-area-inset-top))
             34px
-            80px;
+            max(80px, env(safe-area-inset-bottom));
     }
 
     .title {
+
         font-size: 1.8rem;
     }
 
@@ -558,10 +585,17 @@ a:focus-visible {
 
     main {
 
-        padding:
-            38px
-            20px
-            70px;
+        padding-top:
+            max(38px, env(safe-area-inset-top));
+
+        padding-bottom:
+            max(64px, env(safe-area-inset-bottom));
+
+        padding-left:
+            max(20px, env(safe-area-inset-left));
+
+        padding-right:
+            max(20px, env(safe-area-inset-right));
     }
 
     .title {
@@ -633,6 +667,11 @@ a:focus-visible {
         line-height: 1.9;
     }
 
+    .dot-divider {
+
+        margin: 34px 0;
+    }
+
     .options-container {
 
         gap: 26px;
@@ -656,20 +695,36 @@ a:focus-visible {
 
         line-height: 1.7;
     }
+
+    .email-block a {
+
+        font-size: 1rem;
+    }
 }
 
-/* VERY SMALL PHONES */
+/* SHORT SCREENS */
 
 @media (max-height: 700px) {
 
     main {
 
-        padding-top: 28px;
+        padding-top:
+            max(28px, env(safe-area-inset-top));
     }
 
     .page-nav {
 
         margin-bottom: 40px;
+    }
+}
+
+/* DYNAMIC MOBILE VIEWPORT */
+
+@supports (height: 100dvh) {
+
+    body {
+
+        min-height: 100dvh;
     }
 }
 
@@ -739,147 +794,147 @@ a:focus-visible {
 
             <div class="intro-text">
 
-            <div class="section">
-
-                <p>
-                    My writing workshops are less about teaching people
-                    what to write than creating the conditions in which
-                    writing can happen naturally and without pressure.
-                </p>
-
-                <p>
-                    The aim is to make space for curiosity, conversation,
-                    and attention, allowing people to discover what
-                    genuinely interests them and how that might find its
-                    own form in language.
-                </p>
-
-            </div>
-
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    I work with schools, libraries, festivals, and
-                    community groups, developing workshops and visits that respond
-                    to the people in the room and the questions already
-                    present there.
-                </p>
-
-                <p>
-                    Some workshops begin with literature, myth, or shared
-                    reading.
-                </p>
-
-                <p>
-                    Others emerge from memory, observation, place, or
-                    everyday experience.
-                </p>
-
-                <p>
-                    The precise structure is always shaped by context,
-                    but the central concern remains the same: writing as
-                    something lived, exploratory, and communal rather than
-                    simply instructional.
-                </p>
-
-            </div>
-
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    I am particularly interested in helping people develop
-                    a relationship to writing that feels personal and
-                    sustainable.
-                </p>
-
-                <p>
-                    This often means allowing more time to stay with an image, a conversation, or a line of thought long enough for something unexpected to emerge.
-                </p>
-
-                <p>
-                    The work is less about producing finished pieces than cultivating confidence, attentiveness, and a sense that writing belongs to one's own experience of the world.
-                </p>
-
-            </div>
-
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    No two groups ask for quite the same kind of
-                    attention.
-                </p>
-
-                <p>
-                    Workshops can be developed around particular texts, themes, curriculum topics, or broader questions about reading and writing, with each session shaped around the particular context and group.
-                </p>
-
-            </div>
-
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    <strong>Writing Workshop</strong><br>
-                    A single workshop for schools, libraries, festivals,
-                    and community groups.<br>
-                    60 minutes · £150
-                </p>
-
-                <p>
-                    <strong>Extended Writing Workshop</strong><br>
-                    A longer session allowing greater space for
-                    discussion, shared reading, individual guidance, and
-                    the development of writing over the course of a
-                    morning or afternoon.<br>
-                    120 minutes · £250
-                </p>
-
-            </div>
-
-            <div class="dot-divider">•</div>
-
-            <div class="section">
-
-                <p>
-                    If you'd like to discuss a workshop, visit, or
-                    possible collaboration, you're very welcome to get in
-                    touch.
-                </p>
-
-                <div class="email-block">
+                <div class="section">
 
                     <p>
-                        Please send enquiries with the subject
-                        <strong>WORKSHOPS</strong> to:
+                        My writing workshops are less about teaching people
+                        what to write than creating the conditions in which
+                        writing can happen naturally and without pressure.
                     </p>
 
-                    <a href="mailto:contact@maxthackara.uk">
-                        contact@maxthackara.uk
-                    </a>
+                    <p>
+                        The aim is to make space for curiosity, conversation,
+                        and attention, allowing people to discover what
+                        genuinely interests them and how that might find its
+                        own form in language.
+                    </p>
 
                 </div>
 
-            </div>
+                <div class="dot-divider">•</div>
 
-            <div class="dot-divider">•</div>
+                <div class="section">
 
-            <div class="section">
+                    <p>
+                        I work with schools, libraries, festivals, and
+                        community groups, developing workshops and visits that respond
+                        to the people in the room and the questions already
+                        present there.
+                    </p>
 
-                <p>
-                    <strong>Practical Information</strong><br>
-                    Qualified Teacher Status (QTS)<br>
-                    Enhanced DBS<br>
-                    Safeguarding trained
-                </p>
+                    <p>
+                        Some workshops begin with literature, myth, or shared
+                        reading.
+                    </p>
 
-            </div>
+                    <p>
+                        Others emerge from memory, observation, place, or
+                        everyday experience.
+                    </p>
+
+                    <p>
+                        The precise structure is always shaped by context,
+                        but the central concern remains the same: writing as
+                        something lived, exploratory, and communal rather than
+                        simply instructional.
+                    </p>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        I am particularly interested in helping people develop
+                        a relationship to writing that feels personal and
+                        sustainable.
+                    </p>
+
+                    <p>
+                        This often means allowing more time to stay with an image, a conversation, or a line of thought long enough for something unexpected to emerge.
+                    </p>
+
+                    <p>
+                        The work is less about producing finished pieces than cultivating confidence, attentiveness, and a sense that writing belongs to one's own experience of the world.
+                    </p>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        No two groups ask for quite the same kind of
+                        attention.
+                    </p>
+
+                    <p>
+                        Workshops can be developed around particular texts, themes, curriculum topics, or broader questions about reading and writing, with each session shaped around the particular context and group.
+                    </p>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        <strong>Writing Workshop</strong><br>
+                        A single workshop for schools, libraries, festivals,
+                        and community groups.<br>
+                        60 minutes · £150
+                    </p>
+
+                    <p>
+                        <strong>Extended Writing Workshop</strong><br>
+                        A longer session allowing greater space for
+                        discussion, shared reading, individual guidance, and
+                        the development of writing over the course of a
+                        morning or afternoon.<br>
+                        120 minutes · £250
+                    </p>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        If you'd like to discuss a workshop, visit, or
+                        possible collaboration, you're very welcome to get in
+                        touch.
+                    </p>
+
+                    <div class="email-block">
+
+                        <p>
+                            Please send enquiries with the subject
+                            <strong>WORKSHOPS</strong> to:
+                        </p>
+
+                        <a href="mailto:contact@maxthackara.uk">
+                            contact@maxthackara.uk
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="dot-divider">•</div>
+
+                <div class="section">
+
+                    <p>
+                        <strong>Practical Information</strong><br>
+                        Qualified Teacher Status (QTS)<br>
+                        Enhanced DBS<br>
+                        Safeguarding trained
+                    </p>
+
+                </div>
 
             </div>
 
