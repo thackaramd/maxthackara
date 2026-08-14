@@ -8,6 +8,8 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
+<meta name="theme-color" content="#FFE5C9">
+
 <title>Max Thackara</title>
 
 <link
@@ -53,7 +55,7 @@ html {
     width: 100%;
     min-height: 100%;
 
-    background: var(--bg-deep);
+    background: var(--bg);
 }
 
 body {
@@ -244,6 +246,12 @@ a:focus-visible {
 @media (max-width: 750px) {
 
     main {
+
+        padding-top:
+            max(40px, env(safe-area-inset-top));
+
+        padding-bottom:
+            max(56px, env(safe-area-inset-bottom));
 
         padding-left:
             max(20px, env(safe-area-inset-left));
