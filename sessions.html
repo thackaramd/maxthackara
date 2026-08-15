@@ -28,8 +28,6 @@
 :root {
 
     --bg: #FFE5C9;
-    --bg-warm: #F7DDC0;
-    --bg-deep: #F0D2B4;
 
     --text: #44554F;
     --text-soft: rgba(68, 85, 79, 0.78);
@@ -74,13 +72,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    background:
-        radial-gradient(
-            circle at top,
-            var(--bg) 0%,
-            var(--bg-warm) 48%,
-            var(--bg-deep) 100%
-        );
+    background: var(--bg);
 
     overflow-x: hidden;
 
