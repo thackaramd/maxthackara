@@ -332,6 +332,10 @@ main {
     font-style: normal;
 }
 
+.caption-mobile-break {
+    display: none;
+}
+
 
 /* --------------------------------
    EMAIL
@@ -565,9 +569,13 @@ a:focus-visible {
 
     .portrait-caption {
 
-        max-width: 300px;
+        max-width: 340px;
 
         font-size: 0.72rem;
+    }
+
+    .caption-mobile-break {
+        display: block;
     }
 
     .contact-email {
@@ -693,7 +701,9 @@ a:focus-visible {
             <p class="portrait-caption">
 
                 <span class="occasion">
-                    At The Parlour, Issue One gathering — 23 August 2026
+                    At The Parlour, Issue One gathering
+                    <br class="caption-mobile-break">
+                    — 23 August 2026
                 </span>
 
                 <span class="credit">
