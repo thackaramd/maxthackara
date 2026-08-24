@@ -275,12 +275,15 @@ main {
 
 .portrait {
 
-    width: 100%;
-    max-width: 280px;
+    width: 280px;
+    height: 280px;
 
-    height: auto;
+    object-fit: cover;
+    object-position: center;
 
     display: block;
+
+    border-radius: 14px;
 
     margin-bottom: 16px;
 }
@@ -327,7 +330,7 @@ main {
 .contact-email {
 
     margin:
-        38px
+        50px
         0
         0;
 }
@@ -536,7 +539,8 @@ a:focus-visible {
 
     .portrait {
 
-        max-width: 250px;
+        width: 250px;
+        height: 250px;
 
         margin-bottom: 14px;
     }
@@ -550,7 +554,7 @@ a:focus-visible {
 
     .contact-email {
 
-        margin-top: 34px;
+        margin-top: 44px;
     }
 
     .contact-affiliations {
@@ -659,7 +663,7 @@ a:focus-visible {
         <div class="contact-top">
 
             <img
-                src="images/portrait.jpg"
+                src="images/portrait.png"
                 alt="Max Thackara at The Parlour Issue One gathering"
                 class="portrait"
             >
