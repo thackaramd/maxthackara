@@ -154,17 +154,14 @@ main {
     color: var(--text);
 }
 
-.underline {
-
-    width: 52px;
-
-    height: 1px;
-
-    background-color: var(--line);
-
-    margin:
-        0 auto
-        56px auto;
+.practice-label {
+    font-size: 0.625rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin: 0 auto 41px;
 }
 
 
@@ -260,8 +257,8 @@ a:focus-visible {
         font-size: 1.75rem;
     }
 
-    .underline {
-        margin-bottom: 48px;
+    .practice-label {
+        margin-bottom: 33px;
     }
 
     .nav {
@@ -298,6 +295,15 @@ a:focus-visible {
     }
 }
 
+.location {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 0 max(28px, env(safe-area-inset-right)) max(22px, env(safe-area-inset-bottom)) max(28px, env(safe-area-inset-left));
+    font-size: 0.6875rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
 </style>
 </head>
 
@@ -311,7 +317,7 @@ a:focus-visible {
             Max Thackara
         </div>
 
-        <div class="underline"></div>
+        <p class="practice-label">Independent Practice</p>
 
         <nav class="nav">
 
@@ -344,6 +350,8 @@ a:focus-visible {
     </div>
 
 </main>
+
+<footer class="location">Bedford, England</footer>
 
 </body>
 </html>

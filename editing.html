@@ -161,16 +161,14 @@ main {
 
 /* underline */
 
-.underline {
-
-    width: 52px;
-    height: 1px;
-
-    background-color: var(--line);
-
-    margin:
-        0 auto
-        34px auto;
+.practice-label {
+    font-size: 0.625rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin: 0 auto 23px;
 }
 
 /* NAV */
@@ -209,6 +207,10 @@ main {
 }
 
 .page-nav a.current {
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
 
     color: var(--text);
 }
@@ -563,11 +565,8 @@ a:focus-visible {
         font-size: 1.55rem;
     }
 
-    .underline {
-
-        width: 46px;
-
-        margin-bottom: 30px;
+    .practice-label {
+        margin-bottom: 19px;
     }
 
     .page-nav {
@@ -683,14 +682,14 @@ a:focus-visible {
             <a href="index.html">Max Thackara</a>
         </div>
 
-        <div class="underline"></div>
+        <p class="practice-label">Independent Practice</p>
 
         <div class="page-nav">
 
             <a href="books.html">Books</a>
             <a href="sessions.html">Sessions</a>
             <a href="readings.html">Readings</a>
-            <a href="editing.html" class="current">Editing</a>
+            <a href="editing.html" class="current" aria-current="page">Editing</a>
 
             <span class="nav-break"></span>
 
