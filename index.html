@@ -155,13 +155,14 @@ main {
 }
 
 .practice-label {
+    position: relative;
     font-size: 0.625rem;
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-soft);
-    margin: 0 auto 41px;
+    margin: 0 auto 49px;
 }
 
 
@@ -258,7 +259,7 @@ a:focus-visible {
     }
 
     .practice-label {
-        margin-bottom: 33px;
+        margin-bottom: 41px;
     }
 
     .nav {
@@ -304,6 +305,21 @@ a:focus-visible {
     line-height: 1.6;
     color: var(--text-soft);
 }
+/* The divider sits inside the existing name-to-descriptor gap. */
+.practice-label::before {
+    content: "";
+    position: absolute;
+    width: 52px;
+    height: 1px;
+    background: var(--line);
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 750px) {
+    .practice-label::before { width: 46px; }
+}
+
 </style>
 </head>
 
