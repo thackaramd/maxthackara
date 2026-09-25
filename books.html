@@ -545,14 +545,16 @@ a:focus-visible {
     content: "";
     position: absolute;
     width: 52px;
-    height: 1px;
+    height: 0.5px;
     background: var(--line);
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
+    border-radius: 0;
+    top: -12px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
 }
 @media (max-width: 750px) {
-    .practice-label::before { width: 46px; }
+    .practice-label::before { width: 46px; top: -11px; }
 }
 
 </style>
