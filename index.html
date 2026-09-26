@@ -141,7 +141,7 @@ main {
     width: max-content;
     max-width: 100%;
 
-    transform: translateY(-20px);
+    transform: translateY(-10px);
 
     animation: fadeIn 1.1s ease;
 }
@@ -160,14 +160,20 @@ main {
 }
 
 .practice-label {
+
     grid-column: 2;
+
     position: relative;
+
     font-size: 0.65625rem;
     font-weight: 400;
     line-height: 1.6;
+
     letter-spacing: 0.16em;
     text-transform: uppercase;
+
     color: var(--text-soft);
+
     margin: 0 auto 65px;
 }
 
@@ -186,28 +192,42 @@ main {
 
     gap: 22px;
     width: 100%;
+
     margin-inline: auto;
+
     text-align: left;
+
     position: relative;
 }
 
 .nav::before {
+
     content: "";
+
     position: absolute;
+
     top: -6px;
     bottom: -6px;
+
     left: 2.75rem;
+
     width: 0.5px;
+
     background: var(--line);
+
     pointer-events: none;
 }
 
 .nav a {
 
     display: grid;
+
     grid-template-columns: 1.125rem minmax(0, 1fr);
+
     column-gap: 4rem;
+
     align-items: baseline;
+
     white-space: nowrap;
 
     text-decoration: none;
@@ -223,9 +243,13 @@ main {
 }
 
 .nav-number {
+
     font-size: 0.625rem;
+
     font-variant-numeric: lining-nums tabular-nums;
+
     letter-spacing: 0.04em;
+
     opacity: 0.65;
 }
 
@@ -237,6 +261,7 @@ main {
 }
 
 .nav a.italic {
+
     font-style: italic;
 }
 
@@ -249,6 +274,68 @@ a:focus-visible {
 
 
 /* --------------------------------
+   LOCATION
+-------------------------------- */
+
+.location {
+
+    grid-column: 1 / -1;
+
+    position: relative;
+
+    margin: 64px 0 0;
+    padding: 16px 0 0;
+
+    text-align: left;
+
+    font-size: 0.6875rem;
+    line-height: 1.6;
+
+    color: var(--text-soft);
+}
+
+.location::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 0.5px;
+
+    background: var(--line);
+}
+
+
+/* --------------------------------
+   PRACTICE DIVIDER
+-------------------------------- */
+
+.practice-label::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 52px;
+    height: 0.5px;
+
+    background: var(--line);
+
+    border-radius: 0;
+
+    top: -12px;
+    left: 0;
+    right: 0;
+
+    margin-inline: auto;
+}
+
+
+/* --------------------------------
    ANIMATION
 -------------------------------- */
 
@@ -256,12 +343,12 @@ a:focus-visible {
 
     from {
         opacity: 0;
-        transform: translateY(-12px);
+        transform: translateY(-2px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
 }
 
@@ -288,22 +375,33 @@ a:focus-visible {
     }
 
     .container {
-        transform: translateY(-14px);
+
+        transform: translateY(-6px);
     }
 
     .title {
+
         font-size: 1.75rem;
     }
 
     .practice-label {
+
         margin-bottom: 57px;
     }
 
+    .practice-label::before {
+
+        width: 46px;
+        top: -11px;
+    }
+
     .nav {
+
         gap: 21px;
     }
 
     .nav a {
+
         font-size: 1.10rem;
     }
 
@@ -311,12 +409,12 @@ a:focus-visible {
 
         from {
             opacity: 0;
-            transform: translateY(-6px);
+            transform: translateY(2px);
         }
 
         to {
             opacity: 1;
-            transform: translateY(-14px);
+            transform: translateY(-6px);
         }
     }
 }
@@ -331,44 +429,6 @@ a:focus-visible {
     body {
         min-height: 100dvh;
     }
-}
-
-.location {
-    grid-column: 1 / -1;
-    position: relative;
-    margin: 64px 0 0;
-    padding: 16px 0 0;
-    text-align: left;
-    font-size: 0.6875rem;
-    line-height: 1.6;
-    color: var(--text-soft);
-}
-
-.location::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0.5px;
-    background: var(--line);
-}
-
-/* The divider sits inside the existing name-to-descriptor gap. */
-.practice-label::before {
-    content: "";
-    position: absolute;
-    width: 52px;
-    height: 0.5px;
-    background: var(--line);
-    border-radius: 0;
-    top: -12px;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-}
-@media (max-width: 750px) {
-    .practice-label::before { width: 46px; top: -11px; }
 }
 
 </style>
@@ -420,7 +480,9 @@ a:focus-visible {
 
         </nav>
 
-        <footer class="location">Bedford, England</footer>
+        <footer class="location">
+            Bedford, England
+        </footer>
 
     </div>
 
