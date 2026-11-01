@@ -181,10 +181,10 @@ main {
     display: flex;
     flex-direction: column;
 
-    gap: 22px;
-    width: 100%;
+    gap: 20.9px;
+    width: calc(100% + 36px);
 
-    margin-inline: auto;
+    margin-inline: -18px;
 
     text-align: left;
 
@@ -200,11 +200,11 @@ main {
     top: -6px;
     bottom: -6px;
 
-    left: 2.75rem;
+    left: 4.375rem;
 
     width: 0.5px;
 
-    background: var(--line);
+    background: rgba(68, 85, 79, 0.242);
 
     pointer-events: none;
 }
@@ -215,9 +215,13 @@ main {
 
     grid-template-columns: 1.125rem minmax(0, 1fr);
 
-    column-gap: 4rem;
+    column-gap: 7.5rem;
 
     align-items: baseline;
+
+    /* Extend the hit area while keeping the typeset row rhythm. */
+    padding-block: 10px;
+    margin-block: -10px;
 
     white-space: nowrap;
 
@@ -225,7 +229,7 @@ main {
 
     color: var(--text-soft);
 
-    font-size: 1.17rem;
+    font-size: 1.0998rem;
 
     transition:
         color 0.22s ease,
@@ -235,7 +239,7 @@ main {
 
 .nav-number {
 
-    font-size: 0.625rem;
+    font-size: 0.5875rem;
 
     font-variant-numeric: lining-nums tabular-nums;
 
@@ -274,7 +278,8 @@ a:focus-visible {
 
     position: relative;
 
-    margin: 64px 0 0;
+    margin: 64px 0 0 -18px;
+    width: calc(100% + 36px);
     padding: 16px 0 0;
 
     text-align: left;
@@ -356,12 +361,12 @@ a:focus-visible {
 
     .nav {
 
-        gap: 21px;
+        gap: 19.95px;
     }
 
     .nav a {
 
-        font-size: 1.10rem;
+        font-size: 1.034rem;
     }
 
     .location::before {
@@ -399,6 +404,11 @@ a:focus-visible {
 @media (min-width: 981px) {
     .title { font-size: 1.7rem; }
     
+}
+
+/* Homepage-only plaque width; the shared inscription stays unchanged. */
+.container > .masthead.title {
+    --masthead-plaque-width: calc(100% + 23px);
 }
 
 </style>
