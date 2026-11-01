@@ -2,20 +2,21 @@
 .masthead.title {
     --masthead-plaque-background: #F8E0C6;
     --masthead-plaque-border: rgba(120, 104, 87, 0.185);
-    --masthead-scale: 0.87;
+    --masthead-scale: 0.8352;
     --masthead-plaque-width: auto;
     --masthead-plaque-top: 13px;
     --masthead-plaque-bottom: 17px;
     --masthead-plaque-inline: 14px;
     --masthead-heading-size: 0.62em;
     --masthead-name-size: 0.44em;
-    --masthead-nav-gap: 40px;
+    --masthead-divider-above: 14.8px;
+    --masthead-divider-below: 14.2px;
     display: block;
     width: max-content;
     max-width: 100%;
     position: relative;
     isolation: isolate;
-    margin: 0 auto var(--masthead-nav-gap);
+    margin: 0 auto calc(var(--masthead-plaque-bottom) * var(--masthead-scale) + var(--masthead-divider-above) + var(--masthead-divider-below));
     line-height: 1.3;
     text-align: center;
     font-weight: 400;
@@ -72,7 +73,7 @@
     height: 0.5px;
     background: var(--line);
     opacity: 0.65;
-    bottom: calc((var(--masthead-plaque-bottom) * var(--masthead-scale) + var(--masthead-nav-gap)) / -2);
+    bottom: calc(var(--masthead-plaque-bottom) * var(--masthead-scale) + var(--masthead-divider-above));
     left: 0;
     right: 0;
     margin-inline: auto;
@@ -80,7 +81,7 @@
 }
 .container > .masthead {
     /* Homepage reductions are independent of the secondary-page scale. */
-    --masthead-scale: 1;
+    --masthead-scale: 0.96;
     --masthead-plaque-top: 14px;
     --masthead-plaque-bottom: 16px;
     --masthead-plaque-inline: 17px;
@@ -91,7 +92,10 @@
 }
 .container > .masthead::after { display: none; }
 @media (max-width: 750px) {
-    .masthead.title { --masthead-nav-gap: 36px; }
+    .masthead.title {
+        --masthead-divider-above: 12.46px;
+        --masthead-divider-below: 11.93px;
+    }
     .masthead::after { width: 46px; }
     .container > .masthead { margin-bottom: 73px; }
 }
