@@ -1,9 +1,11 @@
 /* Shared masthead. Surface, edge, padding and type are independently adjustable. */
 .masthead.title {
-    --masthead-plaque-background: #FAE2C7;
+    --masthead-plaque-background: #FBE3C8;
     --masthead-plaque-border: rgba(120, 104, 87, 0.16);
-    /* Set to none to remove the shallow engraved lettering treatment. */
-    --masthead-impression: 0 -0.25px 0 rgba(45, 57, 52, 0.14), 0 0.7px 0 rgba(255, 247, 235, 0.65);
+    /* One light direction, with finer impressions for the small lettering. */
+    --masthead-heading-impression: 0 -0.02em 0 rgba(40, 52, 47, 0.20), 0 0.045em 0 rgba(255, 248, 236, 0.72);
+    --masthead-name-impression: 0 -0.015em 0 rgba(40, 52, 47, 0.12), 0 0.04em 0 rgba(255, 248, 236, 0.58);
+    --masthead-of-impression: 0 -0.01em 0 rgba(40, 52, 47, 0.08), 0 0.04em 0 rgba(255, 248, 236, 0.50);
     --masthead-scale: 0.818496;
     --masthead-plaque-width: auto;
     --masthead-plaque-top: 13px;
@@ -24,7 +26,6 @@
     line-height: 1.3;
     text-align: center;
     font-weight: 400;
-    text-shadow: var(--masthead-impression);
 }
 /* Remove the inline link baseline space below the secondary inscription. */
 .masthead.title > a { display: block; }
@@ -34,6 +35,7 @@
 .masthead-practice {
     /* Reduce lettering by 4% without changing the fitted plaque or line box. */
     transform: scale(0.96);
+    text-shadow: var(--masthead-heading-impression);
     font-size: calc(var(--masthead-heading-size) * var(--masthead-scale));
     line-height: 1.35;
     letter-spacing: 0.025em;
@@ -44,6 +46,7 @@
     font-size: calc(0.36em * var(--masthead-scale));
     line-height: 1.15;
     font-style: italic;
+    text-shadow: var(--masthead-of-impression);
     letter-spacing: 0;
     color: var(--text-soft);
 }
@@ -51,6 +54,7 @@
     font-size: calc(var(--masthead-name-size) * var(--masthead-scale));
     line-height: 1.5;
     text-transform: uppercase;
+    text-shadow: var(--masthead-name-impression);
     letter-spacing: 0.16em;
     padding-left: 0.16em;
     color: var(--text-soft);
@@ -68,6 +72,11 @@
     margin-inline: auto;
     background: var(--masthead-plaque-background);
     border: 1px solid var(--masthead-plaque-border);
+    /* Dark upper cut, quiet sides, warm lower edge: a recess, not a raised rim. */
+    border-color:
+        rgba(112, 94, 75, 0.19)
+        rgba(120, 104, 87, 0.08)
+        rgba(255, 248, 236, 0.48);
     pointer-events: none;
 }
 /* Secondary-page divider: clear of the plaque and lighter than its edge. */
