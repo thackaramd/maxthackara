@@ -1,7 +1,9 @@
 /* Shared masthead. Surface, edge, padding and type are independently adjustable. */
 .masthead.title {
-    --masthead-plaque-background: #F8E0C6;
-    --masthead-plaque-border: rgba(120, 104, 87, 0.185);
+    --masthead-plaque-background: #FAE2C7;
+    --masthead-plaque-border: rgba(120, 104, 87, 0.16);
+    /* Set to none to remove the shallow lower-edge impression. */
+    --masthead-impression: 0 0.5px 0 rgba(255, 247, 235, 0.45);
     --masthead-scale: 0.8352;
     --masthead-plaque-width: auto;
     --masthead-plaque-top: 13px;
@@ -20,6 +22,7 @@
     line-height: 1.3;
     text-align: center;
     font-weight: 400;
+    text-shadow: var(--masthead-impression);
 }
 /* Remove the inline link baseline space below the secondary inscription. */
 .masthead.title > a { display: block; }
