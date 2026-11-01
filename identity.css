@@ -2,17 +2,19 @@
 .masthead.title {
     --masthead-plaque-background: #FAE2C7;
     --masthead-plaque-border: rgba(120, 104, 87, 0.16);
-    /* Set to none to remove the shallow lower-edge impression. */
-    --masthead-impression: 0 0.5px 0 rgba(255, 247, 235, 0.45);
-    --masthead-scale: 0.8352;
+    /* Set to none to remove the shallow engraved lettering treatment. */
+    --masthead-impression: 0 -0.25px 0 rgba(45, 57, 52, 0.14), 0 0.7px 0 rgba(255, 247, 235, 0.65);
+    --masthead-scale: 0.818496;
     --masthead-plaque-width: auto;
     --masthead-plaque-top: 13px;
     --masthead-plaque-bottom: 17px;
     --masthead-plaque-inline: 14px;
     --masthead-heading-size: 0.62em;
     --masthead-name-size: 0.44em;
-    --masthead-divider-above: 14.8px;
-    --masthead-divider-below: 14.2px;
+    --masthead-bridge-above: 4px;
+    --masthead-bridge-below: 2px;
+    --masthead-divider-above: 15.8px;
+    --masthead-divider-below: 15.2px;
     display: block;
     width: max-content;
     max-width: 100%;
@@ -38,7 +40,7 @@
     color: var(--text);
 }
 .masthead-of {
-    margin: calc(4px * var(--masthead-scale)) 0 calc(2px * var(--masthead-scale));
+    margin: calc(var(--masthead-bridge-above) * var(--masthead-scale)) 0 calc(var(--masthead-bridge-below) * var(--masthead-scale));
     font-size: calc(0.36em * var(--masthead-scale));
     line-height: 1.15;
     font-style: italic;
@@ -85,9 +87,11 @@
 .container > .masthead {
     /* Homepage reductions are independent of the secondary-page scale. */
     --masthead-scale: 0.96;
-    --masthead-plaque-top: 14px;
-    --masthead-plaque-bottom: 16px;
+    --masthead-plaque-top: 15px;
+    --masthead-plaque-bottom: 17px;
     --masthead-plaque-inline: 17px;
+    --masthead-bridge-above: 5px;
+    --masthead-bridge-below: 3px;
     --masthead-heading-size: 0.658em;
     --masthead-name-size: 0.4632em;
     grid-column: 2;
@@ -96,8 +100,8 @@
 .container > .masthead::after { display: none; }
 @media (max-width: 750px) {
     .masthead.title {
-        --masthead-divider-above: 12.46px;
-        --masthead-divider-below: 11.93px;
+        --masthead-divider-above: 13.46px;
+        --masthead-divider-below: 12.93px;
     }
     .masthead::after { width: 46px; }
     .container > .masthead { margin-bottom: 73px; }
