@@ -1,13 +1,15 @@
 /* Shared masthead. Surface, edge, padding and type are independently adjustable. */
 .masthead.title {
-    --masthead-plaque-background: #F7DEC5;
-    --masthead-plaque-border: rgba(120, 104, 87, 0.21);
+    --masthead-plaque-background: #F8E0C6;
+    --masthead-plaque-border: rgba(120, 104, 87, 0.185);
+    --masthead-scale: 0.87;
+    --masthead-plaque-width: auto;
     --masthead-plaque-top: 13px;
     --masthead-plaque-bottom: 17px;
     --masthead-plaque-inline: 14px;
     --masthead-heading-size: 0.62em;
     --masthead-name-size: 0.44em;
-    --masthead-nav-gap: 44px;
+    --masthead-nav-gap: 40px;
     display: block;
     width: max-content;
     max-width: 100%;
@@ -24,21 +26,21 @@
 .masthead-of,
 .masthead-name { display: block; }
 .masthead-practice {
-    font-size: var(--masthead-heading-size);
+    font-size: calc(var(--masthead-heading-size) * var(--masthead-scale));
     line-height: 1.35;
     letter-spacing: 0.025em;
     color: var(--text);
 }
 .masthead-of {
-    margin: 4px 0 2px;
-    font-size: 0.36em;
+    margin: calc(4px * var(--masthead-scale)) 0 calc(2px * var(--masthead-scale));
+    font-size: calc(0.36em * var(--masthead-scale));
     line-height: 1.15;
     font-style: italic;
     letter-spacing: 0;
     color: var(--text-soft);
 }
 .masthead-name {
-    font-size: var(--masthead-name-size);
+    font-size: calc(var(--masthead-name-size) * var(--masthead-scale));
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -51,9 +53,11 @@
     position: absolute;
     z-index: -1;
     inset:
-        calc(-1 * var(--masthead-plaque-top))
-        calc(-1 * var(--masthead-plaque-inline))
-        calc(-1 * var(--masthead-plaque-bottom));
+        calc(-1 * var(--masthead-plaque-top) * var(--masthead-scale))
+        calc(-1 * var(--masthead-plaque-inline) * var(--masthead-scale))
+        calc(-1 * var(--masthead-plaque-bottom) * var(--masthead-scale));
+    width: var(--masthead-plaque-width);
+    margin-inline: auto;
     background: var(--masthead-plaque-background);
     border: 1px solid var(--masthead-plaque-border);
     pointer-events: none;
@@ -66,24 +70,26 @@
     height: 0.5px;
     background: var(--line);
     opacity: 0.65;
-    bottom: calc((var(--masthead-plaque-bottom) + var(--masthead-nav-gap)) / -2);
+    bottom: calc((var(--masthead-plaque-bottom) * var(--masthead-scale) + var(--masthead-nav-gap)) / -2);
     left: 0;
     right: 0;
     margin-inline: auto;
     pointer-events: none;
 }
 .container > .masthead {
-    --masthead-plaque-top: 13px;
-    --masthead-plaque-bottom: 15px;
+    /* Homepage reductions are independent of the secondary-page scale. */
+    --masthead-scale: 1;
+    --masthead-plaque-top: 14px;
+    --masthead-plaque-bottom: 16px;
     --masthead-plaque-inline: 17px;
-    --masthead-heading-size: 0.70em;
-    --masthead-name-size: 0.48em;
+    --masthead-heading-size: 0.658em;
+    --masthead-name-size: 0.4632em;
     grid-column: 2;
-    margin-bottom: 81px;
+    margin-bottom: 83px;
 }
 .container > .masthead::after { display: none; }
 @media (max-width: 750px) {
-    .masthead.title { --masthead-nav-gap: 40px; }
+    .masthead.title { --masthead-nav-gap: 36px; }
     .masthead::after { width: 46px; }
-    .container > .masthead { margin-bottom: 71px; }
+    .container > .masthead { margin-bottom: 73px; }
 }
