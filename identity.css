@@ -26,6 +26,8 @@
 .masthead-of,
 .masthead-name { display: block; }
 .masthead-practice {
+    /* Reduce lettering by 4% without changing the fitted plaque or line box. */
+    transform: scale(0.96);
     font-size: calc(var(--masthead-heading-size) * var(--masthead-scale));
     line-height: 1.35;
     letter-spacing: 0.025em;
