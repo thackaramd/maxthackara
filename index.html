@@ -175,16 +175,16 @@ main {
 
 .nav {
 
-    grid-column: 2 / -1;
-    contain: inline-size;
+    grid-column: 2;
+    justify-self: start;
 
     display: flex;
     flex-direction: column;
 
     gap: 20.9px;
-    width: calc(100% + 36px);
+    width: max-content;
 
-    margin-inline: -18px;
+    margin-inline: 0;
 
     text-align: left;
 
@@ -200,7 +200,7 @@ main {
     top: -6px;
     bottom: -6px;
 
-    left: 4.375rem;
+    left: 2.75rem;
 
     width: 0.5px;
 
@@ -213,9 +213,9 @@ main {
 
     display: grid;
 
-    grid-template-columns: 1.125rem minmax(0, 1fr);
+    grid-template-columns: 1.125rem max-content;
 
-    column-gap: 7.5rem;
+    column-gap: 4rem;
 
     align-items: baseline;
 
