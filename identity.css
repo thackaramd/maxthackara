@@ -1,0 +1,48 @@
+/* Shared identity: retain each page's existing name size and layout. */
+.masthead.title {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto 29px;
+    line-height: 1.3;
+    text-align: center;
+    font-weight: 400;
+}
+.masthead-practice,
+.masthead-of,
+.masthead-name { display: block; }
+.masthead-practice {
+    font-size: 0.52em;
+    line-height: 1.5;
+    letter-spacing: 0.025em;
+    color: var(--text-soft);
+}
+.masthead-of {
+    margin: 2px 0 3px;
+    font-size: 0.43em;
+    line-height: 1.2;
+    font-style: italic;
+    letter-spacing: 0;
+    color: var(--text-soft);
+}
+.masthead::after {
+    content: "";
+    position: absolute;
+    width: 52px;
+    height: 0.5px;
+    background: var(--line);
+    bottom: -13px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+}
+.container > .masthead {
+    grid-column: 2;
+    margin-bottom: 61px;
+}
+@media (max-width: 750px) {
+    .masthead.title { margin-bottom: 25px; }
+    .masthead::after { width: 46px; bottom: -12px; }
+    .container > .masthead { margin-bottom: 53px; }
+}
