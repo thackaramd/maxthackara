@@ -176,12 +176,12 @@ main {
 .nav {
 
     grid-column: 2;
-    justify-self: start;
+    justify-self: center;
 
     display: flex;
     flex-direction: column;
 
-    gap: 20.9px;
+    gap: 19.019px;
     width: max-content;
 
     margin-inline: 0;
@@ -200,11 +200,11 @@ main {
     top: -6px;
     bottom: -6px;
 
-    left: 2.75rem;
+    left: 2.4575rem;
 
     width: 0.5px;
 
-    background: rgba(68, 85, 79, 0.242);
+    background: rgba(68, 85, 79, 0.271);
 
     pointer-events: none;
 }
@@ -215,13 +215,13 @@ main {
 
     grid-template-columns: 1.125rem max-content;
 
-    column-gap: 4rem;
+    column-gap: 3.28rem;
 
     align-items: baseline;
 
     /* Extend the hit area while keeping the typeset row rhythm. */
-    padding-block: 10px;
-    margin-block: -10px;
+    padding-block: 9px;
+    margin-block: -9px;
 
     white-space: nowrap;
 
@@ -229,7 +229,7 @@ main {
 
     color: var(--text-soft);
 
-    font-size: 1.0998rem;
+    font-size: 1.033812rem;
 
     transition:
         color 0.22s ease,
@@ -239,7 +239,9 @@ main {
 
 .nav-number {
 
-    font-size: 0.5875rem;
+    font-size: 0.55225rem;
+
+    text-align: right;
 
     font-variant-numeric: lining-nums tabular-nums;
 
@@ -278,11 +280,12 @@ a:focus-visible {
 
     position: relative;
 
-    margin: 64px 0 0 -18px;
-    width: calc(100% + 36px);
+    margin: clamp(72px, 12svh, 112px) 0 0;
+    width: max-content;
+    justify-self: center;
     padding: 16px 0 0;
 
-    text-align: left;
+    text-align: center;
 
     font-size: 0.6875rem;
     line-height: 1.6;
@@ -297,12 +300,14 @@ a:focus-visible {
     position: absolute;
 
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
-    width: 72%;
+    width: 72px;
     height: 0.5px;
 
     background: var(--line);
+    opacity: 0.55;
 }
 
 
@@ -361,17 +366,17 @@ a:focus-visible {
 
     .nav {
 
-        gap: 19.95px;
+        gap: 18.1545px;
     }
 
     .nav a {
 
-        font-size: 1.034rem;
+        font-size: 0.97196rem;
     }
 
     .location::before {
 
-        width: 72%;
+        width: 72px;
     }
 
     @keyframes fadeIn {
