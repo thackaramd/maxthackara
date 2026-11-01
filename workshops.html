@@ -10,7 +10,7 @@
 
 <meta name="theme-color" content="#FFE5C9">
 
-<title>Workshops — Max Thackara</title>
+<title>Workshops — The Independent Practice of Max Thackara</title>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Prata&display=swap"
@@ -161,16 +161,7 @@ main {
 
 /* UNDERLINE */
 
-.practice-label {
-    position: relative;
-    font-size: 0.7rem;
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-soft);
-    margin: 0 auto 29px;
-}
+
 
 /* NAV */
 
@@ -669,9 +660,7 @@ a:focus-visible {
         margin-bottom: 12px;
     }
 
-    .practice-label {
-        margin-bottom: 25px;
-    }
+    
 
     .page-nav {
 
@@ -789,22 +778,8 @@ a:focus-visible {
     }
 }
 
-/* The divider sits inside the existing name-to-descriptor gap. */
-.practice-label::before {
-    content: "";
-    position: absolute;
-    width: 52px;
-    height: 0.5px;
-    background: var(--line);
-    border-radius: 0;
-    top: -12px;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-}
-@media (max-width: 750px) {
-    .practice-label::before { width: 46px; top: -11px; }
-}
+
+
 
 .service-heading {
     color: var(--text);
@@ -816,10 +791,11 @@ a:focus-visible {
 /* Desktop masthead proportions */
 @media (min-width: 981px) {
     .title { font-size: 1.6rem; }
-    .practice-label { font-size: 0.8rem; }
+    
 }
 
 </style>
+<link rel="stylesheet" href="identity.css">
 </head>
 
 <body>
@@ -828,15 +804,13 @@ a:focus-visible {
 
     <div class="header-container">
 
-        <div class="title">
-
+        <div class="title masthead">
             <a href="index.html">
-                Max Thackara
+            <span class="masthead-practice">The Independent Practice</span>
+            <em class="masthead-of">of</em>
+            <span class="masthead-name">Max Thackara</span>
             </a>
-
         </div>
-
-        <p class="practice-label">Independent Practice</p>
 
         <div class="page-nav">
 
