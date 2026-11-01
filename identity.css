@@ -73,7 +73,7 @@
     height: 0.5px;
     background: var(--line);
     opacity: 0.65;
-    bottom: calc(var(--masthead-plaque-bottom) * var(--masthead-scale) + var(--masthead-divider-above));
+    bottom: calc(-1 * (var(--masthead-plaque-bottom) * var(--masthead-scale) + var(--masthead-divider-above)));
     left: 0;
     right: 0;
     margin-inline: auto;
