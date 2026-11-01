@@ -1,4 +1,4 @@
-/* Shared identity: retain each page's existing name size and layout. */
+/* Shared masthead: practice heading, quiet bridge, formal attribution. */
 .masthead.title {
     display: block;
     width: max-content;
@@ -13,17 +13,25 @@
 .masthead-of,
 .masthead-name { display: block; }
 .masthead-practice {
-    font-size: 0.52em;
-    line-height: 1.5;
+    font-size: 0.65em;
+    line-height: 1.35;
     letter-spacing: 0.025em;
-    color: var(--text-soft);
+    color: var(--text);
 }
 .masthead-of {
-    margin: 2px 0 3px;
-    font-size: 0.43em;
-    line-height: 1.2;
+    margin: 3px 0 1px;
+    font-size: 0.36em;
+    line-height: 1.15;
     font-style: italic;
     letter-spacing: 0;
+    color: var(--text-soft);
+}
+.masthead-name {
+    font-size: 0.46em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    padding-left: 0.16em;
     color: var(--text-soft);
 }
 .masthead::after {
@@ -39,10 +47,10 @@
 }
 .container > .masthead {
     grid-column: 2;
-    margin-bottom: 61px;
+    margin-bottom: 78px;
 }
 @media (max-width: 750px) {
     .masthead.title { margin-bottom: 25px; }
     .masthead::after { width: 46px; bottom: -12px; }
-    .container > .masthead { margin-bottom: 53px; }
+    .container > .masthead { margin-bottom: 68px; }
 }
