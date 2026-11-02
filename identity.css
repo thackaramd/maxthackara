@@ -117,6 +117,6 @@
  .secondary-navigation .page-nav .section-number { font-size:.6264rem; }
 }
 @media (max-width:750px) {
- .header-container .masthead.title { margin-bottom:6px; }
+ .header-container .masthead.title { margin-bottom:39px; }
  .header-container .secondary-navigation { margin-bottom:36px; }
 }
