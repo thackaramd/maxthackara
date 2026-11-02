@@ -117,7 +117,12 @@
  .secondary-navigation .page-nav .section-number { font-size:.6264rem; }
 }
 @media (max-width:750px) {
- .header-container .masthead.title { margin-bottom:34px; }
+ .header-container .masthead.title { margin-bottom:37px; }
  .header-container .secondary-navigation { margin-bottom:37px; }
  .mobile-actions svg { width:26px; height:26px; }
 }
+
+.contact-envelope { width:.75rem; height:.75rem; opacity:.72; }
+.nav .contact-link > .contact-envelope { grid-column:1; grid-row:1; justify-self:end; align-self:center; }
+.nav .contact-link > span { grid-column:2; grid-row:1; }
+.page-nav .contact-desktop .contact-envelope { vertical-align:middle; margin-right:.7em; }
