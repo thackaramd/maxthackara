@@ -104,10 +104,10 @@
     .container > .masthead { margin-bottom: 73px; }
 }
 /* Keep secondary navigation associated with its content. */
-.header-container .page-nav { margin-bottom:48px; }
-@media(max-width:980px) { .header-container .page-nav { margin-bottom:42px; } }
+.header-container .page-nav { margin-bottom:56px; }
+@media(max-width:980px) { .header-container .page-nav { margin-bottom:49px; } }
 @media(max-width:750px) {
  .header-container .masthead.title { --masthead-scale:0.7775712; }
- .header-container .page-nav { margin-bottom:34px; }
+ .header-container .page-nav { margin-bottom:40px; }
 }
-@media(max-height:700px) { .header-container .page-nav { margin-bottom:28px; } }
+@media(max-height:700px) { .header-container .page-nav { margin-bottom:34px; } }
