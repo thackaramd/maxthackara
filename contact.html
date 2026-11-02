@@ -652,8 +652,20 @@ a:focus-visible {
 }
 </style>
 <style>
-.masthead .masthead-practice { text-transform:uppercase; letter-spacing:.065em; }
-.masthead .masthead-name { text-transform:none; letter-spacing:.035em; margin-top:8px; }
+.masthead .masthead-practice { text-transform:none; letter-spacing:.025em; }
+.masthead .masthead-name { text-transform:uppercase; letter-spacing:.16em; margin-top:8px; }
+</style>
+<style>
+.contact-page {
+ max-width:760px;
+ background:linear-gradient(to bottom,rgba(255,241,225,.72),rgba(255,235,214,.62));
+ backdrop-filter:blur(3px);
+ padding:54px;
+ border-radius:10px;
+ box-shadow:var(--shadow);
+}
+@media(max-width:980px) { .contact-page { padding:44px 40px; } }
+@media(max-width:750px) { .contact-page { padding:34px 24px; border-radius:8px; } }
 </style>
 </head>
 
@@ -665,8 +677,8 @@ a:focus-visible {
 
         <div class="title masthead">
             <a href="index.html">
-            <span class="masthead-practice">INDEPENDENT PRACTICE</span>
-            <span class="masthead-name">Max Thackara</span>
+            <span class="masthead-practice">Independent Practice</span>
+            <span class="masthead-name">MAX THACKARA</span>
             </a>
         </div>
 
