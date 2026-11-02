@@ -413,6 +413,9 @@ a:focus-visible {
 /* Homepage-only plaque width; the shared inscription stays unchanged. */
 .container > .masthead.title {
     --masthead-plaque-width: calc(100% + 22.08px);
+    /* Scale the complete inscription without moving the directory or footer. */
+    transform: scale(0.96);
+    transform-origin: center;
 }
 
 
