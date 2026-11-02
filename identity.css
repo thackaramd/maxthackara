@@ -15,8 +15,8 @@
     --masthead-name-size: 0.44em;
     --masthead-bridge-above: 4px;
     --masthead-bridge-below: 2px;
-    --masthead-divider-above: 25px;
-    --masthead-divider-below: 27px;
+    --masthead-divider-above: 23px;
+    --masthead-divider-below: 23px;
     display: block;
     width: max-content;
     max-width: 100%;
@@ -79,20 +79,8 @@
         rgba(255, 248, 236, 0.48);
     pointer-events: none;
 }
-/* Secondary-page divider: clear of the plaque and lighter than its edge. */
-.masthead::after {
-    content: "";
-    position: absolute;
-    width: 52px;
-    height: 0.5px;
-    background: var(--line);
-    opacity: 0.65;
-    bottom: calc(-1 * (var(--masthead-plaque-bottom) * var(--masthead-scale) + var(--masthead-divider-above)));
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    pointer-events: none;
-}
+/* The plaque stands alone; no divider beneath it. */
+.masthead::after { display:none; }
 .container > .masthead {
     /* Homepage reductions are independent of the secondary-page scale. */
     --masthead-scale: 0.96;
@@ -109,8 +97,8 @@
 .container > .masthead::after { display: none; }
 @media (max-width: 750px) {
     .masthead.title {
-        --masthead-divider-above: 21px;
-        --masthead-divider-below: 23px;
+        --masthead-divider-above: 19px;
+        --masthead-divider-below: 21px;
     }
     .masthead::after { width: 46px; }
     .container > .masthead { margin-bottom: 73px; }
