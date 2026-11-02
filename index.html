@@ -415,6 +415,14 @@ a:focus-visible {
     --masthead-plaque-width: calc(100% + 22.08px);
 }
 
+
+/* Printed register study: retain the plaque and surrounding composition. */
+.nav::before { display:none; }
+.nav a { position:relative; font-size:1.075rem; }
+.nav a::after { content:""; position:absolute; left:0; right:0; bottom:0; height:0.5px; background:rgba(68,85,79,.19); pointer-events:none; }
+.nav-number { opacity:.72; }
+@media(max-width:750px) { .nav a { font-size:1.01rem; } }
+
 </style>
 <link rel="stylesheet" href="identity.css?v=20261101-12">
 </head>
