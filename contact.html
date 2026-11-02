@@ -637,6 +637,20 @@ a:focus-visible {
  .page-nav .section-number { display:inline-block; width:1.5em; margin-right:2em; }
 }
 </style>
+<style>
+@media (min-width:751px) {
+ .secondary-navigation .page-nav a.current,
+ .secondary-navigation .page-nav a[aria-current="page"] {
+  text-decoration:none;
+  color:var(--text);
+ }
+ .secondary-navigation .page-nav a.current .section-number,
+ .secondary-navigation .page-nav a[aria-current="page"] .section-number {
+  color:var(--text-soft);
+  opacity:.7;
+ }
+}
+</style>
 </head>
 
 <body>
@@ -655,7 +669,7 @@ a:focus-visible {
 
         <div class="secondary-navigation">
 <div class="mobile-actions"><button type="button" aria-label="Menu" aria-expanded="false" aria-controls="secondary-links"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><a href="contact.html" aria-label="Contact"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx=".5"/><path d="m3 5 9 8 9-8"/></svg></a></div>
-<nav class="page-nav" id="secondary-links" aria-label="Main navigation"><a href="conversations.html"><span class="section-number" aria-hidden="true">01</span>Conversations</a><a href="readings.html"><span class="section-number" aria-hidden="true">02</span>Readings</a><a href="editing.html"><span class="section-number" aria-hidden="true">03</span>Editing</a><a href="workshops.html"><span class="section-number" aria-hidden="true">04</span>Workshops</a><a href="contact.html" class="contact-desktop"><svg class="contact-envelope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx=".5"/><path d="m3 5 9 8 9-8"/></svg>Contact</a></nav>
+<nav class="page-nav" id="secondary-links" aria-label="Main navigation"><a href="conversations.html"><span class="section-number" aria-hidden="true">01</span>Conversations</a><a href="readings.html"><span class="section-number" aria-hidden="true">02</span>Readings</a><a href="editing.html"><span class="section-number" aria-hidden="true">03</span>Editing</a><a href="workshops.html"><span class="section-number" aria-hidden="true">04</span>Workshops</a><a href="contact.html" class="contact-desktop current" aria-current="page"><svg class="contact-envelope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx=".5"/><path d="m3 5 9 8 9-8"/></svg>Contact</a></nav>
 </div>
 
     </div>

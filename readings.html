@@ -611,6 +611,20 @@ a:focus-visible {
  .page-nav .section-number { display:inline-block; width:1.5em; margin-right:2em; }
 }
 </style>
+<style>
+@media (min-width:751px) {
+ .secondary-navigation .page-nav a.current,
+ .secondary-navigation .page-nav a[aria-current="page"] {
+  text-decoration:none;
+  color:var(--text);
+ }
+ .secondary-navigation .page-nav a.current .section-number,
+ .secondary-navigation .page-nav a[aria-current="page"] .section-number {
+  color:var(--text-soft);
+  opacity:.7;
+ }
+}
+</style>
 </head>
 
 <body>
