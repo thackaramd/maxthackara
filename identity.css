@@ -117,7 +117,7 @@
  .secondary-navigation .page-nav .section-number { font-size:.6264rem; }
 }
 @media (max-width:750px) {
- .header-container .masthead.title { margin-bottom:30px; }
- .header-container .secondary-navigation { margin-bottom:30px; }
+ .header-container .masthead.title { margin-bottom:34px; }
+ .header-container .secondary-navigation { margin-bottom:37px; }
  .mobile-actions svg { width:26px; height:26px; }
 }
