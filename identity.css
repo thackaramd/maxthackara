@@ -15,8 +15,8 @@
     --masthead-name-size: 0.44em;
     --masthead-bridge-above: 4px;
     --masthead-bridge-below: 2px;
-    --masthead-divider-above: 23px;
-    --masthead-divider-below: 23px;
+    --masthead-divider-above: 20px;
+    --masthead-divider-below: 20px;
     display: block;
     width: max-content;
     max-width: 100%;
@@ -97,8 +97,8 @@
 .container > .masthead::after { display: none; }
 @media (max-width: 750px) {
     .masthead.title {
-        --masthead-divider-above: 19px;
-        --masthead-divider-below: 21px;
+        --masthead-divider-above: 17px;
+        --masthead-divider-below: 19px;
     }
     .masthead::after { width: 46px; }
     .container > .masthead { margin-bottom: 73px; }
