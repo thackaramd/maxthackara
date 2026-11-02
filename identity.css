@@ -111,3 +111,12 @@
  .header-container .page-nav { margin-bottom:46px; }
 }
 @media(max-height:700px) { .header-container .page-nav { margin-bottom:40px; } }
+/* Quiet refinements to secondary navigation. */
+@media (min-width:751px) {
+ .header-container .secondary-navigation .page-nav { font-size:1rem; }
+ .secondary-navigation .page-nav .section-number { font-size:.6264rem; }
+}
+@media (max-width:750px) {
+ .header-container .masthead.title { margin-bottom:6px; }
+ .header-container .secondary-navigation { margin-bottom:36px; }
+}
